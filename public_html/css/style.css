@@ -48,7 +48,7 @@ nav ul {
     list-style: none;
 }
 #pageContent {
-    max-width: 1000px;
+    max-width: 95%;
     margin: auto;
     border: none;
 }
@@ -77,7 +77,7 @@ main section {
 }
 footer {
 	background: #AEC6CF;
-	max-width: 1000px;
+	max-width: 95%;
 	margin: auto;
 	clear: both;
 	text-align: right;
@@ -106,14 +106,14 @@ aside > div {
     margin-right: 10px;
 }
 body > section {
-    max-width: 1000px;
+    max-width: 95%;
     margin: auto;
     padding: 30px 0px;
     border-bottom: 1px solid #999;
     color: #333;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 95%) {
 	body > section {
 		padding: 30px 20px;
 	}
