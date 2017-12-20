@@ -20,11 +20,173 @@ and open the template in the editor.
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
+        <link href="../css/styloMiCuenta.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
         <div>
-            <h1>Mi cuenta</h1>
+            <div class="container auth">
+                <br><br>
+                <h1 class="text-center">Mi cuenta <span>Mis datos</span> </h1>
+                <div id="big-form" class="well auth-box">
+                    <form>
+                        <fieldset>
+                            <br>
+                            <!-- Form Name -->
+                            <!-- <legend>Nice form example</legend>
+ 
+                                 <a href="index.html" class="btn btn-default">All</a>
+                                 <a href="example1.html" class="btn btn-default">example 1</a>
+                                 <a href="example2.html" class="btn btn-default">example 2</a>
+ 
+                            --> 
 
+
+                            <!-- Nombre-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Nombre</label>  
+                                <div class="">
+                                    <input id="textinput" name="textinput" placeholder="nombre.." class="form-control input-md" type="text">
+                                </div>
+                            </div>
+
+                            <!-- Apellido-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Apellido</label>  
+                                <div class="">
+                                    <input id="textinput" name="textinput" placeholder="apellido.." class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <!-- Telefono-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Telefono</label>  
+                                <div class="">
+                                    <input id="textinput" name="textinput" placeholder="telefono.." class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <!-- Email-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Email</label>  
+                                <div class="">
+                                    <input id="textinput" name="textinput" placeholder="email.." class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <!-- Coche-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Coche</label>  
+                                <div class="">
+                                    <input id="textinput" name="textinput" placeholder="coche.." class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <!-- Añadir coche -->
+                            <div class="form-group">
+                                <div class="">
+                                    <button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
+                                </div>
+                            </div>
+
+                            <!-- Trayectos pasajero -->
+                            <div class="form-group">
+                                <label class=" " for="selectmultiple">Trayectos pasajero</label>
+                                <div class="scroll">
+                                    <table>
+                                        <tr>
+                                            <td><strong>Curso</strong></td>
+                                            <td><strong>Horas</strong></td>
+                                            <td><strong>Horario</strong></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>CSS</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>HTML</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Dreamweaver</td>
+                                            <td>60</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!-- Trayectos conductor -->
+                            <div class="form-group">
+                                <label class="" for="selectmultiple">Trayectos conductor</label>
+                                <div class="scroll">
+                                    <table>
+                                        <tr>
+                                            <td><strong>Curso</strong></td>
+                                            <td><strong>Horas</strong></td>
+                                            <td><strong>Horario</strong></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>CSS</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>HTML</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Dreamweaver</td>
+                                            <td>60</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!-- Trayectos peticiones -->
+                            <div class="form-group">
+                                <label class="" for="selectmultiple">Trayectos peticiones</label>
+                                <div class="scroll">
+                                    <table>
+                                        <tr>
+                                            <td><strong>Curso</strong></td>
+                                            <td><strong>Horas</strong></td>
+                                            <td><strong>Horario</strong></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>CSS</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>HTML</td>
+                                            <td>20</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Dreamweaver</td>
+                                            <td>60</td>
+                                            <td>16:00 - 20:00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
 
         </div>
     </body>
