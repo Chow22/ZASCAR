@@ -2,7 +2,7 @@
   margin-top: 20px;
 }
 body{
-  background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/08/30/12087/3574f899daef41d2f145eba13ff7840f.jpg');
+  background:url('http://www.freixenet.es/webroot/img/cavas/emblematicos/bg/bg_cordon_negro.jpg');
   background-size:100% 100%;
   background-attachment: fixed; 
   background-repeat:no-repeat;
@@ -44,6 +44,7 @@ body{
   -ms-transition: background 1s ease-in-out;
   -o-transition: background 1s ease-in-out;
   transition: background 1s ease-in-out;
+  padding:1%;
 }
 @media(max-width:460px){
   .auth .auth-box{
@@ -176,7 +177,6 @@ body{
 }
 .auth .control-label{
   width: 25%;
-  color:#00dd93;
   float: left;
 }
 .auth label.label-floatlabel {
@@ -188,8 +188,19 @@ body{
 }
 /*scroll------*/
 .scroll {
-    width:85%;
+
     height: 150px;
     overflow: scroll;
 }
-/*------*/
+/*imagen*/
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
