@@ -1,26 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Agenda</title>
-    </head>
-    <body >
-        <div align="center">
-            <h1>Iniciar Sesión</h1>
-            <hr>
-            <div id="Sign-In" > 
-                <fieldset style="width:30px"><legend><b>LogIn:</b></legend> 
-                    <form method="POST" action="../controlador/login_controlador.php"> 
-                        Usuario: <br><input type="text" name="Nombre" size="40" required><br> 
-                        Contraseña: <br><input type="password" name="Pass" size="40" required>
-                        <br>
-                        <br> 
-                        <input id="button" type="submit" name="submit" value="Logeate"> 
-                        <input id="button" type="submit" value="Cancel" onclick="location.href = '../vista/index.html'">
-                        <br>
-                    </form> 
-                </fieldset> 
-            </div >
-        </div>
-    </body>
-</html>
+<?php
+require_once 'conector.php';
+class trayectos{
+    private $link;
+    private $usuario;
+
+    public function __construct(){
+        $this->link=Conectar::conexion();
+        $this->usuario=array();
+         }
+
+    public function get_trayectoConductor(){
+       $sql="CALL verTrayectosConductor(7)";
+       $consulta=$this->link->query($sql);
+         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
+           {
+            $this->usuario[]=$row;
+           }
+       $consulta->free_result();
+       $this->link->close();
+       return $this->usuario;
+      }
+      
+      public function get_trayectoPasajero(){
+       $sql="CALL verTrayectosPasajero(7)";
+       $consulta=$this->link->query($sql);
+         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
+           {
+            $this->usuario[]=$row;
+           }
+       $consulta->free_result();
+       $this->link->close();
+       return $this->usuario;
+      }
+      
+    public function insertar_pelicula($titulo,$anyo,$director,$cartel){
+        $consulta=$this->link->query("CALL spInsertarPelicula('$titulo','$anyo','$director','$cartel')");
+
+    }
+
+public function borrar_pelicula($idBorrar){
+        $consulta=$this->link->query("CALL spBorrarPelicula ('$idBorrar')");
+
+    }
+
+public function modificar_pelicula($id,$titulo,$anyo,$director){
+     $consulta=$this->link->query("CALL modificarPeliculas ('$id','$titulo','$anyo','$director')");
+     print("CALL modificarPeliculas ('$id','$titulo','$anyo','$director')");
+}
+
+ }
+?>

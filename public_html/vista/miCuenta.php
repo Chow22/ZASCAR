@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Mi cuenta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
@@ -16,25 +16,19 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
         <link href="../css/styloMiCuenta.css" rel="stylesheet" type="text/css"/>
-
+        <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
         <div>
             <div class="container auth">
                 <br><br>
-                <h1 class="text-center">Mi cuenta <span>Mis datos</span> </h1>
+                <h1 class="text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
-                    <form>
+                    <form action="google.es" method="post">
                         <fieldset>
+                             <h2 class="text-left">Mis datos</h2>
                             <br>
-                            <!-- Form Name -->
-                            <!-- <legend>Nice form example</legend>
- 
-                                 <a href="index.html" class="btn btn-default">All</a>
-                                 <a href="example1.html" class="btn btn-default">example 1</a>
-                                 <a href="example2.html" class="btn btn-default">example 2</a>
- 
-                            --> 
+       
 
                             <a target="_blank" href="paris.jpg">
                                 <img src="http://bambinoides.com/wp-content/uploads/2014/10/Selfi_monalisa.jpg" alt="Paris" style="width:25%" align="right">
@@ -44,7 +38,7 @@
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Nombre</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="nombre.." class="form-control input-md" type="text">
+                                    <input id="nombre" name="textinput" placeholder="nombre.." class="form-control input-md" type="text" required>
                                 </div>
                             </div>
 
@@ -52,28 +46,28 @@
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Apellido</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="apellido.." class="form-control input-md" type="text">
+                                    <input id="apellido" name="textinput" placeholder="apellido.." class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Telefono-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Telefono</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="telefono.." class="form-control input-md" type="text">
+                                    <input id="telefono" type="tel" name="textinput" placeholder="telefono.." class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Email-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Email</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="email.." class="form-control input-md" type="text">
+                                    <input id="textinput" name=email" type="email" placeholder="email.." class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Coche-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Coche</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="coche.." class="form-control input-md" type="text"><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
+                                    <input id="textinput" name="textinput" placeholder="coche.." class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
                                 </div>
                             </div>
                             <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar</button>
@@ -81,31 +75,9 @@
                             <div class="form-group">
                                 <label class=" " for="selectmultiple">Trayectos pasajero</label>
                                 <div class="scroll">
-                                    <table>
-                                        <tr>
-                                            <td><strong>Curso</strong></td>
-                                            <td><strong>Horas</strong></td>
-                                            <td><strong>Horario</strong></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>CSS</td>
-                                            <td>20</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>HTML</td>
-                                            <td>20</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Dreamweaver</td>
-                                            <td>60</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-                                    </table>
+                                    <div id="tablaPasajero">
+                                        
+                                    </div>
                                 </div>
 
                             </div>
@@ -113,33 +85,9 @@
                             <div class="form-group">
                                 <label class="" for="selectmultiple">Trayectos conductor</label>
                                 <div class="scroll">
-                                    <table>
-                                        <tr>
-                                            <td><strong>Curso</strong></td>
-                                            <td><strong>Horas</strong></td>
-                                            <td><strong>Horario</strong></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>CSS</td>
-                                            <td>20</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>HTML</td>
-                                            <td>20</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Dreamweaver</td>
-                                            <td>60</td>
-                                            <td>16:00 - 20:00</td>
-                                        </tr>
-                                    </table>
-                                </div>
-
+                                    <div id="tablaConductor">
+                                        
+                                    </div>
                             </div>
                             <!-- Trayectos peticiones -->
                             <div class="form-group">
