@@ -19,9 +19,9 @@
                     <span class="grande"> {{item.paradas}}</span> 
                     <span class="grande"> {{item.fecha}} </span> 
                     <span class="peque"> {{item.plazas}} </span>                     
-<!--                    <span class="peque"> <input type="button" ng-model="item.seleccionado"></span> -->
-                     <span class="peque">  <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='informacion($index,item)' alt="" ></span>                      
-                     <span class="peque">  <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='aceptar($index,item.id)' alt="" ></span> 
+<!--                <span class="peque"> <input type="button" ng-model="item.seleccionado"></span> -->
+                    <span class="peque">  <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='informacion($index,item)' alt="" ></span>                      
+                    <span class="peque">  <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='aceptar($index,item.id)' alt="" ></span> 
                 </li>
             </ul>            
         </div>        
