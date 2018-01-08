@@ -17,7 +17,7 @@
 
     <body>
         <header>                         
-            <div id="logo"><img src="http://html5-templates.com/logo.png">HTML5 Layout
+            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
              <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
             </div>
             <br>
@@ -33,7 +33,7 @@
             </nav>
         </header>
         <section>
-            <strong>Demonstration of a simple page layout using HTML5 tags: header, nav, section, main, article, aside, footer, address.</strong>
+            <strong>En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>
         </section>
         <section id="pageContent">
             <main role="main">
@@ -51,19 +51,19 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="http://placehold.it/800x400" alt="...">
+            <img src="img/carousel0.png" alt="...">
           <div class="carousel-caption">
             <h2>Heading</h2>
           </div>
         </div>
         <div class="item">
-          <img src="http://placehold.it/800x400" alt="...">
+            <img src="img/carousel1.jpg" alt="...">
           <div class="carousel-caption">
             <h2>Heading</h2>
           </div>
         </div>
         <div class="item">
-          <img src="http://placehold.it/800x400" alt="...">
+            <img src="img/carousel2.jpg" alt="...">
           <div class="carousel-caption">
             <h2>Heading</h2>
           </div>
