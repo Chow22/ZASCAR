@@ -25,7 +25,7 @@ $(document).ready(function () {
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
                <th class='idusuario'>idusuario</th>\n\ \n\
-               <th class='idusuario'></th>\n\ ";
+               <th class='idusuario'>Eliminar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
                         .each(
@@ -153,7 +153,7 @@ $(document).ready(function () {
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
                <th class='idusuario'>idusuario</th>\n\ \n\
-               <th class='idusuario'></th>\n\ ";
+               <th class='idusuario'>Aceptar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
                         .each(
