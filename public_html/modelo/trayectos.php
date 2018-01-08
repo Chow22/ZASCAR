@@ -33,6 +33,18 @@ class trayectos{
        return $this->usuario;
       }
       
+            public function get_trayectoPeticiones(){
+       $sql="CALL verPeticiones(7)";
+       $consulta=$this->link->query($sql);
+         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
+           {
+            $this->usuario[]=$row;
+           }
+       $consulta->free_result();
+       $this->link->close();
+       return $this->usuario;
+      }
+      
     public function insertar_pelicula($titulo,$anyo,$director,$cartel){
         $consulta=$this->link->query("CALL spInsertarPelicula('$titulo','$anyo','$director','$cartel')");
 
