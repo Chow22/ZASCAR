@@ -26,7 +26,7 @@ img.txiki{
 header {
     background: #AEC6CF;
     padding: 20px 30px;
-    max-width: 940px;
+    max-width: 95%;
     margin: auto;
 }
 nav {
@@ -84,7 +84,7 @@ footer {
 	max-width: 95%;
 	margin: auto;
 	clear: both;
-	text-align: right;
+	text-align: center;
 }
 footer p {
 	padding: 20px;
