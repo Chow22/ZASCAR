@@ -1,11 +1,10 @@
 <?php
 
-require_once '../modelo/modelo_Pelicula.php';
-//$id = htmlspecialchars(trim($_POST['Id']));
-$titulo = htmlspecialchars(trim($_POST['Titulo']));
-$edad = htmlspecialchars(trim($_POST['Edad']));
-$director = htmlspecialchars(trim($_POST['Director']));
-$cartel = htmlspecialchars(trim($_POST['Cartel']));
-$cont = new modelo_pelicula();
-$cont->insertar_pelicula($titulo, $edad, $director, $cartel);
-print($titulo);
+require_once '../modelo/modelo_vehiculo.php';
+$marca = htmlspecialchars(trim($_POST['marca']));
+$plazas = htmlspecialchars(trim($_POST['plazas']));
+$combustible = htmlspecialchars(trim($_POST['combustible']));
+$matricula = htmlspecialchars(trim($_POST['matricula']));
+$cont = new modelo_vehiculo();
+$cont->insertar_vehiculo($marca, $plazas, $combustible, $matricula);
+print($marca);
