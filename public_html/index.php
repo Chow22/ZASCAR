@@ -83,20 +83,79 @@
 </section>
             </main>
             <aside>
-                <div id="wrapper">
- 
-    <ul class="menu">
-        <li class="item1"><a href="#">Friends <span>340</span></a></li>
-        <li class="item2"><a href="#">Videos <span>147</span></a></li>
-        <li class="item3"><a href="#">Galleries <span>340</span></a></li>
-        <li class="item4"><a href="#">Podcasts <span>222</span></a></li>
-        <li class="item5"><a href="#">Robots <span>16</span></a></li>
-    </ul>
- 
+               <div id="wrapper">
+
+	<ul class="menu">
+		<li class="item1"><a href="#">Friends</a>
+			<ul>
+				<li class="subitem1"><a href="#">Cute Kittens</a></li>
+				<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+		<li class="item2"><a href="#">Videos</a>
+			<ul>
+				<li class="subitem1"><a href="#">Cute Kittens</a></li>
+				<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+		<li class="item3"><a href="#">Galleries</a>
+			<ul>
+				<li class="subitem1"><a href="#">Cute Kittens</a></li>
+				<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+		<li class="item4"><a href="#">Podcasts</a>
+			<ul>
+				<li class="subitem1"><a href="#">Cute Kittens</a></li>
+				<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+		<li class="item5"><a href="#">Robots</a>
+			<ul>
+				<li class="subitem1"><a href="#">Cute Kittens</a></li>
+				<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+	</ul>
+
 </div>
+
+<!--initiate accordion-->
+<script type="text/javascript">
+	$(function() {
+	
+	    var menu_ul = $('.menu > li > ul'),
+	           menu_a  = $('.menu > li > a');
+	    
+	    menu_ul.hide();
+	
+	    menu_a.click(function(e) {
+	        e.preventDefault();
+	        if(!$(this).hasClass('active')) {
+	            menu_a.removeClass('active');
+	            menu_ul.filter(':visible').slideUp('normal');
+	            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+	        } else {
+	            $(this).removeClass('active');
+	            $(this).next().stop(true,true).slideUp('normal');
+	        }
+	    });
+	
+	});
+</script>
             </aside>
         </section>
-        
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="/" target="_blank" rel="nofollow">Contacto</a></p>
+            <address>
+                Contacta vía E-mail-<a href="mailto:ethazi3@gmail.com">ethazi3@gmail.com</a>
+            </address>
+        </footer>   
         <?php 
             include 'footer.php';
         ?>
