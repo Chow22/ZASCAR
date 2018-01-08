@@ -1,27 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <title>Modelo-vista-controlador</title>
-</head>
-<body>
-    <h1>Platillos disponibles</h1>
-    <table border="1">
-        <tr>
-            <td><strong>Nombre platillo</strong></td>
-            <td><strong>Precio platillo</strong></td>
-        </tr>
-        <?php
-            for($i=0;$i<count($pd);$i++)
-            {
-                ?>
-                    <tr>
-                        <td><?php echo $pd[$i]["nombre"]; ?></td>
-                        <td><?php echo $pd[$i]["precio"]; ?> USD.</td>
-                    </tr>
-                <?php
-            }
-        ?>
-    </table>
-</body>
-</html>
+<?php
+
+require_once '../controlador/conector.php';
+
+class modelo_usuario {
+
+    private $link;
+    private $usuario;
+
+    public function __construct() {
+        $this->link = Conectar::conexion();
+        $this->usuario = array();
+    }
+
+    public function get_usuarios() {
+        $sql = "CALL verIkasleak ()";
+        $consulta = $this->link->query($sql);
+        while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
+            $this->usuario[] = $row;
+        }
+        $consulta->free_result();
+        $this->link->close();
+        return $this->usuario;
+    }
+
+    public function insertar_usuario($nombre, $apellido1, $apellido2, $ciclo, $curso) {
+        $consulta = $this->link->query("CALL aniadirUsuario ('$nombre','$apellido1','$apellido2','$ciclo','$curso')");
+        $row = mysqli_fetch_array($consulta, MYSQLI_ASSOC);
+        $this->id = $row['id'];
+    }
+
+    public function modificar_usuario($id, $nombre, $apellido1, $apellido2, $ciclo, $curso) {
+        $consulta = $this->link->query("CALL modificarUsuario ('$id','$nombre','$apellido1','$apellido2','$ciclo','$curso')");
+    }
+
+    public function borrar_usuario($idBorrar) {
+        $consulta = $this->link->query("CALL borrarUsuario('$idBorrar')");
+    }
+
+}
+
+?>
