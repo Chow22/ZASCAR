@@ -83,9 +83,17 @@
 </section>
             </main>
             <aside>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div id="wrapper">
+ 
+    <ul class="menu">
+        <li class="item1"><a href="#">Friends <span>340</span></a></li>
+        <li class="item2"><a href="#">Videos <span>147</span></a></li>
+        <li class="item3"><a href="#">Galleries <span>340</span></a></li>
+        <li class="item4"><a href="#">Podcasts <span>222</span></a></li>
+        <li class="item5"><a href="#">Robots <span>16</span></a></li>
+    </ul>
+ 
+</div>
             </aside>
         </section>
         
