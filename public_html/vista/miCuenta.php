@@ -85,8 +85,7 @@
                             <div class="form-group">
                                 <label class="" for="selectmultiple">Trayectos conductor</label>
                                 <div class="scroll">
-                                    <div id="tablaConductor">
-                                        
+                                    <div id="tablaConductor"> 
                                     </div>
                             </div>
                             <!-- Trayectos peticiones -->
