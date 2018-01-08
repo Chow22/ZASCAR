@@ -24,7 +24,8 @@ $(document).ready(function () {
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
-               <th class='idusuario'>idusuario</th>\n\ ";
+               <th class='idusuario'>idusuario</th>\n\ \n\
+               <th class='idusuario'></th>\n\ ";
                 midato = JSON.parse(datos);
                 $
                         .each(
@@ -50,6 +51,8 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='idusuario'>" + dato.idusuario +
                                             "</td>";
+                                    tabla += "<td class='opciones'>";
+                                    tabla += "<input type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -149,7 +152,8 @@ $(document).ready(function () {
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
-               <th class='idusuario'>idusuario</th>\n\ ";
+               <th class='idusuario'>idusuario</th>\n\ \n\
+               <th class='idusuario'></th>\n\ ";
                 midato = JSON.parse(datos);
                 $
                         .each(
@@ -175,6 +179,8 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='idusuario'>" + dato.idusuario +
                                             "</td>";
+                                    tabla += "<td class='opciones'>";
+                                    tabla += "<input type=image src='../../../../ZASCAR/public_html/img/aceptar.png' width='20' height='17'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
