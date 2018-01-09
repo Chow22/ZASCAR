@@ -15,6 +15,15 @@ abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
 table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
+body{
+    background:url("../img/bg_cordon_negro.jpg");
+    background-size:100% 100%;
+    background-attachment: fixed; 
+    background-repeat:no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 img.txiki{
     width: 20px;
     height: 20px;
@@ -26,10 +35,22 @@ img.txiki{
 }
 
 header {
-    background: #AEC6CF;
+    background: rgba(255, 255, 255, 0.2);
     padding: 20px 30px;
     max-width: 95%;
     margin: auto;
+    border:1px solid rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    -moz-box-shadow:    0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    box-shadow:         0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 1s ease-in-out;
+    -moz-transition: background 1s ease-in-out;
+    -ms-transition: background 1s ease-in-out;
+    -o-transition: background 1s ease-in-out;
+    transition: background 1s ease-in-out;
 }
 nav {
     display: inline-block;
@@ -44,7 +65,7 @@ nav ul li a {
     border-radius: 10px;
 }
 nav ul li a:hover {
-	background: #FFF;
+    background: #FFF;
 }
 nav ul li {
     display: inline-block;
@@ -59,12 +80,12 @@ nav ul {
     border: none;
 }
 main {
-	float: left;
-	width: 60%;
+    float: left;
+    width: 60%;
 }
 aside {
-	float: right;
-	width: 30%;
+    float: right;
+    width: 30%;
 }
 article {
     border-bottom: 2px dotted #999;
@@ -76,29 +97,37 @@ article h2 {
     margin-bottom: 12px;
 }
 article p {
-	
+
 }
 main section {
-	
+
 }
 footer {
-	background: #AEC6CF;
-	max-width: 95%;
-	margin: auto;
-	clear: both;
-	text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    max-width: 95%;
+    margin: auto;
+    clear: both;
+    text-align: center;
+    border:1px solid rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    -moz-box-shadow:    0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    box-shadow:         0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 1s ease-in-out;
+    -moz-transition: background 1s ease-in-out;
+    -ms-transition: background 1s ease-in-out;
+    -o-transition: background 1s ease-in-out;
+    transition: background 1s ease-in-out;
 }
 footer p {
-	padding: 20px;
+    padding: 20px;
 }
 address {
     padding: 10px 20px 30px 10px;
 }
-aside > div {
-	margin: 10px auto;
-	background: #AEC6CF;
-	min-height: 100px;
-}
+
 #logo {
     display: inline-block;
     vertical-align: middle;
@@ -120,20 +149,23 @@ body > section {
 }
 
 @media screen and (max-width: 95%) {
-	body > section {
-		padding: 30px 20px;
-	}
+    body > section {
+        padding: 30px 20px;
+    }
 }
 @media screen and (max-width: 600px) {
-	main {
-		float: none;
-		width: 100%;
-	}
-	aside {
-		float: none;
-		width: 100%;
-	}
+    main {
+        float: none;
+        width: 100%;
+    }
+    aside {
+        float: none;
+        width: 100%;
+    }
 
+}
+strong{
+    color: white;
 }
 /* Makes images fully responsive */
 
@@ -142,187 +174,186 @@ body > section {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-  border-radius: 15px;
+    border-radius: 15px;
 }
 
 .carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 0 0 10px 25px;
+    color: #fff;
+    text-align: left;
 }
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0 25px 25px 0;
-  text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 15;
+    margin: 0;
+    padding: 0 25px 25px 0;
+    text-align: right;
 }
 
 .carousel-control.left,
 .carousel-control.right {
-  background-image: none;
+    background-image: none;
 }
 
 
 /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
 
 .section-white {
-   padding: 10px 0;
+    padding: 10px 0;
 }
 
 .section-white {
-  background-color: #fff;
-  color: #555;
+    color: #555;
 }
 
 @media screen and (min-width: 768px) {
 
-  .section-white {
-     padding: 1.5em 0;
-  }
+    .section-white {
+        padding: 1.5em 0;
+    }
 
 }
 
 @media screen and (min-width: 992px) {
 
-  .container {
-    max-width: 930px;
-  }
+    .container {
+        max-width: 930px;
+    }
 
 }
 
 /*menu*/
 
 #wrapper {	
-	width: 220px;
-	margin: 100px auto;
-	font-size: 0.8125em;
+    width: 220px;
+    margin: 100px auto;
+    font-size: 0.8125em;
 }
 .menu {
-	width: auto;
-	height: auto;
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
-	-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
-	box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+    width: auto;
+    height: auto;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
 }
 .menu > li > a {
-	background-color: #616975;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(114, 122, 134)),to(rgb(80, 88, 100)));
-	background-image: -webkit-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
-	background-image: -moz-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
-	background-image: -o-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
-	background-image: -ms-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
-	background-image: linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#727a86', EndColorStr='#505864');
-	border-bottom: 1px solid #33373d;
-	-webkit-box-shadow: inset 0px 1px 0px 0px #878e98;
-	-moz-box-shadow: inset 0px 1px 0px 0px #878e98;
-	box-shadow: inset 0px 1px 0px 0px #878e98;
-	width: 100%;
-	height: 2.75em;
-	line-height: 2.75em;
-	text-indent: 2.75em;
-	display: block;
-	position: relative;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 600;
-	color: #fff;
-	text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+    background-color: #616975;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(114, 122, 134)),to(rgb(80, 88, 100)));
+    background-image: -webkit-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+    background-image: -moz-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+    background-image: -o-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+    background-image: -ms-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+    background-image: linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#727a86', EndColorStr='#505864');
+    border-bottom: 1px solid #33373d;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #878e98;
+    -moz-box-shadow: inset 0px 1px 0px 0px #878e98;
+    box-shadow: inset 0px 1px 0px 0px #878e98;
+    width: 100%;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-indent: 2.75em;
+    display: block;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 1px 0px rgba(0,0,0,.5);
 }
 .menu ul li a {
-	background: #fff;
-	border-bottom: 1px solid #efeff0;
-	width: 100%;
-	height: 2.75em;
-	line-height: 2.75em;
-	text-indent: 2.75em;
-	display: block;
-	position: relative;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 0.923em;
-	font-weight: 400;
-	color: #878d95;
+    background: #fff;
+    border-bottom: 1px solid #efeff0;
+    width: 100%;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-indent: 2.75em;
+    display: block;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.923em;
+    font-weight: 400;
+    color: #878d95;
 }
 .menu ul li:last-child a {
-	border-bottom: 1px solid #33373d;
+    border-bottom: 1px solid #33373d;
 }
 .menu > li > a:hover, .menu > li > a.active {
-	background-color: #35afe3;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 199, 235)),to(rgb(38, 152, 219)));
-	background-image: -webkit-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
-	background-image: -moz-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
-	background-image: -o-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
-	background-image: -ms-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
-	background-image: linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
-	border-bottom: 1px solid #103c56;
-	-webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
-	-moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
-	box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    background-color: #35afe3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 199, 235)),to(rgb(38, 152, 219)));
+    background-image: -webkit-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+    background-image: -moz-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+    background-image: -o-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+    background-image: -ms-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+    background-image: linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
+    border-bottom: 1px solid #103c56;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    box-shadow: inset 0px 1px 0px 0px #6ad2ef;
 }
 .menu > li > a.active {
-	border-bottom: 1px solid #1a638f;
+    border-bottom: 1px solid #1a638f;
 }
 .menu > li > a:before {
-	content: '';
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	font-size: 36px;
-	height: 1em;
-  	width: 1em;
-	position: absolute;
-  	left: 0;
-	top: 50%;
-	margin: -.5em 0 0 0;
+    content: '';
+    background-image: url(../images/sprite.png);
+    background-repeat: no-repeat;
+    font-size: 36px;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -.5em 0 0 0;
 }
 .item1 > a:before {
-	background-position: 0 0;
+    background-position: 0 0;
 }
 .item2 > a:before {
-	background-position: -38px 0;
+    background-position: -38px 0;
 }
 .item3 > a:before {
-	background-position: 0 -38px;
+    background-position: 0 -38px;
 }
 .item4 > a:before {
-	background-position: -38px -38px;
+    background-position: -38px -38px;
 }
 .item5 > a:before {
-	background-position: -76px 0;
+    background-position: -76px 0;
 }
 
 .menu > li > ul li a:before{
-	font-size: 8px;
-	color: #bcbcbf;
-	position: absolute;
-	width: 1em;
-	height: 1em;
-	top: 0;
-	left: -2.7em;
+    font-size: 8px;
+    color: #bcbcbf;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    left: -2.7em;
 }
 
 .menu > li > ul li:hover a,
 .menu > li > ul li:hover a:before {
-	color: #32373D;
+    color: #32373D;
 }
 
 
