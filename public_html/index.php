@@ -24,7 +24,7 @@
             <br>
             <nav>  
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="vista/miCuenta.php">Mi Cuenta</a></li>                                                        
                     <li><a href="http://html-css-js.com/css/code/">CSS</a></li>
                     <li><a href="http://htmlcheatsheet.com/js/">JS</a></li>
@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/carousel1.jpg" alt="...">
+                                    <img src="img/carousel1.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Heading</h2>
                                     </div>
@@ -152,9 +152,6 @@
         </section>
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="/" target="_blank" rel="nofollow">Contacto</a></p>
-            <address>
-                Contacta vía E-mail | <a href="mailto:ethazi3@gmail.com">ethazi3@gmail.com</a>
-            </address>
         </footer>   
 
 
