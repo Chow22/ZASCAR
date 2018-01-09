@@ -86,7 +86,11 @@
                 <div id="wrapper">
 
                     <ul class="menu">
-                        <li class="item1"><a href="vista/miCuenta.php">Mi Cuenta</a>
+                        <li class="item1"><a href="#">Opciones de Cuenta</a>
+                            <ul>
+                                <li class="subitem1"><a href="vista/miCuenta.php">Modificar Cuenta</a></li>
+                                <li class="subitem1"><a href="vista/miCuenta.php">Eliminar Cuenta</a></li>
+                            </ul>
                         </li>
                         <li class="item2"><a href="#">Videos</a>
                             <ul>
