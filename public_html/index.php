@@ -26,9 +26,8 @@
             <nav>  
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="vista/miCuenta.php">Mi Cuenta</a></li>                                                        
-                    <li><a href="http://html-css-js.com/css/code/">CSS</a></li>
-                    <li><a href="http://htmlcheatsheet.com/js/">JS</a></li>
+                    <li><a href="#">Información</a></li>                                                        
+                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -87,12 +86,7 @@
                 <div id="wrapper">
 
                     <ul class="menu">
-                        <li class="item1"><a href="#">Friends</a>
-                            <ul>
-                                <li class="subitem1"><a href="#">Cute Kittens</a></li>
-                                <li class="subitem2"><a href="#">Strange “Stuff”</a></li>
-                                <li class="subitem3"><a href="#">Automatic Fails</a></li>
-                            </ul>
+                        <li class="item1"><a href="vista/miCuenta.php">Mi Cuenta</a>
                         </li>
                         <li class="item2"><a href="#">Videos</a>
                             <ul>
