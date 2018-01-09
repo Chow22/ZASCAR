@@ -9,15 +9,22 @@ $(document).ready(function () {
     rellenarDatos();
 
     //alert("0");
+
+//////////////////click imagen sacar input/////////////////////////////////////////
+
+
+
+
+
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
-       // alert('rellenarDAtos')
+        // alert('rellenarDAtos')
         $.ajax({
             type: 'POST',
             dstaType: 'json',
             url: "../controlador/usuario_controlador.php",
             success: function (datos) {
-               // alert(datos)
+                // alert(datos)
                 midato = JSON.parse(datos);
                 $
                         .each(
@@ -28,7 +35,8 @@ $(document).ready(function () {
                                     $('#telefono').val(dato.telefono);
                                     $('#email').val(dato.email);
                                     $('#coche').val(dato.coche);
-                                    $("#imagen").attr("src",dato.imagen);
+                                    $("#imagen").attr("src", dato.imagen);
+                                    $("#imagenlink").val(dato.imagen);
                                 });
                 return false;
             },

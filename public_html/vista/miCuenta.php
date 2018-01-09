@@ -22,16 +22,19 @@
         <div>
             <div class="container auth">
                 <br><br>
+
                 <h1 class="text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
+                    <a target="_blank" >
+                        <img id="imagen" class="imagenPerfil" src="../img/imagenpredet.png"  alt="imagen"  align="right">
+                    </a>
+
 
                     <fieldset>
                         <h2 class="text-left">Mis datos</h2>
                         <br>
                         <form name="form" action="" method="post">
-                            <a target="_blank" href="paris.jpg">
-                                <img id="imagen" src="../img/imagenpredet.png"  alt="imagen" style="width:25%" align="right">
-                            </a>
+
                             <!-- Nombre-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput" >Nombre</label>  
@@ -68,12 +71,21 @@
                                     <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
                                 </div>
                             </div>
+                            <!-- Imagen-->
+                            <div class="form-group">
+                                <label class=" control-label" for="textinput">Imagen perfil</label>  
+                                <div class="">
+                                    <input id="imagenlink" name="textinput"  class="form-control input-md" type="text" required>
+                                </div>
+                            </div>
 
-                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar datos</button>
+                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Guardar datos</button>
                         </form>
+                        </div>
+                <div id="big-form" class="well auth-box">
                         <!-- Trayectos pasajero -->
                         <div class="form-group">
-                            <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>>
+                            <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>
                             <div class="scroll">
                                 <div id="tablaPasajero">
 
