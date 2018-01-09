@@ -19,26 +19,24 @@
         <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
-        <div ng-controller="mainController">
+        <div>
             <div class="container auth">
                 <br><br>
                 <h1 class="text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
-                    <form action="google.es" method="post">
-                        <fieldset>
-                             <h2 class="text-left">Mis datos</h2>
-                            <br>
-       
 
+                    <fieldset>
+                        <h2 class="text-left">Mis datos</h2>
+                        <br>
+                        <form name="form" action="" method="post">
                             <a target="_blank" href="paris.jpg">
-                                <img src="../img/Selfi_monalisa.jpg" ng-model="misdatos.imagen" alt="Paris" style="width:25%" align="right">
+                                <img id="imagen" src="../img/imagenpredet.png"  alt="imagen" style="width:25%" align="right">
                             </a>
-                          
                             <!-- Nombre-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput" >Nombre</label>  
                                 <div class="">
-                                    <input id="nombre" ng-model="misdatos.nombre" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="nombre" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
 
@@ -46,64 +44,66 @@
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Apellido</label>  
                                 <div class="">
-                                    <input id="apellido" ng-model="misdatos.apellido" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="apellido" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Telefono-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Telefono</label>  
                                 <div class="">
-                                    <input id="telefono" ng-model="misdatos.telefono" type="tel" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="telefono" type="tel" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Email-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Email</label>  
                                 <div class="">
-                                    <input id="textinput" ng-model="misdatos.email" name=email" type="email" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="email"  name=email" type="email" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Coche-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Coche</label>  
                                 <div class="">
-                                    <input id="textinput" ng-model="misdatos.coche" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
+                                    <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
                                 </div>
                             </div>
-                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar datos</button>
-                            <!-- Trayectos pasajero -->
-                            <div class="form-group">
-                                <label class=" " for="selectmultiple">Trayectos pasajero</label>
-                                <div class="scroll">
-                                    <div id="tablaPasajero">
-                                        
-                                    </div>
-                                </div>
 
+                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar datos</button>
+                        </form>
+                        <!-- Trayectos pasajero -->
+                        <div class="form-group">
+                            <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>>
+                            <div class="scroll">
+                                <div id="tablaPasajero">
+
+                                </div>
                             </div>
-                            <!-- Trayectos conductor -->
-                            <div class="form-group">
-                                <label class="" for="selectmultiple">Trayectos conductor</label>
-                                <div class="scroll">
-                                    <div id="tablaConductor"> 
-                                    </div>
+
+                        </div>
+                        <!-- Trayectos conductor -->
+                        <div class="form-group">
+                            <h2 class="" for="selectmultiple">Trayectos conductor</h2>
+                            <div class="scroll">
+                                <div id="tablaConductor"> 
+                                </div>
                             </div>
                             <!-- Trayectos peticiones -->
                             <div class="form-group">
-                                <label class="" for="selectmultiple">Peticiones</label>
+                                <h2 class="" for="selectmultiple">Peticiones</h2>
                                 <div class="scroll">
-                                      <div id="tablaPeticiones">
-                                        
+                                    <div id="tablaPeticiones">
+
                                     </div>
 
+                                </div>
+
+                                </fieldset>
+
                             </div>
+                            <div class="clearfix"></div>
+                        </div>
 
-                        </fieldset>
-                    </form>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-
-        </div>
-    </body>
-</html>
+                </body>
+                </html>

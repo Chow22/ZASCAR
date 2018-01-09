@@ -59,6 +59,9 @@ public function modificar_pelicula($id,$titulo,$anyo,$director){
      $consulta=$this->link->query("CALL modificarPeliculas ('$id','$titulo','$anyo','$director')");
      print("CALL modificarPeliculas ('$id','$titulo','$anyo','$director')");
 }
+public function aceptar_peticion($idtrayecto){
+        $consulta=$this->link->query("CALL aceptarPeticion ('$idtrayecto')");
 
+    }
  }
 ?>
