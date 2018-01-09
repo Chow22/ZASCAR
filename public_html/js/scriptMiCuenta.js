@@ -2,6 +2,58 @@ $(document).ready(function () {
     funcionConsultaTrayectosConductor();
     funcionConsultaTrayectosPasajero();
     funcionPeticiones();
+//////////////////rellenar campos con los datos de usuario/////////////////////////////////////////
+var miAplicacion = angular.module('miAplicacion', []);
+miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, $http) {
+
+        $http.get('../controlador/usuario_controlador.php').then(function (response) {
+            //alert(response.data);       
+            $scope.lista = response.data;
+        });
+//////////////////////////////////////////////////////////////////////////////////////////////
+        $scope.misdatos = {
+            id: "",
+            nombre: "",
+            apellidos: "",
+            telefono: "",
+            email: "",
+            coche: ""
+        };
+
+//////////////////guardar cambios/////////////////////////////////////////
+     $scope.guardar_modificar = function () {
+            //modificar scope
+            for (i = 0; i < $scope.lista.length; i++)
+            {
+                if ($scope.lista[i].id == $scope.misdatos.id) {
+                    $scope.lista[i].nombre = $scope.misdatos.nombre;
+                    $scope.lista[i].apellido1 = $scope.misdatos.apellido1;
+                    $scope.lista[i].apellido2 = $scope.misdatos.apellido2;
+                    $scope.lista[i].curso = $scope.misdatos.curso;
+                    $scope.lista[i].ciclo = $scope.misdatos.ciclo;
+
+
+                }
+            }
+            var listaaguardar = $scope.misdatos;
+            var listaaguardar = JSON.stringify(listaaguardar);
+            alert(listaaguardar);
+            $http({url: "../controlador/usuario_controlador.php",
+                method: "GET",
+                params: {value: listaaguardar}
+            }).success(function (response) {
+
+                $scope.misdatos.id++;
+                $scope.misdatos.nombre = '';
+                $scope.misdatos.apellido1 = '';
+                $scope.misdatos.apellido2 = '';
+                $scope.misdatos.ciclo = '';
+                $scope.misdatos.curso = '';
+            }).error(function () {
+                console.error("Error ocurred", response.scope);
+            });
+        };
+          }]);
 
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {

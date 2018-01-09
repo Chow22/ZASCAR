@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en" ng-app="miAplicacion">
     <head>
         <title>Mi cuenta</title>
         <meta charset="UTF-8">
@@ -19,7 +19,7 @@
         <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
-        <div>
+        <div ng-controller="mainController">
             <div class="container auth">
                 <br><br>
                 <h1 class="text-center">Mi cuenta </h1>
@@ -31,14 +31,14 @@
        
 
                             <a target="_blank" href="paris.jpg">
-                                <img src="../img/Selfi_monalisa.jpg"  alt="Paris" style="width:25%" align="right">
+                                <img src="../img/Selfi_monalisa.jpg" ng-model="misdatos.imagen" alt="Paris" style="width:25%" align="right">
                             </a>
                           
                             <!-- Nombre-->
                             <div class="form-group">
-                                <label class=" control-label" for="textinput">Nombre</label>  
+                                <label class=" control-label" for="textinput" >Nombre</label>  
                                 <div class="">
-                                    <input id="nombre" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="nombre" ng-model="misdatos.nombre" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
 
@@ -46,31 +46,31 @@
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Apellido</label>  
                                 <div class="">
-                                    <input id="apellido" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="apellido" ng-model="misdatos.apellido" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Telefono-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Telefono</label>  
                                 <div class="">
-                                    <input id="telefono" type="tel" name="textinput" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="telefono" ng-model="misdatos.telefono" type="tel" name="textinput" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Email-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Email</label>  
                                 <div class="">
-                                    <input id="textinput" name=email" type="email" placeholder="" class="form-control input-md" type="text" required>
+                                    <input id="textinput" ng-model="misdatos.email" name=email" type="email" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
                             <!-- Coche-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Coche</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
+                                    <input id="textinput" ng-model="misdatos.coche" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
                                 </div>
                             </div>
-                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar</button>
+                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Modificar datos</button>
                             <!-- Trayectos pasajero -->
                             <div class="form-group">
                                 <label class=" " for="selectmultiple">Trayectos pasajero</label>
