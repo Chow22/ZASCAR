@@ -25,7 +25,7 @@
             <nav>  
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="vista/miCuenta.php">MiCuenta</a></li>                                                        
+                    <li><a href="vista/miCuenta.php">Mi Cuenta</a></li>                                                        
                     <li><a href="http://html-css-js.com/css/code/">CSS</a></li>
                     <li><a href="http://htmlcheatsheet.com/js/">JS</a></li>
                 </ul>
