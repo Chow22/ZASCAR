@@ -34,7 +34,7 @@ $(document).ready(function () {
                                     $('#apellido').val(dato.apellidos);
                                     $('#telefono').val(dato.telefono);
                                     $('#email').val(dato.email);
-                                    $('#coche').val(dato.coche);
+                                    $('#coche').val(dato.marca);
                                     $("#imagen").attr("src", dato.imagen);
                                     $("#imagenlink").val(dato.imagen);
                                 });

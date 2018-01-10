@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Coche</label>  
                                 <div class="">
-                                    <input id="textinput" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
+                                    <input id="coche" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
                                 </div>
                             </div>
                             <!-- Imagen-->
