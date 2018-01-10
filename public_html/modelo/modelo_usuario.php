@@ -1,6 +1,6 @@
 <?php
 
-require_once '../controlador/conector.php';
+require_once '../conector/conector.php';
 
 class modelo_usuario {
 
@@ -13,7 +13,7 @@ class modelo_usuario {
     }
 
     public function get_usuarios() {
-        $sql = "CALL verIkasleak ()";
+        $sql = "CALL mostrarUsuarios ()";
         $consulta = $this->link->query($sql);
         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
             $this->usuario[] = $row;
@@ -23,6 +23,19 @@ class modelo_usuario {
         return $this->usuario;
     }
 
+       public function usuarioPorId() {
+        $sql = "CALL usuarioPorId (7)";
+        $consulta = $this->link->query($sql);
+        while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
+            $this->usuario[] = $row;
+        }
+        $consulta->free_result();
+        $this->link->close();
+        return $this->usuario;
+    }
+
+    
+    
     public function insertar_usuario($nombre, $apellido1, $apellido2, $ciclo, $curso) {
         $consulta = $this->link->query("CALL aniadirUsuario ('$nombre','$apellido1','$apellido2','$ciclo','$curso')");
         $row = mysqli_fetch_array($consulta, MYSQLI_ASSOC);
