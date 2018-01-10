@@ -19,9 +19,11 @@
                     <label>Apellidos</label><br/>
                     <input type="text" name="apellidos" placeholder="Ejemplo: Garcia"/><br/>
                     <label>Teléfono</label><br/>
-                    <input type="text" name="telefono" placeholder="Tu número de teléfono" onkeypress="return TeclaPulsada(event)"/><br/>
+                    <input type="tel" name="telefono" placeholder="Tu número de teléfono" onkeypress="return TeclaPulsada(event)"/><br/>
                     <label>Email</label><br/>
                     <input type="text" name="email" placeholder="juangarcia@ejemplo.com" onkeypress="return comprobarArroba(event)"/><br/>
+                    <label>Imagen</label><br/>
+                    <input type="file" name="imagen"/><br/>
                     <label>Nombre de usuario</label><br/>
                     <input type="text" name="usuario" placeholder="Escribe nombre para iniciar sesión"/><br/>
                     <label>Contraseña</label><br/>

@@ -65,56 +65,54 @@ session_start();
         <div class="container">
 
 
-<?php
-
-$host_db = "127.0.0.1:56624";
-$user_db = "j3a";
-$pass_db = "Qwerty123_";
-$db_name = "j3a";
-$tbl_name = "usuario";
+            <?php
+            $host_db = "127.0.0.1:56624";
+            $user_db = "j3a";
+            $pass_db = "Qwerty123_";
+            $db_name = "j3a";
+            $tbl_name = "usuario";
 // $host_db = "localhost";
 // $user_db = "root";
 // $pass_db = "";
 // $db_name = "j3a";
 // $tbl_name = "usuario";
 
-$conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
+            $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
 
-if ($conexion->connect_error) {
- die("La conexion falló: " . $conexion->connect_error);
-}
+            if ($conexion->connect_error) {
+                die("La conexion falló: " . $conexion->connect_error);
+            }
 
-$username = $_POST['username'];
-$password = $_POST['password'];
- 
-$sql = "SELECT * FROM $tbl_name WHERE username = '$username'";
+            $username = $_POST['username'];
+            $password = $_POST['password'];
 
-$result = $conexion->query($sql);
+            $sql = "SELECT * FROM $tbl_name WHERE username = '$username'";
 
-if ($result->num_rows > 0) {     
- 
- $row = $result->fetch_array(MYSQLI_ASSOC);
- if (password_verify($password, $row['password'])) { 
- 
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $username;
-    $_SESSION['start'] = time();
-    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+            $result = $conexion->query($sql);
 
-    echo "Bienvenido! " . $_SESSION['username'];
-    echo '<br><br><a href="../index.php">Portal</a> | <a href="../miperfil.php">Tu perfil</a>'; 
+            if ($result->num_rows > 0) {
 
- } else { 
-   echo "Username o Password estan incorrectos.";
+                $row = $result->fetch_array(MYSQLI_ASSOC);
+                if (password_verify($password, $row['password'])) {
 
-   echo "<br><a href='index.html'>Volver a Intentarlo</a>";
- }
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['start'] = time();
+                    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+
+                    echo "Bienvenido! " . $_SESSION['username'];
+                    echo '<br><br><a href="../index.php">Portal</a> | <a href="../miperfil.php">Tu perfil</a>';
+                } else {
+                    echo "Username o Password estan incorrectos.";
+
+                    echo "<br><a href='index.html'>Volver a Intentarlo</a>";
+                }
 }else {
-	echo ($username . ' no está registrado. <a href="index.html">Registrate o vuelve a intentarlo con otro usuario</a>.');
-}
- mysqli_close($conexion); 
- ?>
- </div>
+                echo ($username . ' no está registrado. <a href="index.html">Registrate o vuelve a intentarlo con otro usuario</a>.');
+            }
+            mysqli_close($conexion);
+            ?>
+        </div>
         <!--/CONTENIDO -->
 
         <script src="../assets/js/registro.js"></script>
