@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2017 a las 11:02:29
+-- Tiempo de generación: 21-12-2017 a las 11:08:02
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.0.22
 
@@ -43,6 +43,15 @@ BEGIN
 SELECT * FROM usuarios;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verPeticiones` (IN `p_id` INT)  NO SQL
+select * from trayecto where idtrayecto=(select idtrayecto from viajes where aceptado=0 and idusuario=p_id)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosConductor` (IN `p_id` INT)  NO SQL
+select * from trayecto where idtrayecto=(select idtrayecto from viajes where clase='conductor' and idusuario=p_id)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosPasajero` (IN `p_id` INT)  NO SQL
+select * from trayecto where idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_id)$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -60,6 +69,14 @@ CREATE TABLE `trayecto` (
   `paradas` varchar(200) NOT NULL,
   `idusuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `trayecto`
+--
+
+INSERT INTO `trayecto` (`idtrayecto`, `origen`, `destino`, `fecha_hora`, `plazas`, `paradas`, `idusuario`) VALUES
+(1, 'Sevilla', 'Urritxe', '2017-12-21 04:04:07', 4, 'Madrid,Burgos', 7),
+(2, 'marruecos', 'noruega', '2017-12-29 00:00:00', 2, 'Francia, España, Portugal', 9);
 
 -- --------------------------------------------------------
 
@@ -124,9 +141,18 @@ CREATE TABLE `vehiculos` (
 CREATE TABLE `viajes` (
   `idusuario` int(11) NOT NULL,
   `idtrayecto` int(11) NOT NULL,
-  `clase` tinyint(1) NOT NULL,
+  `clase` varchar(11) NOT NULL,
   `aceptado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `viajes`
+--
+
+INSERT INTO `viajes` (`idusuario`, `idtrayecto`, `clase`, `aceptado`) VALUES
+(7, 1, 'conductor', 1),
+(7, 2, 'pasajero', 1),
+(9, 1, 'pasajero', 0);
 
 --
 -- Índices para tablas volcadas
@@ -174,7 +200,7 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `trayecto`
 --
 ALTER TABLE `trayecto`
-  MODIFY `idtrayecto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtrayecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -192,7 +218,7 @@ ALTER TABLE `valoraciones`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
