@@ -2,7 +2,7 @@
 
 require_once '../conector/conector.php';
 
-class usuarios {
+class usuario {
 
     private $link;
     private $usuario;
@@ -12,8 +12,8 @@ class usuarios {
         $this->usuario = array();
     }
 
-    public function registrarUsuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
-        $consulta = $this->link->query("CALL spRegistrarUsuario('$nombre','$apellidos','$telefono','$email',$imagen','$usuario','$pass')");
+    public function registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
+        $this->link->query("CALL spRegistrarUsuario('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");
     }
 
 }
