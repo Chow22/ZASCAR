@@ -9,16 +9,80 @@ $(document).ready(function () {
     rellenarDatos();
 
     //alert("0");
-
-//////////////////guardar datos/////////////////////////////////////////
-    $('#modificar').click(function () {
-        //alert("boton modificar");
-        funcionPeliculaModificar();
+//////////////////eliminar trayecto pasajero/////////////////////////////////////////
+    $('#tablaPasajero').on("click", "#borrar", function () {
+        alert('borrando');
+        funcionBorrar();
         return false;
     });
 
 
-    function funcionPeliculaModificar() {
+    function funcionBorrar() {
+        alert("eliminandoo");
+        id = $(this).attr(data.idtrayecto);
+        idusu = 7;
+        // alert(nombre);
+        $.ajax({
+            type: 'POST',
+            data: "submit=&id=" + id + "&idusu=" + idusu,
+            dstaType: 'json',
+            url: "../controlador/controlador_borrar_trayectoPasajero.php",
+            success: function (datos) {
+                alert("Se ha eliminado con exito");
+                //alert(datos);
+                location.reload();
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status +
+                        " " + xhr.statusText);
+            }
+        });
+
+    }
+    ;
+
+
+//////////////////aceptar peticion/////////////////////////////////////////
+    $('#tablaPeticiones').on("click", "#aceptar", function () {
+        alert('boton aceptar ok');
+        funcionAceptar();
+        return false;
+    });
+
+
+    function funcionAceptar() {
+        alert("aceptandoo");
+        id = $(this).attr("data-idtrayecto");
+         alert(id);
+        $.ajax({
+            type: 'POST',
+            data: "submit=&id=" + id ,
+            dstaType: 'json',
+            url: "../controlador/controlador_borrar_trayectoPasajero.php",
+            success: function (datos) {
+                alert("Se ha eliminado con exito");
+                //alert(datos);
+                location.reload();
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status +
+                        " " + xhr.statusText);
+            }
+        });
+
+    }
+    ;
+
+
+//////////////////guardar datos/////////////////////////////////////////
+    $('#modificar').click(function () {
+        //alert("boton modificar");
+        funcionModificar();
+        return false;
+    });
+
+
+    function funcionModificar() {
         //alert("modificandoooo");
         id = 7;
         nombre = $('#nombre').val();
@@ -32,10 +96,10 @@ $(document).ready(function () {
         plazas = $('#plazas').val();
         combustible = $('#combustible').val();
         matricula = $('#matricula').val();
-       // alert(nombre);
+        // alert(nombre);
         $.ajax({
             type: 'POST',
-            data: "submit=&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono+ "&email=" + email+ "&imagen=" + imagen+ "&user=" + user+ "&pass=" + pass+ "&marca=" + marca+ "&plazas=" + plazas+ "&combustible=" + combustible+ "&matricula=" + matricula,
+            data: "submit=&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&email=" + email + "&imagen=" + imagen + "&user=" + user + "&pass=" + pass + "&marca=" + marca + "&plazas=" + plazas + "&combustible=" + combustible + "&matricula=" + matricula,
             dstaType: 'json',
             url: "../controlador/controlador_modificar_usuario.php",
             success: function (datos) {
@@ -48,7 +112,7 @@ $(document).ready(function () {
                         " " + xhr.statusText);
             }
         });
-        
+
     }
     ;
 
@@ -142,7 +206,7 @@ $(document).ready(function () {
                                     tabla += "<td class='idusuario'>" + dato.idusuario +
                                             "</td>";
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ng-click='modificar()'></td>";
+                                    tabla += "<input id='borrar' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ng-click='modificar()'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -270,7 +334,7 @@ $(document).ready(function () {
                                     tabla += "<td class='idusuario'>" + dato.idusuario +
                                             "</td>";
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
+                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto +"'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
