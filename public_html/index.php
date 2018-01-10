@@ -17,7 +17,7 @@
 
     <body>
         <header>                         
-            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+            <div id="logo"><a href="#"><img src="img/logo.png">ZASCAR Enterprises</a>
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
                 <p>Iniciar sesión</p>
             </div>
@@ -133,7 +133,7 @@
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a></p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a><</p>
         </footer>   
 
 

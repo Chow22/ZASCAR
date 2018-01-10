@@ -17,7 +17,7 @@
 
     <body>
         <header>                         
-            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+             <div id="logo"><a href="#"><img src="img/logo.png">ZASCAR Enterprises</a>
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
                 <p>Iniciar sesión</p>
             </div>
