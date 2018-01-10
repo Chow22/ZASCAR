@@ -368,5 +368,32 @@ strong{
 .menu > li > ul li:hover a:before {
     color: #32373D;
 }
+.contacto{    
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+.contacto p{
+    color: white;
+    width: 50%;
+    float: left;
+    margin-bottom: 10px;
+}
+.contacto p.contenido{
+    color: #ccc;
+}
+.contacto p.info{
+    font-size: large;
+    margin-bottom: 50px;
+}
+.contacto img{
+    max-width:100%;
+    width: 50%;
+    padding-right: 30px;
+    float: left;
+}
+.texto{
+        margin-top: 100px;
+}
+
 
 
