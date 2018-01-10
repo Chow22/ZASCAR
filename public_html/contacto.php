@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="canonical" href="http://html5-templates.com/" />
-        <title>Home</title>
+        <title>Contacto</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
             <nav>  
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="informacion.php">Información</a></li>                                                        
+                    <li><a href="#">Información</a></li>                                                        
                     <li><a href="#">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
@@ -133,7 +133,7 @@
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php" target="_blank" rel="nofollow">Contacto</a></p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="/" target="_blank" rel="nofollow">Contacto</a></p>
         </footer>   
 
 
