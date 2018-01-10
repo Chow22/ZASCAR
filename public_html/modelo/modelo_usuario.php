@@ -42,8 +42,8 @@ class modelo_usuario {
         $this->id = $row['id'];
     }
 
-    public function modificar_usuario($id, $nombre, $apellido1, $apellido2, $ciclo, $curso) {
-        $consulta = $this->link->query("CALL modificarUsuario ('$id','$nombre','$apellido1','$apellido2','$ciclo','$curso')");
+    public function modificar_usuario($id,$nombre,$apellido,$telefono,$email,$imagen,$user,$pass,$marca,$plazas,$combustible,$matricula) {
+        $consulta = $this->link->query("CALL modificarUsuario ('$id','$nombre','$apellido','$telefono','$email','$imagen','$user','$pass','$marca','$plazas','$combustible','$matricula')");
     }
 
     public function borrar_usuario($idBorrar) {

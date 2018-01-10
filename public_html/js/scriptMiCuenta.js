@@ -10,8 +10,47 @@ $(document).ready(function () {
 
     //alert("0");
 
-//////////////////click imagen sacar input/////////////////////////////////////////
+//////////////////guardar datos/////////////////////////////////////////
+    $('#modificar').click(function () {
+        //alert("boton modificar");
+        funcionPeliculaModificar();
+        return false;
+    });
 
+
+    function funcionPeliculaModificar() {
+        //alert("modificandoooo");
+        id = 7;
+        nombre = $('#nombre').val();
+        apellido = $('#apellido').val();
+        telefono = $('#telefono').val();
+        email = $('#email').val();
+        imagen = $('#imagenlink').val();
+        user = $('#user').val();
+        pass = $('#pass').val();
+        marca = $('#marca').val();
+        plazas = $('#plazas').val();
+        combustible = $('#combustible').val();
+        matricula = $('#matricula').val();
+       // alert(nombre);
+        $.ajax({
+            type: 'POST',
+            data: "submit=&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono+ "&email=" + email+ "&imagen=" + imagen+ "&user=" + user+ "&pass=" + pass+ "&marca=" + marca+ "&plazas=" + plazas+ "&combustible=" + combustible+ "&matricula=" + matricula,
+            dstaType: 'json',
+            url: "../controlador/controlador_modificar_usuario.php",
+            success: function (datos) {
+                alert("Se ha modificado con exito");
+                //alert(datos);
+                location.reload();
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status +
+                        " " + xhr.statusText);
+            }
+        });
+        
+    }
+    ;
 
 
 
@@ -34,7 +73,12 @@ $(document).ready(function () {
                                     $('#apellido').val(dato.apellidos);
                                     $('#telefono').val(dato.telefono);
                                     $('#email').val(dato.email);
-                                    $('#coche').val(dato.marca);
+                                    $('#user').val(dato.usuario);
+                                    $('#pass').val(dato.pass);
+                                    $('#marca').val(dato.marca);
+                                    $('#plazas').val(dato.plazas);
+                                    $('#combustible').val(dato.combustible);
+                                    $('#matricula').val(dato.matricula);
                                     $("#imagen").attr("src", dato.imagen);
                                     $("#imagenlink").val(dato.imagen);
                                 });

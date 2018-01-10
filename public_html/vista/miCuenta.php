@@ -31,12 +31,17 @@
 
 
                     <fieldset>
+                        <a  href="../">
+                            <img id="atras"  src="../img/atras.png"  alt="imagen"  align="left" style="float:top;width:10%; border:none" >
+                        </a>
+                        <br><br><br>
                         <h2 class="text-left">Mis datos</h2>
                         <br>
                         <form name="form" action="" method="post">
 
                             <!-- Nombre-->
                             <div class="form-group">
+
                                 <label class=" control-label" for="textinput" >Nombre</label>  
                                 <div class="">
                                     <input id="nombre" name="textinput" placeholder="" class="form-control input-md" type="text" required>
@@ -64,13 +69,6 @@
                                     <input id="email"  name=email" type="email" placeholder="" class="form-control input-md" type="text" required>
                                 </div>
                             </div>
-                            <!-- Coche-->
-                            <div class="form-group">
-                                <label class=" control-label" for="textinput">Coche</label>  
-                                <div class="">
-                                    <input id="coche" name="textinput" placeholder="" class="form-control input-md" type="text" ><button id="singlebutton" name="singlebutton" class="btn btn-default">Añadir</button>
-                                </div>
-                            </div>
                             <!-- Imagen-->
                             <div class="form-group">
                                 <label class=" control-label" for="textinput">Imagen perfil</label>  
@@ -78,43 +76,63 @@
                                     <input id="imagenlink" name="textinput"  class="form-control input-md" type="text" required>
                                 </div>
                             </div>
-
-                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Guardar datos</button>
-                        </form>
-                        </div>
-                <div id="big-form" class="well auth-box">
-                        <!-- Trayectos pasajero -->
-                        <div class="form-group">
-                            <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>
-                            <div class="scroll">
-                                <div id="tablaPasajero">
-
+                            <!-- Login-->
+                            <div class="form-group login">
+                                <label class=" control-label" for="textinput">Login</label> <br><br>
+                                <div class="">
+                                    <input id="user" name="textinput" placeholder="Usuario.." class="form-control input-md" type="text" required >
+                                    <input id="pass" name="textinput" placeholder="Contraseña.." class="form-control input-md" type="password" required >
                                 </div>
-                            </div>
-
-                        </div>
-                        <!-- Trayectos conductor -->
-                        <div class="form-group">
-                            <h2 class="" for="selectmultiple">Trayectos conductor</h2>
-                            <div class="scroll">
-                                <div id="tablaConductor"> 
-                                </div>
-                            </div>
-                            <!-- Trayectos peticiones -->
-                            <div class="form-group">
-                                <h2 class="" for="selectmultiple">Peticiones</h2>
-                                <div class="scroll">
-                                    <div id="tablaPeticiones">
-
+                                <br>
+                                <!-- Coche-->
+                                <div class="form-group coche">
+                                    <label class=" control-label" for="textinput">Coche</label> <br><br>
+                                    <div class="">
+                                        <input id="marca" name="textinput" placeholder="Marca.." class="form-control input-md" type="text" >
+                                        <input id="plazas" name="textinput" placeholder="Plazas.." class="form-control input-md" type="text" >
+                                        <input id="combustible" name="textinput" placeholder="Combustible.." class="form-control input-md" type="text" >
+                                        <input id="matricula" name="textinput" placeholder="Matricula.." class="form-control input-md" type="text" >
                                     </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <button type="button" id="modificar" name="singlebutton" class="btn btn-default">Guardar datos</button>
+                        </form>
+                </div>
+                <div id="big-form" class="well auth-box">
+                    <!-- Trayectos pasajero -->
+                    <div class="form-group">
+                        <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>
+                        <div class="scroll">
+                            <div id="tablaPasajero">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Trayectos conductor -->
+                    <div class="form-group">
+                        <h2 class="" for="selectmultiple">Trayectos conductor</h2>
+                        <div class="scroll">
+                            <div id="tablaConductor"> 
+                            </div>
+                        </div>
+                        <!-- Trayectos peticiones -->
+                        <div class="form-group">
+                            <h2 class="" for="selectmultiple">Peticiones</h2>
+                            <div class="scroll">
+                                <div id="tablaPeticiones">
 
                                 </div>
 
-                                </fieldset>
-
                             </div>
-                            <div class="clearfix"></div>
+
+                            </fieldset>
+
                         </div>
+                        <div class="clearfix"></div>
+                    </div>
 
                 </div>
                 </body>
