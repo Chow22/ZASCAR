@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en" class="no-js">
     <head>
@@ -17,7 +21,7 @@
 
     <body>
         <header>                         
-             <div id="logo"><a href="#"><img src="img/logo.png">ZASCAR Enterprises</a>
+            <div id="logo"><a href="index.php"><img src="img/logo.png">ZASCAR Enterprises</a>
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
                 <p>Iniciar sesión</p>
             </div>
