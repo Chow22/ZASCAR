@@ -24,7 +24,7 @@ class trayectos {
     }
 
     public function get_trayectoPasajero() {
-        $sql = "CALL verTrayectosPasajero(7)";
+        $sql = "CALL buscarTrayectos()";
         $consulta = $this->link->query($sql);
         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
             $this->usuario[] = $row;

@@ -5,6 +5,9 @@ session_start();
 <!doctype html>
 <html lang="en" class="no-js">
     <head>
+                <!--pa la seçao-->
+
+
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +23,55 @@ session_start();
     </head>
 
     <body>
+        <?php
+        $host_db = "localhost";
+        $user_db = "root";
+        $pass_db = "";
+        $db_name = "zascar";
+        $tbl_name = "usuarios";
+// $host_db = "localhost";
+// $user_db = "root";
+// $pass_db = "";
+// $db_name = "j3a";
+// $tbl_name = "usuario";
+
+        $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
+
+        if ($conexion->connect_error) {
+            die("La conexion falló: " . $conexion->connect_error);
+        }
+
+$usuario = filter_input(INPUT_POST, 'usuario');
+$pass = filter_input(INPUT_POST, 'pass');
+
+        $sql = "SELECT * FROM $tbl_name WHERE usuario = '$usuario'";
+
+        $result = $conexion->query($sql);
+
+        if ($result->num_rows > 0) {
+
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            if (password_verify($pass, $row['pass'])) {
+
+                $_SESSION['loggedin'] = true;
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['start'] = time();
+                $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+
+                echo "Bienvenido! " . $_SESSION['usuario'];
+                echo '<br><br><a href="../index.php">Home</a> | <a href="../index.php"></a>';
+            } else {
+                echo "Usuario o Contraseña estan incorrectos.";
+
+                echo "<br><a href='index.php'>Volver a Intentarlo</a>";
+            }
+        } else {
+            echo ($usuario . ' no está registrado. <a align="center" href="vista/login.php">Registrate o vuelve a intentarlo con otro usuario</a>.');
+        }
+        mysqli_close($conexion);
+        ?>
         <header>                         
-            <div id="logo"><a href="#"><img src="img/logo.png">ZASCAR Enterprises</a>
+            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
                 <p>Iniciar sesión</p>
             </div>
@@ -137,7 +187,7 @@ session_start();
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a><</p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php" target="_blank" rel="nofollow">Contacto</a></p>
         </footer>   
 
 

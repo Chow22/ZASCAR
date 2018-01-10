@@ -1,5 +1,4 @@
 <?php
-
 require_once("../modelo/login.php");
 $usuario = filter_input(INPUT_POST, 'usuario');
 $pass = filter_input(INPUT_POST, 'pass');
@@ -10,6 +9,6 @@ if ($pd == NULL) {
     echo ' <br>';
     echo ' <a href="../vista/login.php">Volver</a>';
 } else {
-    header("Location: ../controlador/usuario_controlador.php");
+    header("Location: ../index.php");
 }
 ?>

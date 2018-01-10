@@ -22,17 +22,17 @@ class modelo_usuario {
         $this->link->close();
         return $this->usuario;
     }
-
-       public function usuarioPorId() {
-        $sql = "CALL usuarioPorId (7)";
-        $consulta = $this->link->query($sql);
-        while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
-            $this->usuario[] = $row;
-        }
-        $consulta->free_result();
-        $this->link->close();
-        return $this->usuario;
-    }
+//
+//       public function usuarioPorId() {
+//        $sql = "CALL usuarioPorId (7)";
+//        $consulta = $this->link->query($sql);
+//        while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
+//            $this->usuario[] = $row;
+//        }
+//        $consulta->free_result();
+//        $this->link->close();
+//        return $this->usuario;
+//    }
 
     
     
@@ -49,7 +49,5 @@ class modelo_usuario {
     public function borrar_usuario($idBorrar) {
         $consulta = $this->link->query("CALL borrarUsuario('$idBorrar')");
     }
-
 }
-
 ?>
