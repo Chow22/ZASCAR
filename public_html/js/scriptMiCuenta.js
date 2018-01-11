@@ -11,14 +11,14 @@ $(document).ready(function () {
     //alert("0");
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
     $('#tablaPasajero').on("click", "#borrar", function () {
-        alert('borrando');
+       // alert('borrando');
         funcionBorrar();
         return false;
     });
 
 
     function funcionBorrar() {
-        alert("eliminandoo");
+        //alert("eliminandoo");
         id = $(this).attr(data.idtrayecto);
         idusu = 7;
         // alert(nombre);
@@ -30,7 +30,7 @@ $(document).ready(function () {
             success: function (datos) {
                 alert("Se ha eliminado con exito");
                 //alert(datos);
-                location.reload();
+                funcionConsultaTrayectosPasajero();
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status +
@@ -53,16 +53,17 @@ $(document).ready(function () {
     function funcionAceptar() {
         alert("aceptandoo");
         id = $(this).attr("data-idtrayecto");
+        idusu=7;
          alert(id);
         $.ajax({
             type: 'POST',
-            data: "submit=&id=" + id ,
+            data: "submit=&id=" + id + "&idusu=" + idusu ,
             dstaType: 'json',
-            url: "../controlador/controlador_borrar_trayectoPasajero.php",
+            url: "../controlador/controlador_aceptar_peticiones.php",
             success: function (datos) {
-                alert("Se ha eliminado con exito");
+                alert("Peticion aceptada");
                 //alert(datos);
-                location.reload();
+                 funcionPeticiones();
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status +
@@ -122,8 +123,10 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
+        idusu=7;
         $.ajax({
             type: 'POST',
+            data: "submit=&idusu=" + idusu ,
             dstaType: 'json',
             url: "../controlador/usuario_controlador.php",
             success: function (datos) {
@@ -160,11 +163,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
+        idusu=7;
         $('#tablaPasajero').html(' ');
         $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
+            data: "submit=&idusu=" + idusu ,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_pasajero.php",
             success: function (datos) {
@@ -225,11 +230,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosConductor() {
         //alert('funcionnnnn')
+        idusu=7;
         $('#tablaConductor').html(' ');
         $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
+            data: "submit=&idusu=" + idusu ,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_conductor.php",
             success: function (datos) {
@@ -288,11 +295,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionPeticiones() {
         //alert('funcionnnnn')
+        idusu=7;
         $('#tablaPeticiones').html(' ');
         $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
+            data: "submit=&idusu=" + idusu ,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_peticiones.php",
             success: function (datos) {

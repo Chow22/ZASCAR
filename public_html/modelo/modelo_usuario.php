@@ -23,8 +23,8 @@ class modelo_usuario {
         return $this->usuario;
     }
 
-       public function usuarioPorId() {
-        $sql = "CALL usuarioPorId (7)";
+       public function usuarioPorId($idusu) {
+        $sql = "CALL usuarioPorId ('$idusu')";
         $consulta = $this->link->query($sql);
         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
             $this->usuario[] = $row;
