@@ -52,7 +52,7 @@ public function borrarTrayectoPasajero($id,$idusu){
     }
 
 public function aceptar_peticion($idtrayecto,$idusu){
-        $consulta=$this->link->query("CALL aceptarPeticion ('$idtrayecto,$idusu')");
+        $consulta=$this->link->query("CALL aceptarPeticion ('$idtrayecto','$idusu')");
 
     }
  }

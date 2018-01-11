@@ -1,5 +1,7 @@
 $(document).ready(function () {
     //alert("entramos al js preparense");
+    idtrayecto = 0;
+    idBorrar = 0;
     funcionConsultaTrayectosConductor();
 
     funcionConsultaTrayectosPasajero();
@@ -11,7 +13,8 @@ $(document).ready(function () {
     //alert("0");
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
     $('#tablaPasajero').on("click", "#borrar", function () {
-       // alert('borrando');
+        // alert('borrando');
+        idBorrar = $(this).attr("data-idBorrar");
         funcionBorrar();
         return false;
     });
@@ -19,12 +22,12 @@ $(document).ready(function () {
 
     function funcionBorrar() {
         //alert("eliminandoo");
-        id = $(this).attr(data.idtrayecto);
+
         idusu = 7;
-        // alert(nombre);
+        //alert(idBorrar);
         $.ajax({
             type: 'POST',
-            data: "submit=&id=" + id + "&idusu=" + idusu,
+            data: "submit=&id=" + idBorrar + "&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/controlador_borrar_trayectoPasajero.php",
             success: function (datos) {
@@ -44,26 +47,27 @@ $(document).ready(function () {
 
 //////////////////aceptar peticion/////////////////////////////////////////
     $('#tablaPeticiones').on("click", "#aceptar", function () {
-        alert('boton aceptar ok');
+        //alert('boton aceptar ok');
+        idtrayecto = $(this).attr("data-idtrayecto");
+        //alert(idtrayecto);
         funcionAceptar();
         return false;
     });
 
 
     function funcionAceptar() {
-        alert("aceptandoo");
-        id = $(this).attr("data-idtrayecto");
-        idusu=7;
-         alert(id);
+
+        idusu = 7;
+        //alert(idtrayecto);
         $.ajax({
             type: 'POST',
-            data: "submit=&id=" + id + "&idusu=" + idusu ,
+            data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/controlador_aceptar_peticiones.php",
             success: function (datos) {
                 alert("Peticion aceptada");
                 //alert(datos);
-                 funcionPeticiones();
+                funcionPeticiones();
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status +
@@ -123,10 +127,10 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu=7;
+        idusu = 7;
         $.ajax({
             type: 'POST',
-            data: "submit=&idusu=" + idusu ,
+            data: "submit=&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/usuario_controlador.php",
             success: function (datos) {
@@ -163,13 +167,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
-        idusu=7;
+        idusu = 7;
         $('#tablaPasajero').html(' ');
         $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
-            data: "submit=&idusu=" + idusu ,
+            data: "submit=&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_pasajero.php",
             success: function (datos) {
@@ -177,13 +181,13 @@ $(document).ready(function () {
                 $('#tablaPasajero').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
-                tabla += " <th class='idtrayecto'>idtrayecto</th>\n\
+                tabla += " \n\
                <th class='origen'>origen</th>\n\
                <th class='destino'>destino</th>\n\
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
-               <th class='idusuario'>idusuario</th>\n\ \n\
+ \n\
                <th class='idusuario'>Eliminar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
@@ -191,9 +195,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    tabla += "<td class='idtrayecto'>" +
-                                            dato.idtrayecto +
-                                            "</td>";
+
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -208,10 +210,9 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    tabla += "<td class='idusuario'>" + dato.idusuario +
-                                            "</td>";
+
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input id='borrar' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ng-click='modificar()'></td>";
+                                    tabla += "<input id='borrar' data-idBorrar='" + dato.idtrayecto + "' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -230,13 +231,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosConductor() {
         //alert('funcionnnnn')
-        idusu=7;
+        idusu = 7;
         $('#tablaConductor').html(' ');
         $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
-            data: "submit=&idusu=" + idusu ,
+            data: "submit=&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_conductor.php",
             success: function (datos) {
@@ -244,22 +245,20 @@ $(document).ready(function () {
                 $('#tablaConductor').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
-                tabla += " <th class='idtrayecto'>idtrayecto</th>\n\
+                tabla += "\n\
                <th class='origen'>origen</th>\n\
                <th class='destino'>destino</th>\n\
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
-               <th class='idusuario'>idusuario</th>\n\ ";
+                ";
                 midato = JSON.parse(datos);
                 $
                         .each(
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    tabla += "<td class='idtrayecto'>" +
-                                            dato.idtrayecto +
-                                            "</td>";
+                                    
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -274,8 +273,7 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    tabla += "<td class='idusuario'>" + dato.idusuario +
-                                            "</td>";
+                                    
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -295,13 +293,13 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionPeticiones() {
         //alert('funcionnnnn')
-        idusu=7;
+        idusu = 7;
         $('#tablaPeticiones').html(' ');
         $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
         $.ajax({
             type: 'POST',
-            data: "submit=&idusu=" + idusu ,
+            data: "submit=&idusu=" + idusu,
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_peticiones.php",
             success: function (datos) {
@@ -309,13 +307,13 @@ $(document).ready(function () {
                 $('#tablaPeticiones').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
-                tabla += " <th class='idtrayecto'>idtrayecto</th>\n\
+                tabla += "\n\
                <th class='origen'>origen</th>\n\
                <th class='destino'>destino</th>\n\
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
-               <th class='idusuario'>idusuario</th>\n\ \n\
+                \n\
                <th class='idusuario'>Aceptar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
@@ -323,9 +321,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    tabla += "<td class='idtrayecto'>" +
-                                            dato.idtrayecto +
-                                            "</td>";
+                                   
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -340,10 +336,9 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    tabla += "<td class='idusuario'>" + dato.idusuario +
-                                            "</td>";
+                                    
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto +"'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
+                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
