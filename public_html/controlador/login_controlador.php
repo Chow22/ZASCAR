@@ -4,9 +4,12 @@ $usuario = filter_input(INPUT_POST, 'usuario');
 $pass = filter_input(INPUT_POST, 'pass');
 $login = new Login();
 $pd = $login->comprobar_login($usuario, $pass);
-print($pd);
-
-if($pd=!null) {
+$idusu=0;
+for ($i = 0; $i < count($pd); $i++) {
+    $idusu= $pd [$i]["idusuario"];
+}
+//print($idusu);
+if($idusu=!null) {
 
     $_SESSION['loggedin'] = true;
     $_SESSION['idusu'] = $idusu;
@@ -14,7 +17,7 @@ if($pd=!null) {
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
     // acceso permitido
-    echo 'Iniciando sesi�n para ' . $_SESSION['usuario'] . ' <p>';
+    echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
     echo '<script> window.location="../vista/miCuenta.php"; </script>';
     
     // acceso bloqueado y redireccionamiento al formulario

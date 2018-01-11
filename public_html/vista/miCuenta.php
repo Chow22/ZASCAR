@@ -3,7 +3,9 @@
 <?php
 session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {} else {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    
+} else {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
     echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
