@@ -1,13 +1,32 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Nuevo trayecto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
         <link href="../css/insertarTrayecto.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>INSERTAR TRAYECTO</h1>
+        <header>                         
+            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
+                <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
+                <p>Iniciar sesión</p>
+            </div>
+            <br>
+            <br>
+            <nav>  
+                <ul>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../informacion.php">Información</a></li>                                                        
+                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
+                </ul>
+
+            </nav>
+        </header>
         <br/>
         <div id="izquierda">
             <form action="controlador/trayectos_controlador.php">
@@ -34,5 +53,8 @@
         <div id="derecha">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1716.51054597435!2d-2.726258970762636!3d43.223020180119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e369c4e0d1637%3A0x78ccbf7525105ab1!2sCIFP+ZORNOTZA+LHII!5e1!3m2!1ses!2ses!4v1513758133494" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
+        </footer>
     </body>
 </html>

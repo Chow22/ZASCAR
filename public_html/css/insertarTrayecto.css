@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 body{
     margin: 10px;
@@ -10,6 +10,12 @@ h1{
 }
 form{
     float: left;
+}
+#izquierda fieldset legend{
+    color:white;
+    border:none;
+    font-weight:300;
+    font-size:24px;
 }
 iframe{
     float: right;
@@ -22,4 +28,6 @@ fieldset{
 #izquierda{
     margin-left: 50px;
 }
-
+#derecha{
+    margin-bottom: 10px;
+}
