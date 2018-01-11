@@ -36,10 +36,8 @@ class modelo_usuario {
 
     
     
-    public function insertar_usuario($nombre, $apellido1, $apellido2, $ciclo, $curso) {
-        $consulta = $this->link->query("CALL aniadirUsuario ('$nombre','$apellido1','$apellido2','$ciclo','$curso')");
-        $row = mysqli_fetch_array($consulta, MYSQLI_ASSOC);
-        $this->id = $row['id'];
+    public function registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
+        $this->link->query("CALL spRegistrarUsuario('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");
     }
 
     public function modificar_usuario($id,$nombre,$apellido,$telefono,$email,$imagen,$user,$pass,$marca,$plazas,$combustible,$matricula) {
