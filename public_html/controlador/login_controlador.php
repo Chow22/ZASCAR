@@ -4,11 +4,21 @@ $usuario = filter_input(INPUT_POST, 'usuario');
 $pass = filter_input(INPUT_POST, 'pass');
 $login = new Login();
 $pd = $login->comprobar_login($usuario, $pass);
-if ($pd == NULL) {
-    echo 'ERROR, VUELVA A INTENTARLO CON UN USUARIO VÁLIDO';
-    echo ' <br>';
-    echo ' <a href="../vista/login.php">Volver</a>';
+print($pd);
+if($pd=!null) {
+
+    $_SESSION['loggedin'] = true;
+    $_SESSION['idusu'] = $idusu;
+    $_SESSION['username'] = $usuario;
+    $_SESSION['start'] = time();
+    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+    // acceso permitido
+    echo 'Iniciando sesi�n para ' . $_SESSION['usuario'] . ' <p>';
+    echo '<script> window.location="../vista/miCuenta.php"; </script>';
+    
+    // acceso bloqueado y redireccionamiento al formulario
 } else {
-    header("Location: ../index.php");
+    echo '<script> alert("Usuario o contrase\u00F1a incorrectos.");</script>';
+    echo '<script> window.location="../vista/miCuenta.php"; </script>';
 }
 ?>
