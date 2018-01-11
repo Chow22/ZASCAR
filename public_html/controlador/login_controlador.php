@@ -5,6 +5,7 @@ $pass = filter_input(INPUT_POST, 'pass');
 $login = new Login();
 $pd = $login->comprobar_login($usuario, $pass);
 print($pd);
+
 if($pd=!null) {
 
     $_SESSION['loggedin'] = true;

@@ -18,7 +18,7 @@ class Login {
 
     public function comprobar_login($usuario, $pass) {
         self::set_names();
-        $sql = "select usuario,pass, idusuario from usuarios where usuario='$usuario' AND pass='$pass'";
+        $sql = "select idusuario from usuarios where usuario='$usuario' AND pass='$pass'";
         $result = $this->link->query($sql); // result-en jaso diren emaitzak filtratzen ditu
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $this->login[] = $row; // login array-an result-eko filak banan banan gordetzen dira. 
