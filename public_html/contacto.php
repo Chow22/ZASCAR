@@ -44,7 +44,7 @@ session_start();
                     <div class="contacto">
                         <img src="img/office.jpg"/>
                         <div class="texto">
-                        <p class="info">Somos una empresa abierta a sugerencias y dispuesta a resolver las dudas y posibles problemasde los usuarios, tenemos gente a disponibilidad de los usuarios si estos lo requieren.</p>
+                        <p class="info">Somos una empresa abierta a sugerencias y dispuesta a resolver las dudas y posibles problemas de los usuarios, tenemos gente a disponibilidad de los usuarios si estos lo requieren.</p>
                         <p>Si quieres contactar con nosotros por teléfono |</p>
                         <p class="contenido"> 946 73 02 51</p><br>
                         <p>Si quieres hablar con nosotros en persona |</p>

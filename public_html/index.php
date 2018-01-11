@@ -29,11 +29,6 @@ session_start();
         $pass_db = "";
         $db_name = "zascar";
         $tbl_name = "usuarios";
-// $host_db = "localhost";
-// $user_db = "root";
-// $pass_db = "";
-// $db_name = "j3a";
-// $tbl_name = "usuario";
 
         $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
 
@@ -187,7 +182,7 @@ $pass = filter_input(INPUT_POST, 'pass');
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php" target="_blank" rel="nofollow">Contacto</a></p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a></p>
         </footer>   
 
 
