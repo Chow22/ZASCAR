@@ -67,6 +67,7 @@
                         </form>
                         </fieldset> 
                             <br>
+                        <div class="popup">
                         <div id="zonaReg">
                             <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
                                 <fieldset id="campoviaje">
@@ -92,6 +93,7 @@
                                 <br/>
                                 <input type="submit" value="REGISTRARME"/> <input type="reset" value="BORRAR"/>
                             </form>
+                        </div>
                         </div>
                         <hr>
                     </div>

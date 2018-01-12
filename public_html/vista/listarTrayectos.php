@@ -66,52 +66,54 @@
                     </tr>
                 </table>                 
                 <aside>
-                    <div id="wrapper">
+                <div id="wrapper">
 
-                        <ul class="menu">
-                            <li class="item1"><a href="#">Opciones de Cuenta</a>
-                                <ul>
-                                    <li class="subitem1"><a href="vista/miCuenta.php">Modificar Cuenta</a></li>
-                                    <li class="subitem1"><a href="vista/miCuenta.php">Eliminar Cuenta</a></li>
-                                </ul>
-                            </li>
-                            <li class="item2"><a href="#">Zona Conductor</a>
-                                <ul>
-                                    <li class="subitem1"><a href="#">Publicar Trayecto</a></li>
-                                    <li class="subitem2"><a href="#">Eliminar Trayecto</a></li>
-                                </ul>
-                            </li>
-                            <li class="item3"><a href="#">Zona Pasajero</a>
-                                <ul>
-                                    <li class="subitem1"><a href="../vista/buscarTrayectos.html">Buscar Trayecto</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--initiate accordion-->
-                    <script type="text/javascript">
-                        $(function () {
+                    <ul class="menu">
+                        <li class="item1"><a href="#">Opciones de Cuenta</a>
+                            <ul>
+                                <li class="subitem1"><a href="vista/miCuenta.php">Modificar Cuenta</a></li>
+                                <li class="subitem1"><a href="vista/miCuenta.php">Eliminar Cuenta</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2"><a href="#">Zona Conductor</a>
+                            <ul>
+                                <li class="subitem1"><a href="#">Publicar Trayecto</a></li>
+                                <li class="subitem2"><a href="#">Eliminar Trayecto</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3"><a href="#">Zona Pasajero</a>
+                            <ul>
+                                <li class="subitem1"><a href="vista/buscarTrayectos.html">Buscar Trayecto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                            var menu_ul = $('.menu > li > ul'),
-                                    menu_a = $('.menu > li > a');
+                </div>
 
-                            menu_ul.hide();
+                <!--initiate accordion-->
+                <script type="text/javascript">
+                    $(function () {
 
-                            menu_a.click(function (e) {
-                                e.preventDefault();
-                                if (!$(this).hasClass('active')) {
-                                    menu_a.removeClass('active');
-                                    menu_ul.filter(':visible').slideUp('normal');
-                                    $(this).addClass('active').next().stop(true, true).slideDown('normal');
-                                } else {
-                                    $(this).removeClass('active');
-                                    $(this).next().stop(true, true).slideUp('normal');
-                                }
-                            });
+                        var menu_ul = $('.menu > li > ul'),
+                                menu_a = $('.menu > li > a');
 
+                        menu_ul.hide();
+
+                        menu_a.click(function (e) {
+                            e.preventDefault();
+                            if (!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true, true).slideUp('normal');
+                            }
                         });
-                    </script>
-                </aside>
+
+                    });
+                </script>
+            </aside>
             </section>
             <br>                
         </div>
