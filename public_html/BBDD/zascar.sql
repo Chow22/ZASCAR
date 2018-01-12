@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-12-2017 a las 11:08:02
+-- Tiempo de generación: 12-01-2018 a las 09:54:53
 -- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.0.22
+-- Versión de PHP: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -26,15 +26,34 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `aceptarPeticion` (IN `p_id` INT, IN `p_idusu` INT)  NO SQL
+UPDATE viajes SET aceptado=1 WHERE idtrayecto=p_id AND idusuario=p_idusu$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `borrarTrayectoPasajero` (IN `p_id` INT, IN `p_idusu` INT)  NO SQL
+BEGIN
+DELETE FROM viajes WHERE idusuario=p_idusu AND clase='pasajero';
+
+DELETE FROM trayecto WHERE idtrayecto=p_id AND idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_idusu);
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertarUsuarios` (IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40))  NO SQL
 BEGIN
 INSERT INTO usuarios (nombre,apellidos,telefono,email,imagen,usuario,pass) values (p_nombre,p_apellidos,p_telefono,p_email,p_imagen,p_usuario,p_pass);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `modificarUsuario` (IN `p_idusuario` INT(11), IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listarTrayecto` ()  NO SQL
+BEGIN
+SELECT origen Origen, destino Destino, fecha_hora Fecha_Hora, plazas Plazas, paradas Paradas FROM trayecto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `modificarUsuario` (IN `p_idusuario` INT(11), IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40), IN `p_marca` VARCHAR(40), IN `p_plazas` VARCHAR(40), IN `p_combustible` VARCHAR(40), IN `p_matricula` VARCHAR(40))  NO SQL
 BEGIN
 UPDATE usuarios 
 set nombre = p_nombre, apellidos = p_apellidos, telefono = p_telefono, email = p_email, imagen = p_imagen, usuario = p_usuario, pass = p_pass
+where idusuario = p_idusuario;
+
+UPDATE vehiculos
+set marca = p_marca, plazas = p_plazas, combustible = p_combustible, matricula = p_matricula
 where idusuario = p_idusuario;
 END$$
 
@@ -43,11 +62,17 @@ BEGIN
 SELECT * FROM usuarios;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarUsuario` (IN `pnombre` VARCHAR(40), IN `papellidos` VARCHAR(80), IN `ptelefono` VARCHAR(40), IN `pemail` VARCHAR(40), IN `pimagen` VARCHAR(200), IN `pusuario` VARCHAR(40), IN `ppass` VARCHAR(40))  NO SQL
+INSERT INTO usuarios(nombre, apellidos, telefono, email, imagen, usuario, pass) VALUES (pnombre,papellidos,ptelefono,pemail,pimagen,pusuario,ppass)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usuarioPorId` (IN `p_id` INT)  NO SQL
+select usuarios, vehiculos FROM usuarios LEFT JOIN vehiculos ON usuarios.idusuario=vehiculos.idusuario WHERE usuarios.idusuario=p_id$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verPeticiones` (IN `p_id` INT)  NO SQL
-select * from trayecto where idtrayecto=(select idtrayecto from viajes where aceptado=0 and idusuario=p_id)$$
+select usuarios.nombre, trayecto.* from trayecto LEFT JOIN usuarios ON usuarios.idusuario=trayecto.idusuario where idtrayecto IN(select idtrayecto from viajes where aceptado=0 and idusuario=p_id and clase="pasajero")$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosConductor` (IN `p_id` INT)  NO SQL
-select * from trayecto where idtrayecto=(select idtrayecto from viajes where clase='conductor' and idusuario=p_id)$$
+select * from trayecto where idtrayecto IN(select idtrayecto from viajes where clase='conductor' and idusuario=p_id)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosPasajero` (IN `p_id` INT)  NO SQL
 select * from trayecto where idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_id)$$
@@ -101,8 +126,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellidos`, `telefono`, `email`, `imagen`, `permisos`, `usuario`, `pass`) VALUES
-(7, 'jennifer', 'Hernandez Macias', '688659988', 'jennifer@gmail.com', 'http://es.web.img2.acsta.net/pictures/17/03/23/12/22/099965.jpg', 0, 'jennerys', '12345'),
-(9, 'Mikel', 'Martin Culoprieto', '999999999', 'mikel@gmail.com', 'https://www.gazetaesportiva.com/wp-content/uploads/imagem/2015/12/31/008340131-1024x682.jpg', 0, 'mikelsito', '123456');
+(7, 'jennifer', 'Hernandez Macias', '688659988', 'jennifer@gmail.com', 'https://blog.fotolia.com/es/files/2015/09/Screenshot1.png', 0, 'jennerys', '55555'),
+(9, 'Mikel', 'Martin Culoprieto', '999999999', 'mikel@gmail.com', 'https://www.gazetaesportiva.com/wp-content/uploads/imagem/2015/12/31/008340131-1024x682.jpg', 0, 'mikelsito', '123456'),
+(10, 'prueba', 'prueva', 'pruefa', 'prrueba', 'prrueva', 0, 'prruefa', 'prruebha');
 
 -- --------------------------------------------------------
 
@@ -132,6 +158,13 @@ CREATE TABLE `vehiculos` (
   `matricula` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `vehiculos`
+--
+
+INSERT INTO `vehiculos` (`idcoche`, `idusuario`, `marca`, `plazas`, `combustible`, `matricula`) VALUES
+(1, 7, 'Megane', 4, 'Dieselss', '25824 JH');
+
 -- --------------------------------------------------------
 
 --
@@ -151,7 +184,7 @@ CREATE TABLE `viajes` (
 
 INSERT INTO `viajes` (`idusuario`, `idtrayecto`, `clase`, `aceptado`) VALUES
 (7, 1, 'conductor', 1),
-(7, 2, 'pasajero', 1),
+(7, 2, 'pasajero', 0),
 (9, 1, 'pasajero', 0);
 
 --
@@ -201,25 +234,21 @@ ALTER TABLE `viajes`
 --
 ALTER TABLE `trayecto`
   MODIFY `idtrayecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
   MODIFY `idvaloracion` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
