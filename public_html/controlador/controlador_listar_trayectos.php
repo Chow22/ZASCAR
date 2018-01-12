@@ -1,6 +1,8 @@
 <?php
 require_once("../modelo/trayectos.php");
-$lista = new trayectos();
-$pd = $lista->listar_trayectos();
-require_once("../vista/listarTrayectos.php");
+$cont=new Trayectos();
+$datos=$cont->listar_trayectos();
+
+$datos= json_encode($datos); 
+ print $datos; 
 ?>

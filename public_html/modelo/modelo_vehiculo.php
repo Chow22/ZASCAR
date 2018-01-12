@@ -12,8 +12,8 @@ class modelo_vehiculo {
         $this->respuesta = array();
     }
 
-    public function insertar_vehiculo($marca, $plazas, $combustible, $matricula) {
-        $sql = "CALL sp_insertar_vehiculo('$marca','$plazas','$combustible','$matricula')";
+    public function insertar_vehiculo($id,$marca, $plazas, $combustible, $matricula) {
+        $sql = "CALL sp_insertar_vehiculo('$id','$marca','$plazas','$combustible','$matricula')";
         $this->link->query($sql);
         // $consulta->free_result();
         $this->link->close();

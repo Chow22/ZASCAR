@@ -29,25 +29,24 @@ session_start();
         </header>
         <br/>
         <div id="izquierda">
-            <form action="controlador/trayectos_controlador.php">
+            <form action="../controlador/trayectos_controlador.php" method="post" id="trayecto">
                 <fieldset id="campoviaje">
                     <legend>Datos del viaje</legend>
                     <label>¿Desde donde sales?</label><br/>
-                    <input type="text" id="inicio" placeholder="Inicio"/><br/>
+                    <input type="text" name="origen" placeholder="Inicio"/><br/>
                     <label>¿A donde vas?</label><br/>
-                    <input type="text" id="destino" placeholder="Destino"/><br/>
+                    <input type="text" name="destino" placeholder="Destino"/><br/>
+                    <label>Fecha y hora</label><br/>
+                    <input type="datetime-local" name="fechahora"/><br/>
+                    <label>Plazas</label><br/>
+                    <input type="text" name="plazas" placeholder="Plazas"/><br/>
                     <label>Paradas</label><br/>
-                    <input type="text" id="paradas" placeholder="Paradas"/><br/>
-                </fieldset>
-                <br/><br/>
-                <fieldset id="campofechadia">
-                    <legend>Dia y Hora</legend>
-                    <label>Fecha ida</label><br/>
-                    <input type="date" id="fecha"/><input type="time" id="datatime"/><br/>
-
+                    <textarea rows="4" cols="50" name="paradas" placeholder="Introduce tus paradas..." form="trayecto"></textarea><br/>
+                    <label>Id usuario</label><br/>
+                    <input type="text" name="id" placeholder="Id"/><br/>
                 </fieldset>
                 <br/>
-                <input type="submit" value="ENVIAR"/>
+                <input type="submit" value="ENVIAR"/> <input type="reset" value="BORRAR"/>
             </form>
         </div>
         <div id="derecha">

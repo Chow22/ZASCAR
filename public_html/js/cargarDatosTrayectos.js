@@ -1,24 +1,23 @@
- alert('hola');
+ //alert('hola');
 var miAplicacion = angular.module('miAplicacion',[]);
- alert('hola 2');
+ //alert('hola 2');
 miAplicacion.controller('mainController',["$scope","$http",function($scope,$http){
-    
-    alert('holitaaaa');
-    alert($scope);
-    alert($http);
+    //te jakié la computadora
+    //alert('holitaaaa');
+    //alert($scope);
+    //alert($http);
     $scope.lista=[];
-    $http.get('../controlador/controlador_listar_trayectos.php').success(function(data){       
-        alert(data);       
+    $http.get('../controlador/controlador_buscarTrayectos.php').success(function(data){       
+        //alert(data);       
         $scope.lista = data;
      }); 
 //////////////////////////////////////////////////////////////////////////////////////////////
-$scope.misdatos={
-       
+$scope.misdatos={        
         origen:"",
         destino:"",
         fecha_hora:"",
         plazas:"",
-        
+        paradas:""
    };
             ///// Cargar la lista del JSON //////    
 //    $http.get('../JSON/datos.json').then(function(response)    {
@@ -152,14 +151,14 @@ $scope.misdatos={
 //  };
 //  //Se busca por cualquiera de los caract.Proemro se da al boton 
 //  //iniciar busqueda para ver los campos de busqueda y luego se filtra//
-//  $scope.VerFormBusqueda=false;
-//  $scope.Buscar = function() {
-//    $scope.VerFormBusqueda=true;
-//  };
+  $scope.VerFormBusqueda=false;
+  $scope.Buscar = function() {
+    $scope.VerFormBusqueda=true;
+  };
 ////////////////////////////////////////////////////////////////////////////////////////////////
-//  $scope.finbuscar = function() {
-//    $scope.TEXTObusqueda="";
-//    $scope.VerFormBusqueda=false;
-//  };
+  $scope.finbuscar = function() {
+    $scope.TEXTObusqueda="";
+    $scope.VerFormBusqueda=false;
+  };
 
 }]);

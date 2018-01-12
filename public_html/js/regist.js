@@ -4,8 +4,7 @@ $(document).ready(function () {
     $('#mostrarRegistro').click(function () {
         //alert('Registro');
         $('#zonaReg').show();      
-    });
-
+    });   
     // funciones generales esconder registro
     function esconder() {
         $('#zonaReg').hide();

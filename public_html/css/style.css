@@ -418,3 +418,12 @@ td{
 strong{
     color:black;
 }
+/*-----------------Tabla para la pagina buscarTrayectos--------------------*/
+#zonalista{background-color:white ;color:black;width:50%;margin:auto;
+padding:10px;margin-bottom: 20px;  border:solid black 1px;}
+listatrayectos  li ul li .modul{ width:250px;padding:2px;}
+listatrayectos{list-style-type: none;}  
+listatrayectos li{display:inline-block;padding:2px;}
+listatrayectos li span li span{display:inline-block;}
+listatrayectos li .grande{width:200px;}
+listatrayectos li .medio{width:100px;}
