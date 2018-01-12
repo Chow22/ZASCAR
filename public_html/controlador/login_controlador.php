@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 require_once("../modelo/login.php");
 $usuario = filter_input(INPUT_POST, 'usuario');
 $pass = filter_input(INPUT_POST, 'pass');

@@ -127,7 +127,9 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu = 7;
+        idusu ="<?php echo $_SESSION['idusu'];?>";
+        idusu=7;
+        //alert (idusu);
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,

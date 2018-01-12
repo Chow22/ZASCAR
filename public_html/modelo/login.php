@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conector.php';
+require_once '../conector/conector.php';
 
 class Login {
 
