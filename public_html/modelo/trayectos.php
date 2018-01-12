@@ -44,8 +44,8 @@ class trayectos{
        $this->link->close();
        return $this->usuario;
       }
-               public function listar_trayectos(){
-       $sql="CALL listarTrayectos()";
+       public function listar_trayectos(){
+       $sql="CALL listarTrayecto()";
        $consulta=$this->link->query($sql);
          while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
            {
