@@ -41,7 +41,7 @@ session_start();
             </nav>
         </header>
         <section>
-            <strong>En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>
+            <strong class="strindex">En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>
         </section>
         <section id="pageContent">
             <main role="main">

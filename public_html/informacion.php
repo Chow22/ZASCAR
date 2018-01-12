@@ -37,8 +37,7 @@ session_start();
             </nav>
         </header>
         <section>
-            <h1 class="">ZASCAR</h1> <h1>ENTERPRISES</h1>
-            <strong>ZASCAR ha sido formada para facilitar el acceso al centro a aquellos que no tienen coche o que quieren compartirlo</strong>
+            <strong class="strindex">ZASCAR ha sido formada para facilitar el acceso al centro a aquellos que no tienen coche o que quieren compartirlo</strong>
         </section>
         <section id="pageContent">
             <main role="main">

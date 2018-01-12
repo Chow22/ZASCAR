@@ -178,7 +178,7 @@ body > section {
     }
 
 }
-strong{
+.strindex{
     color: white;
 }
 /* Makes images fully responsive */
