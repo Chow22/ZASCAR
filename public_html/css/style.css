@@ -179,6 +179,8 @@ body > section {
 
 }
 .strindex{
+    display:block;
+    margin-left: 25px;margin-right: 25px;
     color: white;
 }
 /* Makes images fully responsive */
@@ -410,7 +412,7 @@ tr{
     padding: 7px;
 }
 td{
-    
+    text-align: center;
      padding: 7px;
 }
 strong{
