@@ -35,7 +35,7 @@ session_start();
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
-                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -108,7 +108,7 @@ session_start();
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
                             <ul>
-                                <li class="subitem1"><a href="#">Buscar Trayecto</a></li>
+                                <li class="subitem1"><a href="vista/buscarTrayectos.html">Buscar Trayecto</a></li>
                             </ul>
                         </li>
                     </ul>

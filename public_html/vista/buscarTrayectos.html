@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miAplicacion">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="canonical" href="http://html5-templates.com/" />
+        <title>Buscar Trayectos</title>
+        <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">                
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/style.css">               
+        <script src="../js/cargarDatosTrayectos.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>                         
+            <div id="logo"><img src="../img/logo.png" alt="">ZASCAR Enterprises
+                <a  href="login.php"><img class="login-img" src="../img/loginbutton.png" alt=""/></a>
+                <p>Iniciar sesión</p>
+            </div>
+            <br>
+            <br>
+            <nav>  
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="../informacion.php">Información</a></li>                                                        
+                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                </ul>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <div align="center" ng-controller="mainController">
+            <h1>Lista de trayectos</h1>        
+            <br>
+            <p>Aquí se muestra una lista de los trayectos a los que te puedes agregar o puedes mostrar la informacion del conductor.</p>
+            <hr>
+            <br>   
+            <div id="zonalista"> 
+                <ul id="listatrayectos"> 
+                    <li ng-repeat="item in lista| filter:TEXTObusqueda"> 
+                        <span class="peque"> {{item.origen}} </span> 
+                        <span class="medio"> {{item.destino}} </span> 
+                        <span class="medio"> {{item.fecha_hora}}</span> 
+                        <span class="medio"> {{item.plazas}} </span> 
+                        <span class="grande"> {{item.paradas}} </span>    
+                        <span class="peque">  <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" ></span> 
+                        <span class="peque">  <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='agregar($index, item.id)' alt="" ></span> 
+                    </li>
+                </ul>            
+            </div> 
+        </div>
+    </body>
+</html>

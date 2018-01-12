@@ -2,7 +2,7 @@ $(document).ready(function () {
     esconder();
     // GESTION DE RESGISTRO DE REGISTRO
     $('#mostrarRegistro').click(function () {
-        alert('Registro');
+        //alert('Registro');
         $('#zonaReg').show();      
     });
 

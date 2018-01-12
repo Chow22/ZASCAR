@@ -7,18 +7,18 @@ miAplicacion.controller('mainController',["$scope","$http",function($scope,$http
     alert($scope);
     alert($http);
     $scope.lista=[];
-    $http.get('../controlador/controlador_consulta_trayectos_pasajero.php').success(function(data){       
+    $http.get('../controlador/controlador_listar_trayectos.php').success(function(data){       
         alert(data);       
         $scope.lista = data;
      }); 
 //////////////////////////////////////////////////////////////////////////////////////////////
 $scope.misdatos={
-        idTrayecto:"",
+       
         origen:"",
         destino:"",
         fecha_hora:"",
         plazas:"",
-        idUsuario:""
+        
    };
             ///// Cargar la lista del JSON //////    
 //    $http.get('../JSON/datos.json').then(function(response)    {

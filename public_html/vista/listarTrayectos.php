@@ -26,7 +26,7 @@
                 <ul>
                     <li><a href="../index.php">Home</a></li>
                     <li><a href="../informacion.php">Información</a></li>                                                        
-                    <li><a href="buscarTrayecto.html" class="active">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="listarTrayecto.html" class="active">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -83,7 +83,7 @@
                             </li>
                             <li class="item3"><a href="#">Zona Pasajero</a>
                                 <ul>
-                                    <li class="subitem1"><a href="#">Buscar Trayecto</a></li>
+                                    <li class="subitem1"><a href="../vista/buscarTrayectos.html">Buscar Trayecto</a></li>
                                 </ul>
                             </li>
                         </ul>
