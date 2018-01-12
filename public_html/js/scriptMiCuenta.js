@@ -1,6 +1,7 @@
 $(document).ready(function () {
     //alert("entramos al js preparense");
     idtrayecto = 0;
+    idsolic = 0;
     idBorrar = 0;
     funcionConsultaTrayectosConductor();
 
@@ -49,6 +50,7 @@ $(document).ready(function () {
     $('#tablaPeticiones').on("click", "#aceptar", function () {
         //alert('boton aceptar ok');
         idtrayecto = $(this).attr("data-idtrayecto");
+        idsolic = $(this).attr("data-idsolic");
         //alert(idtrayecto);
         funcionAceptar();
         return false;
@@ -59,14 +61,16 @@ $(document).ready(function () {
 
         idusu = 7;
         //alert(idtrayecto);
+         //alert(idsolic);
+        
         $.ajax({
             type: 'POST',
-            data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idusu,
+            data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idsolic,
             dstaType: 'json',
             url: "../controlador/controlador_aceptar_peticiones.php",
             success: function (datos) {
                 alert("Peticion aceptada");
-                //alert(datos);
+                alert(datos);
                 funcionPeticiones();
             },
             error: function (xhr) {
@@ -127,8 +131,8 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu = "<?php echo $_SESSION['idusu'];?>";
-        idusu = 7;
+        idusu ="<?php echo $_SESSION['idusu'];?>";
+        idusu=7;
         //alert (idusu);
         $.ajax({
             type: 'POST',
@@ -260,7 +264,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-
+                                    
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -275,7 +279,7 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-
+                                    
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -314,7 +318,6 @@ $(document).ready(function () {
                <th class='destino'>Destino</th>\n\
                <th class='fecha_hora'>Fecha_Hora</th>\n\
                <th class='plazas'>Plazas</th>\n\
-               \n\<th class='plazas'>Aceptado</th>\n\
                <th class='paradas'>Paradas</th>\n\
                 \n\
                <th class='idusuario'>Aceptar</th>\n\ ";
@@ -324,7 +327,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    tabla += "<td class='nombre'>" +
+                                   tabla += "<td class='nombre'>" +
                                             dato.nombre +
                                             "</td>";
                                     tabla += "<td class='origen'>" +
@@ -341,10 +344,9 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    tabla += "<td class='paradas'>" + dato.aceptado +
-                                            "</td>";
+                                    
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
+                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "' data-idsolic='" + dato.idsolic + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";

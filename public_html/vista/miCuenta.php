@@ -2,7 +2,7 @@
 	<!-- Codigo para permitir acceso a usuarios logados solamente -->
 <?php
 session_start();
-echo ($_SESSION['loggedin']);
+//echo ($_SESSION['loggedin']);
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     
 } else {

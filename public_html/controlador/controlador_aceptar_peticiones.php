@@ -5,6 +5,7 @@ require_once '../modelo/trayectos.php';
  $idusu = htmlspecialchars(trim($_POST['idusu']));
 
 $cont = new trayectos();
-$cont->aceptar_peticion($idtrayecto,$idusu);
+$cont->aceptarPeticion($idtrayecto,$idusu);
 print($idtrayecto);
+print($idusu);
 ?>
