@@ -127,8 +127,8 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu ="<?php echo $_SESSION['idusu'];?>";
-        idusu=7;
+        idusu = "<?php echo $_SESSION['idusu'];?>";
+        idusu = 7;
         //alert (idusu);
         $.ajax({
             type: 'POST',
@@ -260,7 +260,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    
+
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -275,7 +275,7 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    
+
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -309,12 +309,13 @@ $(document).ready(function () {
                 $('#tablaPeticiones').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
-                tabla += "\n\
-               <th class='origen'>origen</th>\n\
-               <th class='destino'>destino</th>\n\
-               <th class='fecha_hora'>fecha_hora</th>\n\
-               <th class='plazas'>plazas</th>\n\
-               <th class='paradas'>paradas</th>\n\
+                tabla += "<th class='nombre'>Solicitante</th>\n\
+               <th class='origen'>Origen</th>\n\
+               <th class='destino'>Destino</th>\n\
+               <th class='fecha_hora'>Fecha_Hora</th>\n\
+               <th class='plazas'>Plazas</th>\n\
+               \n\<th class='plazas'>Aceptado</th>\n\
+               <th class='paradas'>Paradas</th>\n\
                 \n\
                <th class='idusuario'>Aceptar</th>\n\ ";
                 midato = JSON.parse(datos);
@@ -323,7 +324,9 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                   
+                                    tabla += "<td class='nombre'>" +
+                                            dato.nombre +
+                                            "</td>";
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -338,7 +341,8 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    
+                                    tabla += "<td class='paradas'>" + dato.aceptado +
+                                            "</td>";
                                     tabla += "<td class='opciones'>";
                                     tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
