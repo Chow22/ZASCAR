@@ -31,7 +31,7 @@ session_start();
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="#" class="active">Información</a></li>                                                        
-                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>

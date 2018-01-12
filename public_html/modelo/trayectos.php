@@ -1,5 +1,5 @@
 <?php
-require_once 'conector.php';
+require_once '../conector/conector.php';
 class trayectos{
     private $link;
     private $usuario;
@@ -35,6 +35,17 @@ class trayectos{
       
             public function get_trayectoPeticiones($idusu){
        $sql="CALL verPeticiones('$idusu')";
+       $consulta=$this->link->query($sql);
+         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
+           {
+            $this->usuario[]=$row;
+           }
+       $consulta->free_result();
+       $this->link->close();
+       return $this->usuario;
+      }
+               public function listar_trayectos(){
+       $sql="CALL listarTrayectos()";
        $consulta=$this->link->query($sql);
          while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC))
            {

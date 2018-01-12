@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once "../modelo/usuarios.php";
 $nombre = htmlspecialchars(trim($_POST['nombre']));
 $apellidos = htmlspecialchars(trim($_POST['apellidos']));
