@@ -10,8 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">                
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../css/style.css">               
+        <link rel="stylesheet" href="../css/style.css">   
+        <script src="../js/angular.min.js" type="text/javascript"></script>
         <script src="../js/cargarDatosTrayectos.js" type="text/javascript"></script>
+
     </head>
     <body>
         <header>                         
@@ -36,8 +38,13 @@
             <br>
             <strong class="strindex">Aquí se muestra una lista de los trayectos a los que te puedes agregar o puedes mostrar la informacion del conductor.</strong>
             <hr>
-            <br>   
-            <div id="zonalista"> 
+            <br>                    
+            <div id="zonalista">                
+                <div id="dcha" ng-show="VerMenu === true"> 
+                    <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar:<input type="text" ng-model="TEXTObusqueda"> 
+                        <input type="submit" value="Finalizar Busqueda"/> 
+                    </form> 
+                </div>
                 <ul id="listatrayectos"> 
                     <li ng-repeat="item in lista| filter:TEXTObusqueda"> 
                         <span class="peque"> {{item.origen}} </span> 
@@ -50,6 +57,14 @@
                     </li>
                 </ul>            
             </div> 
+            <div id="acciones">
+                <input type="button" value="Buscar" ng-click="Buscar()"> 
+                <div id="dcha" ng-show="VerMenu === true"> 
+                    <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar:<input type="text" ng-model="TEXTObusqueda"> 
+                        <input type="submit" value="Finalizar Busqueda"/> 
+                    </form> 
+                </div>  
+            </div>
         </div>
     </body>
 </html>
