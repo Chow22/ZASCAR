@@ -27,15 +27,23 @@ session_start();
             </nav>
         </header>
         <h1>AÑADIR VEHICULO</h1>
-        <form action="../controlador/vehiculo_controlador.php" method="post" name="vehiculo">
+        <form action="../controlador/vehiculo_controlador.php" method="post" id="vehiculo">
             <fieldset>
-                <legend></legend>
-                <label>Marca</label><input type="text" name="marca"/><br/>
-                <label>Plazas</label><input type="text" name="plazas"/><br/>
-                <label>Combustible</label><input type="text" name="combustible"/><br/>
-                <label>Matrícula</label><input type="text" name="matricula"/><br/>
-                <input type="submit" value="GUARDAR"/> <input type="reset" value="BORRAR"/>
+                <legend>Nuevo vehículo</legend>
+                <label>Id usuario</label><br/>
+                <input type="text" name="id"/><br/>
+                <label>Marca</label><br/>
+                <input type="text" name="marca"/><br/>
+                <label>Plazas</label><br/>
+                <input type="text" name="plazas"/><br/>
+                <label>Combustible</label><br/>
+                <input type="text" name="combustible"/><br/>
+                <label>Matrícula</label><br/>
+                <input type="text" name="matricula"/><br/>
             </fieldset>
+            <br/>
+            <input type="submit" value="GUARDAR"/> <input type="reset" value="BORRAR"/>
+
         </form>
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
