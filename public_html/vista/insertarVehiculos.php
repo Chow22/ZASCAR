@@ -1,5 +1,16 @@
+	<!-- Codigo para permitir acceso a usuarios logueados solamente -->
 <?php
 session_start();
+//echo ($_SESSION['loggedin']);
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    
+} else {
+    echo "Esta pagina es solo para usuarios registrados.<br>";
+    echo "<br><a href='../vista/login.php'>Login</a>";
+    echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
+    
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
