@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-	<!-- Codigo para permitir acceso a usuarios logados solamente -->
+<!-- Codigo para permitir acceso a usuarios logados solamente -->
 <?php
 session_start();
 //echo ($_SESSION['loggedin']);
+//echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    
+                echo "<h1 id='idusuSession' hidden>";
+                echo  ($_SESSION['idusu']);
+
+                echo "</h1>";
 } else {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
     echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
-    
+
     exit();
 }
 ?>
@@ -36,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <div>
             <div class="container auth">
                 <br><br>
-
+                
                 <h1 class="text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
                     <a target="_blank" >

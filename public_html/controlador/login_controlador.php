@@ -12,7 +12,7 @@ for ($i = 0; $i < count($pd); $i++) {
     $idusu= $pd [$i]["idusuario"];
 }
 //print($idusu);
-if($idusu=!null) {
+if($idusu!=null) {
 
     $_SESSION['loggedin'] = true;
     $_SESSION['idusu'] = $idusu;
@@ -25,6 +25,7 @@ if($idusu=!null) {
     
     // acceso bloqueado y redireccionamiento al formulario
 } else {
+    $_SESSION['loggedin'] = false;
     echo '<script> alert("Usuario o contrase\u00F1a incorrectos.");</script>';
     echo '<script> window.location="../vista/miCuenta.php"; </script>';
 }

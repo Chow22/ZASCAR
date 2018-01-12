@@ -24,7 +24,7 @@ $(document).ready(function () {
     function funcionBorrar() {
         //alert("eliminandoo");
 
-        idusu = 7;
+        idusu= $('#idusuSession').text();
         //alert(idBorrar);
         $.ajax({
             type: 'POST',
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     function funcionAceptar() {
 
-        idusu = 7;
+       idusu= $('#idusuSession').text();
         //alert(idtrayecto);
          //alert(idsolic);
         
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
     function funcionModificar() {
         //alert("modificandoooo");
-        id = 7;
+        idusu= $('#idusuSession').text();
         nombre = $('#nombre').val();
         apellido = $('#apellido').val();
         telefono = $('#telefono').val();
@@ -131,8 +131,8 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu ="<?php echo $_SESSION['idusu'];?>";
-        idusu=7;
+       // alert($('#idusuSession').text());
+        idusu= $('#idusuSession').text();
         //alert (idusu);
         $.ajax({
             type: 'POST',
@@ -173,7 +173,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu= $('#idusuSession').text();
         $('#tablaPasajero').html(' ');
         $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
@@ -193,7 +193,7 @@ $(document).ready(function () {
                <th class='fecha_hora'>fecha_hora</th>\n\
                <th class='plazas'>plazas</th>\n\
                <th class='paradas'>paradas</th>\n\
- \n\
+               <th class='aceptado'>aceptado</th>\n\
                <th class='idusuario'>Eliminar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
@@ -216,7 +216,8 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-
+                                    tabla += "<td class='aceptado'>" + dato.aceptado +
+                                            "</td>";
                                     tabla += "<td class='opciones'>";
                                     tabla += "<input id='borrar' data-idBorrar='" + dato.idtrayecto + "' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ></td>";
                                     tabla += "</tr>";
@@ -237,7 +238,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosConductor() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu= $('#idusuSession').text();
         $('#tablaConductor').html(' ');
         $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
@@ -299,7 +300,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionPeticiones() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu= $('#idusuSession').text();
         $('#tablaPeticiones').html(' ');
         $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
