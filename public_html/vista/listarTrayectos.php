@@ -36,9 +36,13 @@
 
         <h1>Lista de trayectos que pueden interesarte</h1>
         <br> 
-        <p>En esta página se muestra los trayectos publicados por nuestros conductores, se ofrecen diferentes trayectos con diferente origen,fecha y hora,plazas y paradas
-            elige el viaje que mas te convenga, agregate y espera la respuesta del conductor</p>
+        <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores, se ofrecen diferentes trayectos 
+            con diferente origen,fecha y hora,plazas y paradas elige el viaje que mas te convenga, agregate y espera 
+            la respuesta del conductor</strong>
         <br>
+        <br>
+        <br>
+        
         <div align="center">
             <section>
                 <table align="center" border="6">
