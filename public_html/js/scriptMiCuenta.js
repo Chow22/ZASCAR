@@ -317,9 +317,6 @@ $(document).ready(function () {
                <th class='origen'>Origen</th>\n\
                <th class='destino'>Destino</th>\n\
                <th class='fecha_hora'>Fecha_Hora</th>\n\
-               <th class='plazas'>Plazas</th>\n\
-               <th class='paradas'>Paradas</th>\n\
-                \n\
                <th class='idusuario'>Aceptar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
@@ -338,11 +335,6 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='fecha_hora'>" +
                                             dato.fecha_hora +
-                                            "</td>";
-                                    tabla += "<td class='plazas'>" +
-                                            dato.plazas +
-                                            "</td>";
-                                    tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
                                     
                                     tabla += "<td class='opciones'>";
