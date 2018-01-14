@@ -17,7 +17,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     exit();
 }
 ?>
-<html lang ="en" ng-app="miAplicacion">
+<html lang ="en" >
     <head>
         <title>Mi cuenta</title>
         <meta charset="UTF-8">

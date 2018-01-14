@@ -240,4 +240,14 @@ tr:nth-child(even) {
 }
 .coche{
     float: top; 
+   
+}
+.trnoaceptado{
+    background-color: red; 
+   
+}
+
+.traceptado{
+    background-color: greenyellow; 
+   
 }
