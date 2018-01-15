@@ -23,7 +23,7 @@ if($idusu!=null) {
     echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
     echo '<script> window.location="../index.php"; </script>';
     
-    // acceso bloqueado y redireccionamiento al formulario
+    // acceso bloqueado y redireccionamiento a la pagina de login
 } else {
     $_SESSION['loggedin'] = false;
     echo '<script> alert("Usuario o contrase\u00F1a incorrectos.");</script>';
