@@ -37,7 +37,7 @@ class modelo_usuario {
     
     
     public function registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
-        $this->link->query("CALL spRegistrarUsuario('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");
+        $this->link->query("CALL insertarUsuarios('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");
     }
 
     public function modificar_usuario($id,$nombre,$apellido,$telefono,$email,$imagen,$user,$pass,$marca,$plazas,$combustible,$matricula) {

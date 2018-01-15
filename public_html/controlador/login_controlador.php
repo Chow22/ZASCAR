@@ -27,6 +27,6 @@ if($idusu!=null) {
 } else {
     $_SESSION['loggedin'] = false;
     echo '<script> alert("Usuario o contrase\u00F1a incorrectos.");</script>';
-    echo '<script> window.location="../index.php"; </script>';
+    echo '<script> window.location="../vista/login.php"; </script>';
 }
 ?>
