@@ -412,7 +412,7 @@ td{
 strong{
     color:black;
 }
-/*-----------------Tabla para la pagina buscarTrayectos--------------------*/
+/*--------------------Tabla para la pagina buscarTrayectos--------------------*/
 #zonalista{width:50%;margin:auto;padding:15px;margin-bottom: 50px;}
 listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
 th{text-align:center;}
