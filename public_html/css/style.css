@@ -397,15 +397,9 @@ body > section {
 .texto{
         margin-top: 100px;
 }
-/*------imagenes pagina buscarTrayecto-------*/
-img.txiki{
-    width: 20px;
-    height: 20px;
-}
 /*---Tabla listarTrayectos---*/
 table, tr, td{  
     border:solid black 1px;
-    background-color: white;
 }
 
 tr{ 
@@ -419,11 +413,19 @@ strong{
     color:black;
 }
 /*-----------------Tabla para la pagina buscarTrayectos--------------------*/
-#zonalista{background-color:white ;color:black;width:50%;margin:auto;
-padding:10px;margin-bottom: 20px;  border:solid black 1px;}
-listatrayectos  li ul li .modul{ width:250px;padding:2px;}
-listatrayectos{list-style-type: none;}  
-listatrayectos li{display:inline-block;padding:2px;}
-listatrayectos li span li span{display:inline-block;}
-listatrayectos li .grande{width:200px;}
-listatrayectos li .medio{width:100px;}
+#zonalista{width:50%;margin:auto;padding:15px;margin-bottom: 50px;}
+listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
+th{text-align:center;}
+listatrayectos {display:none;padding:50px;}
+li{margin-bottom: 15px}
+listatrayectos li span li span{display:block;}
+.peque{width:50px;}
+acciones{width:80%;margin:auto;text-align: center}
+#izda ,#dcha{}
+table.chenzira, tr, td{ border:solid black 1px;}
+form{color: black;}
+/*------imagenes pagina buscarTrayecto-------*/
+img.txiki{   
+    width: 20px;
+    height: 20px;
+}

@@ -34,7 +34,7 @@ $scope.misdatos={
 //    
 //
 //    $scope.verAgregaralumno=false;
-//    $scope.VerMenu=true;
+    $scope.VerMenu=true;
 //    ///////////////////matar a todo el mundo//////////////////////////////
 //    ////////////////////////////////////////////////
 //    $scope.Iniciaragregar=function(){
@@ -43,34 +43,25 @@ $scope.misdatos={
 //    };
 //  
 // //////////////////////////////////////////////////////////////////////////////////////////////
-//$scope.agregar = function () {
-//            $scope.lista.push({id: $scope.misdatos.id, nombre: $scope.misdatos.nombre,
-//                apellido1: $scope.misdatos.apellido1, apellido2: $scope.misdatos.apellido2,
-//                ciclo: $scope.misdatos.ciclo, curso: $scope.misdatos.curso});
-//
-//            //INSERTAR ALUMNO NUEVO EN BBDD
-//            var nuevoAlumno=$scope.misdatos;
-//            var enviarNuevoAlumno= JSON.stringify(nuevoAlumno);
-//            //alert(enviarNuevoAlumno);
-//            $http({url:'../controlador/insertar.php',
-//                method:"GET",
-//
-//                params: {value:enviarNuevoAlumno}
-//            }).success(function (data) {
-//                $scope.misdatos.id++;
-//                $scope.misdatos.nombre = '';
-//                $scope.misdatos.apellido1 = '';
-//                $scope.misdatos.apellido2 = '';
-//                $scope.misdatos.ciclo = '';
-//                $scope.misdatos.curso = '';
-//                $scope.verAgregaralumno = false;
-//                $scope.VerMenu = true;
-//            });
-//
-//
-//
-//
-//        };
+$scope.informacion = function () {
+    $scope.lista=[];
+    $http.get('../controlador/controlador_buscarTrayectos.php').success(function(data){       
+        //alert(data);       
+        $scope.lista = data;
+     }); 
+//////////////////////////////////////////////////////////////////////////////////////////////
+$scope.misdatos={        
+        origen:"",
+        destino:"",
+        fecha_hora:"",
+        plazas:"",
+        paradas:""
+   };
+
+
+
+
+        };
 //  
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //  $scope.cancelar = function() {
