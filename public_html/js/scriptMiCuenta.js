@@ -1,5 +1,9 @@
 $(document).ready(function () {
     //alert("entramos al js preparense");
+    setInterval(funcionConsultaTrayectosPasajero, 120000);
+    setInterval(funcionConsultaTrayectosConductor, 120000);
+    setInterval(funcionPeticiones, 120000);
+
     idtrayecto = 0;
     idsolic = 0;
     idBorrar = 0;
@@ -10,6 +14,8 @@ $(document).ready(function () {
     funcionPeticiones();
 
     rellenarDatos();
+
+
 
     //alert("0");
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
@@ -24,7 +30,7 @@ $(document).ready(function () {
     function funcionBorrar() {
         //alert("eliminandoo");
 
-        idusu = 7;
+        idusu = $('#idusuSession').text();
         //alert(idBorrar);
         $.ajax({
             type: 'POST',
@@ -59,10 +65,10 @@ $(document).ready(function () {
 
     function funcionAceptar() {
 
-        idusu = 7;
+        idusu = $('#idusuSession').text();
         //alert(idtrayecto);
-         //alert(idsolic);
-        
+        //alert(idsolic);
+
         $.ajax({
             type: 'POST',
             data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idsolic,
@@ -70,7 +76,7 @@ $(document).ready(function () {
             url: "../controlador/controlador_aceptar_peticiones.php",
             success: function (datos) {
                 alert("Peticion aceptada");
-                alert(datos);
+                //alert(datos);
                 funcionPeticiones();
             },
             error: function (xhr) {
@@ -93,7 +99,7 @@ $(document).ready(function () {
 
     function funcionModificar() {
         //alert("modificandoooo");
-        id = 7;
+        idusu = $('#idusuSession').text();
         nombre = $('#nombre').val();
         apellido = $('#apellido').val();
         telefono = $('#telefono').val();
@@ -131,8 +137,8 @@ $(document).ready(function () {
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
-        idusu ="<?php echo $_SESSION['idusu'];?>";
-        idusu=7;
+        // alert($('#idusuSession').text());
+        idusu = $('#idusuSession').text();
         //alert (idusu);
         $.ajax({
             type: 'POST',
@@ -173,7 +179,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu = $('#idusuSession').text();
         $('#tablaPasajero').html(' ');
         $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
@@ -188,19 +194,19 @@ $(document).ready(function () {
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += " \n\
-               <th class='origen'>origen</th>\n\
-               <th class='destino'>destino</th>\n\
-               <th class='fecha_hora'>fecha_hora</th>\n\
-               <th class='plazas'>plazas</th>\n\
-               <th class='paradas'>paradas</th>\n\
- \n\
+               <th class='origen'>Origen</th>\n\
+               <th class='destino'>Destino</th>\n\
+               <th class='fecha_hora'>Fecha-Hora</th>\n\
+               <th class='plazas'>Plazas</th>\n\
+               <th class='paradas'>Paradas</th>\n\
+               <th class='aceptado'>Aceptado</th>\n\
                <th class='idusuario'>Eliminar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
                         .each(
                                 midato,
                                 function (i, dato) {
-                                    tabla += "<tr>";
+                                    tabla += "<tr data-aceptado='" + dato.aceptado + "' id='linea' >";
 
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
@@ -216,15 +222,29 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-
+                                    tabla += "<td class='aceptado'>" + dato.aceptado +
+                                            "</td>";
                                     tabla += "<td class='opciones'>";
                                     tabla += "<input id='borrar' data-idBorrar='" + dato.idtrayecto + "' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
                 //  alert(tabla)
+
                 $('#tablaPasajero').append(tabla).hide()
                         .fadeIn('slow');
+
+                //////////////////colorear linear tr/////////////////////////////////////////
+                $('#tablaPasajero tr').each(function () {
+
+                    if ($(this).attr('data-aceptado') === '0') {
+                        $(this).css('background-color', 'rgba(243, 31, 31, 0.4)');
+                    } else if ($(this).attr('data-aceptado') === '1') {
+                        $(this).css('background-color', 'rgba(102, 243, 31, 0.4)');
+                    }
+
+                });
+
                 return false;
             },
             error: function (xhr) {
@@ -237,7 +257,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosConductor() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu = $('#idusuSession').text();
         $('#tablaConductor').html(' ');
         $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
@@ -252,11 +272,11 @@ $(document).ready(function () {
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += "\n\
-               <th class='origen'>origen</th>\n\
-               <th class='destino'>destino</th>\n\
-               <th class='fecha_hora'>fecha_hora</th>\n\
-               <th class='plazas'>plazas</th>\n\
-               <th class='paradas'>paradas</th>\n\
+               <th class='origen'>Origen</th>\n\
+               <th class='destino'>Destino</th>\n\
+               <th class='fecha_hora'>Fecha-Hora</th>\n\
+               <th class='plazas'>Plazas</th>\n\
+               <th class='paradas'>Paradas</th>\n\
                 ";
                 midato = JSON.parse(datos);
                 $
@@ -264,7 +284,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                    
+
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -279,7 +299,7 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-                                    
+
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -299,7 +319,7 @@ $(document).ready(function () {
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionPeticiones() {
         //alert('funcionnnnn')
-        idusu = 7;
+        idusu = $('#idusuSession').text();
         $('#tablaPeticiones').html(' ');
         $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
 
@@ -316,7 +336,7 @@ $(document).ready(function () {
                 tabla += "<th class='nombre'>Solicitante</th>\n\
                <th class='origen'>Origen</th>\n\
                <th class='destino'>Destino</th>\n\
-               <th class='fecha_hora'>Fecha_Hora</th>\n\
+               <th class='fecha_hora'>Fecha-Hora</th>\n\
                <th class='idusuario'>Aceptar</th>\n\ ";
                 midato = JSON.parse(datos);
                 $
@@ -324,7 +344,7 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-                                   tabla += "<td class='nombre'>" +
+                                    tabla += "<td class='nombre'>" +
                                             dato.nombre +
                                             "</td>";
                                     tabla += "<td class='origen'>" +
@@ -336,7 +356,7 @@ $(document).ready(function () {
                                     tabla += "<td class='fecha_hora'>" +
                                             dato.fecha_hora +
                                             "</td>";
-                                    
+
                                     tabla += "<td class='opciones'>";
                                     tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "' data-idsolic='" + dato.idsolic + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";

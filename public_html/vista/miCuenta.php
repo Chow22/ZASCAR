@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-	<!-- Codigo para permitir acceso a usuarios logados solamente -->
+<!-- Codigo para permitir acceso a usuarios logados solamente -->
 <?php
 session_start();
 //echo ($_SESSION['loggedin']);
+//echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    
+                echo "<h1 id='idusuSession' hidden>";
+                echo  ($_SESSION['idusu']);
+
+                echo "</h1>";
 } else {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
     echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
-    
+
     exit();
 }
 ?>
-<html lang ="en" ng-app="miAplicacion">
+<html lang ="en" >
     <head>
         <title>Mi cuenta</title>
         <meta charset="UTF-8">
@@ -30,13 +34,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <!-- Latest compiled JavaScript -->
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <link href="../css/styloMiCuenta.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
         <div>
             <div class="container auth">
                 <br><br>
-
+                
                 <h1 class="text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
                     <a target="_blank" >

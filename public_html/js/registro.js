@@ -18,7 +18,7 @@ function Correo() {
 function Clave() {
     var clav1 = document.getElementById("clave1");
     var clav2 = document.getElementById("clave2");
-    if ((clav1.value == "") || (clav1.value != clav2.value)) {
+    if ((clav1.value === "") || (clav1.value !== clav2.value)) {
         alert("Las contraseñas no coinciden");
         return false;
     } else {

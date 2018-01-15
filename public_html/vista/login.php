@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link rel="canonical" href="http://html5-templates.com/" />
         <title>Información</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
