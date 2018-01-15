@@ -34,6 +34,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <!-- Latest compiled JavaScript -->
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <link href="../css/styloMiCuenta.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>

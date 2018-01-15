@@ -4,6 +4,7 @@
         <title>Registro de usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link href="../css/insertarTrayecto.css" rel="stylesheet" type="text/css"/>
         <script src="../js/registro.js" type="text/javascript"></script>
     </head>

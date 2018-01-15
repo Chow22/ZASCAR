@@ -1,4 +1,4 @@
-	<!-- Codigo para permitir acceso a usuarios logueados solamente -->
+<!-- Codigo para permitir acceso a usuarios logueados solamente -->
 <?php
 session_start();
 //echo ($_SESSION['loggedin']);
@@ -8,7 +8,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
     echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
-    
+
     exit();
 }
 ?>
@@ -18,6 +18,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <title>Nuevo trayecto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
         <link href="../css/insertarTrayecto.css" rel="stylesheet" type="text/css"/>
     </head>
