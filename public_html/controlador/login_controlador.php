@@ -21,12 +21,12 @@ if($idusu!=null) {
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
     // acceso permitido
     echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
-    echo '<script> window.location="../vista/miCuenta.php"; </script>';
+    echo '<script> window.location="../index.php"; </script>';
     
     // acceso bloqueado y redireccionamiento al formulario
 } else {
     $_SESSION['loggedin'] = false;
     echo '<script> alert("Usuario o contrase\u00F1a incorrectos.");</script>';
-    echo '<script> window.location="../vista/miCuenta.php"; </script>';
+    echo '<script> window.location="../index.php"; </script>';
 }
 ?>

@@ -1,11 +1,12 @@
 <?php
 session_start();
+//echo ($_SESSION['loggedin']);
+//echo "<h1>" + ($_SESSION['idusu']) + "</h1>";
 ?>
-
 <!doctype html>
 <html lang="en" class="no-js">
     <head>
-                <!--pa la seçao-->
+        <!--pa la seçao-->
 
 
         <meta charset="utf-8">
@@ -22,13 +23,24 @@ session_start();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-
+    
     <body>
-  
+        <a href="controlador/logout.php"></a>
         <header>                         
             <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
-                <p>Iniciar sesión</p>
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<p> (";
+                    echo ($_SESSION['username']);
+                    echo ")<a href='controlador/logout.php'> Cerrar sesion</a></p>";
+                } else {
+                    echo "<p>Iniciar sesión</p>";
+                    
+                }
+                ?>
+
+
             </div>
             <br>
             <br>
