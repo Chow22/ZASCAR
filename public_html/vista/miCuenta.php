@@ -99,7 +99,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <div class="form-group login">
                                 <label class=" control-label" for="textinput">Login</label> <br><br>
                                 <div class="">
-                                    <input id="user" name="textinput" placeholder="Usuario.." class="form-control input-md" type="text" required >
+                                    <input id="user" name="textinput" placeholder="Usuario.." class="form-control input-md" type="text" required disabled="" >
                                     <input id="pass" name="textinput" placeholder="Contraseña.." class="form-control input-md" type="password" required >
                                 </div>
                                 <br>

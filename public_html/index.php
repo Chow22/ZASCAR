@@ -31,9 +31,9 @@ session_start();
                 <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    echo "<p> (";
+                    echo "<p>";
                     echo ($_SESSION['username']);
-                    echo ")<a href='controlador/logout.php'> Cerrar sesion</a></p>";
+                    echo "<a href='controlador/logout.php'> Cerrar sesion</a></p>";
                 } else {
                     echo "<p>Iniciar sesión</p>";
                     
