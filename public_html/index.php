@@ -23,26 +23,22 @@ session_start();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    
+
     <body>
         <a href="controlador/logout.php"></a>
         <header>                         
             <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
-                
+
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
-                    echo "<p style='color:orange;'>";
-                    echo ($_SESSION['username']);
-                    echo "</p>";
+                    echo "<p style='color:white';>Bienvenido, </p>";
+                    echo "<p style='color:orange;>"+($_SESSION['username'])+"</p>";
                 } else {
                     echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
                     echo "<p>Iniciar sesión</p>";
-                    
                 }
                 ?>
-
-
             </div>
             <br>
             <br>

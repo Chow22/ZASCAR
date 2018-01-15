@@ -40,17 +40,16 @@
             <div class="container">
                 <div class="row">                                           
                     <div class="col-md-4 col-md-offset-4 login">                              
-                        <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Login</h1>                                                                   
+                        <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Login</h1>    
+                        <br>
                         <form method="POST" action="../controlador/login_controlador.php">
                             <fieldset>
-                                <div class="form-group">
-                                    <label>Usuario: </label>
-                                    <input type="text" class="form-control" name="usuario">
+                                <div class="form-group">                                                                        
+                                    <label>Usuario:</label><input type="text" class="form-control" name="usuario">
                                 </div>
                                 <p>
-                                <div class="form-group">
-                                    <label>Contraseña: </label>
-                                    <input type="password" class="form-control" name="pass">
+                                <div class="form-group">                                                                      
+                                    <label>Contraseña:</label><input type="password" class="form-control" name="pass">
                                 </div>
                                 <p>
                                     <!--                                <div class="checkbox">
