@@ -32,13 +32,13 @@ session_start();
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
-                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="vista/listarTrayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
         </header>
         <section>
-            <strong>Puedes contactar con nosotros de las siguientes formas</strong>
+            <strong class="strindex">Puedes contactar con nosotros de las siguientes formas</strong>
         </section>
         <section id="pageContent">
                 <section class="section-white">

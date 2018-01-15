@@ -48,7 +48,7 @@ session_start();
             </main>             
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="/" target="_blank" rel="nofollow">Contacto</a></p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a></p>
         </footer>   
 
 
