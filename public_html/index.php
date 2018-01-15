@@ -25,7 +25,6 @@ session_start();
     </head>
 
     <body>
-        <a href="controlador/logout.php"></a>
         <header>                         
             <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
 
