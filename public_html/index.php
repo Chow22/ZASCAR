@@ -28,13 +28,15 @@ session_start();
         <a href="controlador/logout.php"></a>
         <header>                         
             <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
-                <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
+                
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
                     echo "<p>";
                     echo ($_SESSION['username']);
-                    echo "<a href='controlador/logout.php'> Cerrar sesion</a></p>";
+                    echo "</p>";
                 } else {
+                    echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
                     echo "<p>Iniciar sesión</p>";
                     
                 }
