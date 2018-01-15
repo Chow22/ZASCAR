@@ -256,7 +256,64 @@ body > section {
     }
 
 }
+.contacto{    
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+.contacto p{
+    color: white;
+    width: 47%;
+    float: right;
+    margin-bottom: 10px;
+}
+.contacto p.contenido{
+    color: #ccc;
+}
+.contacto p.info{
+    font-size: large;
+    margin-bottom: 50px;
+}
+.contacto img{
+    max-width:100%;
+    width: 47%;
+    padding-right: 30px;
+    float: left;
+}
+.texto{
+        margin-top: 100px;
+}
+/*---Tabla listarTrayectos---*/
+table, tr, td{  
+    border:solid black 1px;
+}
 
+tr{ 
+    padding: 7px;
+}
+td{
+    text-align: center;
+     padding: 7px;
+}
+strong{
+    color:black;
+}
+/*--------------------Tabla para la pagina buscarTrayectos--------------------*/
+#zonalista{width:50%;margin:auto;padding:15px;margin-bottom: 50px;}
+listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
+th{text-align:center;}
+listatrayectos {display:none;padding:50px;}
+li{margin-bottom: 15px}
+listatrayectos li span li span{display:block;}
+.peque{width:50px;}
+acciones{width:80%;margin:auto;text-align: center}
+#izda ,#dcha{}
+table.chenzira, tr, td{ border:solid black 1px;}
+form{color: black;}
+/*------imagenes pagina buscarTrayecto-------*/
+img.txiki{   
+    width: 20px;
+    height: 20px;
+}
 /*menu*/
 
 #wrapper {	
@@ -370,62 +427,4 @@ body > section {
 .menu > li > ul li:hover a,
 .menu > li > ul li:hover a:before {
     color: #32373D;
-}
-.contacto{    
-    margin-bottom: 100px;
-    overflow: hidden;
-}
-.contacto p{
-    color: white;
-    width: 47%;
-    float: right;
-    margin-bottom: 10px;
-}
-.contacto p.contenido{
-    color: #ccc;
-}
-.contacto p.info{
-    font-size: large;
-    margin-bottom: 50px;
-}
-.contacto img{
-    max-width:100%;
-    width: 47%;
-    padding-right: 30px;
-    float: left;
-}
-.texto{
-        margin-top: 100px;
-}
-/*---Tabla listarTrayectos---*/
-table, tr, td{  
-    border:solid black 1px;
-}
-
-tr{ 
-    padding: 7px;
-}
-td{
-    text-align: center;
-     padding: 7px;
-}
-strong{
-    color:black;
-}
-/*--------------------Tabla para la pagina buscarTrayectos--------------------*/
-#zonalista{width:50%;margin:auto;padding:15px;margin-bottom: 50px;}
-listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
-th{text-align:center;}
-listatrayectos {display:none;padding:50px;}
-li{margin-bottom: 15px}
-listatrayectos li span li span{display:block;}
-.peque{width:50px;}
-acciones{width:80%;margin:auto;text-align: center}
-#izda ,#dcha{}
-table.chenzira, tr, td{ border:solid black 1px;}
-form{color: black;}
-/*------imagenes pagina buscarTrayecto-------*/
-img.txiki{   
-    width: 20px;
-    height: 20px;
 }
