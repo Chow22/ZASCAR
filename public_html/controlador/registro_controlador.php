@@ -1,5 +1,4 @@
 <?php
-
 require_once "../modelo/modelo_usuario.php";
 $nombre = htmlspecialchars(trim($_POST['nombre']));
 $apellidos = htmlspecialchars(trim($_POST['apellidos']));
@@ -10,4 +9,6 @@ $usuario = htmlspecialchars(trim($_POST['usuario']));
 $pass = htmlspecialchars(trim($_POST['pass']));
 $lista = new modelo_usuario();
 $lista->registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass);
-print $nombre;
+//print $nombre;
+header('Location: ../index.php'); 
+?>

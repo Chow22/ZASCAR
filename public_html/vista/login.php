@@ -14,7 +14,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/script.js"></script>
-        <script src="../js/regist.js" type="text/javascript"></script>
+         <script src="../js/regist.js" type="text/javascript"></script>
+        <script src="../js/registro.js" type="text/javascript"></script>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -72,7 +73,8 @@
                         <div id="zonaReg">
                             <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
                                 <fieldset id="campoviaje">
-                                    <legend>Datos Personales</legend>
+                                    <legend>Datos Personales: </legend>
+                                    <br>
                                     <label>Nombre</label><br/>
                                     <input type="text" name="nombre" /><br/>
                                     <label>Apellidos</label><br/>

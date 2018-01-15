@@ -32,7 +32,7 @@ session_start();
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
-                    echo "<p>";
+                    echo "<p style='color:orange;'>";
                     echo ($_SESSION['username']);
                     echo "</p>";
                 } else {
