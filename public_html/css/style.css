@@ -180,7 +180,8 @@ body > section {
 }
 .strindex{
     display:block;
-    margin-left: 25px;margin-right: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
     color: white;
 }
 /* Makes images fully responsive */
@@ -281,6 +282,10 @@ body > section {
 }
 .texto{
         margin-top: 100px;
+}
+.container{
+    margin-top: 50px;
+    margin-left: 25px;
 }
 /*---Tabla listarTrayectos---*/
 table, tr, td{  
