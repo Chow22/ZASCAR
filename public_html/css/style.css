@@ -434,3 +434,48 @@ img.txiki{
 .menu > li > ul li:hover a:before {
     color: #32373D;
 }
+
+
+/*--------------------Diseño de la página insertarTrayectos--------------------*/
+
+/**{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 10px;
+}*/
+
+
+/*#izquierda  {
+    color:white;
+    border:none;
+    font-weight:300;
+    font-size:24px;
+}*/
+iframe{
+    float: right;
+}
+/*fieldset{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}*/
+#trayecto-form{
+    background: transparent;
+    color: white;
+    font-size: 100%;
+    float: left;
+    margin-left: 50px;
+}
+#mapa-dcha{
+    margin-bottom: 10px;
+    margin-right: 35px;
+}
+.trayecto-label{
+    color:white;
+}
+#campoviaje>legend{
+    color:white;
+}
+

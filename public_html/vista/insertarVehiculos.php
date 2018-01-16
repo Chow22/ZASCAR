@@ -1,4 +1,4 @@
-	<!-- Codigo para permitir acceso a usuarios logueados solamente -->
+<!-- Codigo para permitir acceso a usuarios logueados solamente -->
 <?php
 session_start();
 //echo ($_SESSION['loggedin']);
@@ -8,7 +8,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
     echo "<br><br><a href='../vista/registro.php'>Registrarme</a>";
-    
+
     exit();
 }
 ?>
@@ -23,17 +23,26 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     </head>
     <body>
         <header>                         
-            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
-                <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
-                <p>Iniciar sesión</p>
+            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
+                    echo "<p style='color:orange;'>";
+                    echo ($_SESSION['username']);
+                    echo "</p>";
+                } else {
+                    echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
             <nav>  
                 <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../informacion.php">Información</a></li>                                                        
-                    <li><a href="#">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="informacion.php">Información</a></li>                                                        
+                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -42,8 +51,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <form action="../controlador/vehiculo_controlador.php" method="post" id="vehiculo">
             <fieldset>
                 <legend>Nuevo vehículo</legend>
-                <label>Id usuario</label><br/>
-                <input type="text" name="id"/><br/>
+                <?php echo '<input type="hidden" name="id" value="' . ($_SESSION['idusu']) . '"/>' . "\n"; ?>
                 <label>Marca</label><br/>
                 <input type="text" name="marca"/><br/>
                 <label>Plazas</label><br/>
