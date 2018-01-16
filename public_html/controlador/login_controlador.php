@@ -18,7 +18,8 @@ if($idusu!=null) {
     $_SESSION['idusu'] = $idusu;
     $_SESSION['username'] = $usuario;
     $_SESSION['start'] = time();
-    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+    $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
+
     // acceso permitido
     echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
     echo '<script> window.location="../index.php"; </script>';
