@@ -20,15 +20,18 @@ session_start();
     </head>
     <body>
         <header>                         
-            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
 
                 <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
-                    echo "<p style='color:white';>Bienvenido, </p>";
-                    echo "<p style='color:orange;>"+($_SESSION['username'])+"</p>";
+                    echo "<p style='color:white;'>Bienvenido, ";
+                    echo "<font color = 'orange'>";                 
+                    echo ($_SESSION['username']);
+                    echo"</font>";
+                    echo "</p>";
                 } else {
-                    echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
+                    echo"<a  href='vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
                     echo "<p>Iniciar sesión</p>";
                 }
                 ?>
@@ -54,7 +57,7 @@ session_start();
         <section id="pageContent">
             <main role="main">
                 <section class="section-white">
-                    <div class="container">
+                    <div class="container-main">
                         <table align="center" border="6">
                             <tr>                
                                 <td><strong>Origen</strong></td>

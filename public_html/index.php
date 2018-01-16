@@ -61,7 +61,7 @@ session_start();
         <section id="pageContent">
             <main role="main">
                 <section class="section-white">
-                    <div class="container">
+                    <div class="container-main">
 
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->

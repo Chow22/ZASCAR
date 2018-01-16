@@ -38,6 +38,7 @@
         <div align="center">           
             <hr>
             <div class="container">
+                <div class="form-login">
                 <div class="row">                                           
                     <div class="col-md-4 col-md-offset-4 login">                              
                         <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Login</h1>    
@@ -65,8 +66,9 @@
                                         <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
                                 </div>
-                        </form>
                         </fieldset> 
+                        </form>
+
                             <br>
                         <div class="popup">
                         <div id="zonaReg">
@@ -100,6 +102,7 @@
                         <hr>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </body>
