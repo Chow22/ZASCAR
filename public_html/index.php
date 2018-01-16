@@ -118,7 +118,7 @@ session_start();
                         <li class="item2"><a href="#">Zona Conductor</a>
                             <ul>
                                 <li class="subitem1"><a href="vista/insertarTrayectos.php">Publicar Trayecto</a></li>
-                                <li class="subitem2"><a href="#">Eliminar Trayecto</a></li>
+                                <li class="subitem2"><a href="vista/consultarTrayectos.php">Consultar Trayecto</a></li>
                             </ul>
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
