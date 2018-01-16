@@ -22,9 +22,18 @@ session_start();
 
     <body>
         <header>                         
-            <div id="logo"><a href="index.php"><img src="img/logo.png">ZASCAR Enterprises</a>
-                <a  href="vista/login.php"><img class="login-img" src="img/loginbutton.png" alt=""/></a>
-                <p>Iniciar sesión</p>
+            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
+                    echo "<p style='color:white';>Bienvenido, </p>";
+                    echo "<p style='color:orange;>"+($_SESSION['username'])+"</p>";
+                } else {
+                    echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
