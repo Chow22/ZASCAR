@@ -38,7 +38,6 @@
         <div align="center">           
             <hr>
             <div class="container">
-                <div class="form-login">
                 <div class="row">                                           
                     <div class="col-md-4 col-md-offset-4 login">                              
                         <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Login</h1>    
@@ -104,6 +103,5 @@
                 </div>
             </div>
             </div>
-        </div>
     </body>
 </html>

@@ -107,12 +107,6 @@ article h2 {
     font-weight: normal;
     margin-bottom: 12px;
 }
-article p {
-
-}
-main section {
-
-}
 footer {
     background: rgba(255, 255, 255, 0.2);
     color: #FFF;
@@ -283,9 +277,27 @@ body > section {
 .texto{
         margin-top: 100px;
 }
+.presentacion{
+    display: inline-block;
+    width: 100%;
+}
+.img-info{
+    float: right;
+}
+.texto-info{
+    margin-top: 70px;
+    float: left;
+    width: 60%;
+}
 .container-main{
     margin-top: 50px;
     margin-left: 25px;
+}
+.main-info{
+    width:95%;
+}
+.strong-info{
+    color: white;
 }
 /*---Tabla listarTrayectos---*/
 table, tr, td{  
@@ -307,12 +319,11 @@ strong{
 listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
 th{text-align:center;}
 listatrayectos {display:none;padding:50px;}
-li{margin-bottom: 15px}
 listatrayectos li span li span{display:block;}
 .peque{width:50px;}
 acciones{width:80%;margin:auto;text-align: center}
 #izda ,#dcha{}
-table.chenzira, tr, td{ border:solid black 1px;}
+table.tabla-buscar, tr, td{ border:solid black 1px;}
 form{color: black;}
 /*------imagenes pagina buscarTrayecto-------*/
 img.txiki{   
