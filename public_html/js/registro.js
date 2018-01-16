@@ -1,5 +1,5 @@
 function Envio() {
-    if ((Correo() && Clave() && CodigoPostal())) {
+    if ((Correo() && Clave())) {
         return true;
     } else {
         return false;
@@ -8,7 +8,7 @@ function Envio() {
 function Correo() {
     var miCorreo = document.registro.email.value;
     if (/\w+\@\w+\.\w+/.test(miCorreo)) { //EXPRESIÓN REGULAR
-        alert("Correo Correcto");
+//        alert("Correo Correcto");
         return true;
     } else {
         alert("Correo Incorrecto");
@@ -26,16 +26,6 @@ function Clave() {
         return true;
     }
 }
-/*     function CodigoPostal() {
- var cPostal = document.encuesta.cPostal.value;
- if (/^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/.test(cPostal)) {
- alert("Código postal correcta");
- return true;
- } else {
- alert("Código postal incorrecta");
- return false;
- }
- } */
 function TeclaPulsada(e) {
     var keychar;
     var teclanum;
