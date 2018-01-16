@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link rel="canonical" href="http://html5-templates.com/" />
-        <title>Información</title>
+        <title>Zascar - Entra o regístrate</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">            
@@ -28,7 +28,7 @@
             <br>
             <nav>  
                 <ul>
-                    <li><a href="../index.php" class="active">Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li><a href="../informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
@@ -60,7 +60,7 @@
                                                                     </div>-->
                                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                     <div class="btn-group" role="group">
-                                        ¿No tienes cuenta? <a href="#" id="mostrarRegistro" class="btn">Registrate aquí</a>
+                                        ¿No tienes cuenta? <a href="#" id="mostrarRegistro" class="btn">Regístrate aquí</a>
                                     </div>                                    
                                     <div class="btn-group" role="group">
                                         <button type="submit" class="btn btn-primary">Login</button>
