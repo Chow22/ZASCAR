@@ -3,7 +3,10 @@
 session_start();
 //echo ($_SESSION['loggedin']);
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    
+    echo "<h1 id='idusuSession' hidden>";
+    echo ($_SESSION['idusu']);
+
+    echo "</h1>";
 } else {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='../vista/login.php'>Login</a>";
@@ -13,7 +16,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="miAplicacion">
+<html>
     <head>
         <title>Nuevo trayecto</title>
         <meta charset="utf-8">
@@ -27,8 +30,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="../js/angular.min.js" type="text/javascript"></script>
-        <script src="../js/cargarDatosTrayectos.js" type="text/javascript"></script>
+        <script src="../js/consultarTrayectosUsuario.js" type="text/javascript"></script>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>    
     </head>
     <body>
@@ -63,46 +65,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         </header>
         <br/>
         <br/>
-        <div align="center" ng-controller="mainController">
-           <h1>Trayectos añadidos por <?php echo ($_SESSION['username']) ?></h1>      
-            <br>
-            <strong class="strindex">Aquí se muestra una lista de tus trayectos publicados.</strong>
-            <hr>
-            <br>               
-<!--            <input type="button" value="Buscador" ng-click="Buscar()"> 
-            <br>
-            <br>
-            <div id="dcha" ng-show="VerMenu === true"> 
-                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar: <input type="text" ng-model="TEXTObusqueda"> 
-                    <input type="submit" value="Buscar"/> 
-                </form> 
-            </div>           -->
-            <div id="zonalista">  
+       
+                                    <h1>Trayectos pasajero</h1>
+            <div>
+                <div id="tablaTrayectos">
 
-                <div id="listatrayectos">                    
-                    <table class="chenzira"> 
-                        <tr>
-                            <th>Origen</th>
-                            <th>Destino</th>
-                            <th>Fecha/Hora</th>
-                            <th>Plazas</th>
-                            <th>Paradas</th>    
-                            <th>Acciones</th>
-                            <th></th>
-                        </tr>
-                        <tr ng-repeat="item in lista| filter:TEXTObusqueda">
-                            <td class="peque"> {{item.origen}} </td>
-                            <td class="medio"> {{item.destino}} </td>
-                            <td class="medio"> {{item.fecha_hora}}</td>
-                            <td class="medio"> {{item.plazas}} </td>
-                            <td class="grande"> {{item.paradas}}   </td>
-                            <td class="peque"><span> <img src="../img/eliminar.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" ></td>
-                        </tr>                   
-                    </table>             
                 </div>
-
             </div>
+
         
+
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
         </footer>
