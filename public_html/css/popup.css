@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-ene-2018, 9:13:59
+    Author     : Jenn
+*/
+body{ 
+    background:url("../img/bg_cordon_negro.jpg");
+    background-size:100% 100%;
+    background-attachment: fixed; 
+    background-repeat:no-repeat;
+    color:black ;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tablita{text-align: center;background-color:grey ;border:solid black 1px;}
+th{text-align:center;border-bottom: solid black 1px;border-top: solid black 1px;}
+.perfil{border-style:none ;text-decoration:underline grey;font-size: 20px;}
+
