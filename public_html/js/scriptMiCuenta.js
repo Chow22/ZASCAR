@@ -1,32 +1,52 @@
 $(document).ready(function () {
-    //alert("entramos al js preparense");
+//alert("entramos al js preparense");
     setInterval(funcionConsultaTrayectosPasajero, 120000);
     setInterval(funcionConsultaTrayectosConductor, 120000);
     setInterval(funcionPeticiones, 120000);
-
     idtrayecto = 0;
     idsolic = 0;
     idBorrar = 0;
     funcionConsultaTrayectosConductor();
-
     funcionConsultaTrayectosPasajero();
-
     funcionPeticiones();
-
     rellenarDatos();
-
-
-
     //alert("0");
+    //////////////////eliminar Cuenta/////////////////////////////////////////
+    $('#borrarCuenta').click(function (e) {
+        var mensaje = confirm("¿Estas seguro? \n Perderas todos tus datos,trayectos incluidos");
+        if (mensaje) {
+            alert("¡Gracias por aceptar!, Satan ira en tu busqueda por borrar tu cuenta :/");
+            idusu = $('#idusuSession').text();
+        $.ajax({
+            type: 'POST',
+            data: "submit=&idusu=" + idusu,
+            dstaType: 'json',
+            url: "../controlador/controlador_borrar_cuenta.php",
+            success: function (datos) {
+                alert("Se ha eliminado con exito");
+                //alert(datos);
+                window.location.href = "../index.php";
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status +
+                        " " + xhr.statusText);
+            }
+        });
+        }
+        else {
+            alert("Gracias por volver a confiar en nosotros, te amamos mucho! ♥♥♥");
+        }
+    });
+    
+    
+    
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
     $('#tablaPasajero').on("click", "#borrar", function () {
-        // alert('borrando');
+// alert('borrando');
         idBorrar = $(this).attr("data-idBorrar");
         funcionBorrar();
         return false;
     });
-
-
     function funcionBorrar() {
         //alert("eliminandoo");
 
@@ -47,22 +67,17 @@ $(document).ready(function () {
                         " " + xhr.statusText);
             }
         });
-
     }
     ;
-
-
 //////////////////aceptar peticion/////////////////////////////////////////
     $('#tablaPeticiones').on("click", "#aceptar", function () {
-        //alert('boton aceptar ok');
+//alert('boton aceptar ok');
         idtrayecto = $(this).attr("data-idtrayecto");
         idsolic = $(this).attr("data-idsolic");
         //alert(idtrayecto);
         funcionAceptar();
         return false;
     });
-
-
     function funcionAceptar() {
 
         idusu = $('#idusuSession').text();
@@ -84,19 +99,14 @@ $(document).ready(function () {
                         " " + xhr.statusText);
             }
         });
-
     }
     ;
-
-
 //////////////////guardar datos/////////////////////////////////////////
     $('#modificar').click(function () {
-        //alert("boton modificar");
+//alert("boton modificar");
         funcionModificar();
         return false;
     });
-
-
     function funcionModificar() {
         //alert("modificandoooo");
         idusu = $('#idusuSession').text();
@@ -127,13 +137,8 @@ $(document).ready(function () {
                         " " + xhr.statusText);
             }
         });
-
     }
     ;
-
-
-
-
 //////////////////rellenar inputs de bd/////////////////////////////////////////
     function rellenarDatos() {
         // alert('rellenarDAtos')
@@ -174,15 +179,12 @@ $(document).ready(function () {
         });
     }
     ;
-
-
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
         $('#tablaPasajero').html(' ');
         $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
-
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -207,7 +209,6 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr data-aceptado='" + dato.aceptado + "' id='linea' >";
-
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -233,7 +234,6 @@ $(document).ready(function () {
 
                 $('#tablaPasajero').append(tabla).hide()
                         .fadeIn('slow');
-
                 //////////////////colorear linear tr/////////////////////////////////////////
                 $('#tablaPasajero tr').each(function () {
 
@@ -244,7 +244,6 @@ $(document).ready(function () {
                     }
 
                 });
-
                 return false;
             },
             error: function (xhr) {
@@ -260,7 +259,6 @@ $(document).ready(function () {
         idusu = $('#idusuSession').text();
         $('#tablaConductor').html(' ');
         $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
-
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -284,7 +282,6 @@ $(document).ready(function () {
                                 midato,
                                 function (i, dato) {
                                     tabla += "<tr>";
-
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
                                             "</td>";
@@ -299,7 +296,6 @@ $(document).ready(function () {
                                             "</td>";
                                     tabla += "<td class='paradas'>" + dato.paradas +
                                             "</td>";
-
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -315,14 +311,12 @@ $(document).ready(function () {
         });
     }
     ;
-
 //////////////////Mostrar trayectos conductor/////////////////////////////////////////
     function funcionPeticiones() {
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
         $('#tablaPeticiones').html(' ');
         $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
-
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -356,7 +350,6 @@ $(document).ready(function () {
                                     tabla += "<td class='fecha_hora'>" +
                                             dato.fecha_hora +
                                             "</td>";
-
                                     tabla += "<td class='opciones'>";
                                     tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "' data-idsolic='" + dato.idsolic + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
@@ -374,6 +367,5 @@ $(document).ready(function () {
         });
     }
     ;
-
 });
 

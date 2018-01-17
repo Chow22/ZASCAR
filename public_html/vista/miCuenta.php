@@ -7,7 +7,6 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo "<h1 id='idusuSession' hidden>";
                 echo  ($_SESSION['idusu']);
-
                 echo "</h1>";
 } else {
     header('Location: ../vista/nolog.php');
@@ -114,6 +113,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             </div>
 
                             <button type="button" id="modificar" name="singlebutton" class="btn btn-default">Guardar datos</button>
+                            <button type="button" id="borrarCuenta" name="singlebutton" class="btn btn-default">Borrar cuenta</button>
                         </form>
                 </div>
                 <div id="big-form" class="well auth-box">

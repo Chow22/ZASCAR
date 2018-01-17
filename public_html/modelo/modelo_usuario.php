@@ -44,8 +44,8 @@ class modelo_usuario {
         $consulta = $this->link->query("CALL modificarUsuario ('$id','$nombre','$apellido','$telefono','$email','$imagen','$user','$pass','$marca','$plazas','$combustible','$matricula')");
     }
 
-    public function borrar_usuario($idBorrar) {
-        $consulta = $this->link->query("CALL borrarUsuario('$idBorrar')");
+    public function borrarCuenta($idusu) {
+        $consulta = $this->link->query("CALL borrarCuenta('$idusu')");
     }
 
 }
