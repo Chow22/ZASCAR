@@ -17,29 +17,28 @@ $(document).ready(function () {
         if (mensaje) {
             alert("¡Gracias por aceptar!, Satan ira en tu busqueda por borrar tu cuenta :/");
             idusu = $('#idusuSession').text();
-        $.ajax({
-            type: 'POST',
-            data: "submit=&idusu=" + idusu,
-            dstaType: 'json',
-            url: "../controlador/controlador_borrar_cuenta.php",
-            success: function (datos) {
-                alert("Se ha eliminado con exito");
-                //alert(datos);
-                window.location.href = "../index.php";
-            },
-            error: function (xhr) {
-                alert("An error occured: " + xhr.status +
-                        " " + xhr.statusText);
-            }
-        });
-        }
-        else {
+            $.ajax({
+                type: 'POST',
+                data: "submit=&idusu=" + idusu,
+                dstaType: 'json',
+                url: "../controlador/controlador_borrar_cuenta.php",
+                success: function (datos) {
+                    alert("Se ha eliminado con exito");
+                    //alert(datos);
+                    window.location.href = "../index.php";
+                },
+                error: function (xhr) {
+                    alert("An error occured: " + xhr.status +
+                            " " + xhr.statusText);
+                }
+            });
+        } else {
             alert("Gracias por volver a confiar en nosotros, te amamos mucho! ♥♥♥");
         }
     });
-    
-    
-    
+
+
+
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
     $('#tablaPasajero').on("click", "#borrar", function () {
 // alert('borrando');
@@ -197,6 +196,7 @@ $(document).ready(function () {
               <table class='tabla'>";
                 tabla += " \n\
                <th class='origen'>Origen</th>\n\
+               <th class='origen'>Telefono conductor</th>\n\
                <th class='destino'>Destino</th>\n\
                <th class='fecha_hora'>Fecha-Hora</th>\n\
                <th class='plazas'>Plazas</th>\n\
@@ -211,6 +211,9 @@ $(document).ready(function () {
                                     tabla += "<tr data-aceptado='" + dato.aceptado + "' id='linea' >";
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
+                                            "</td>";
+                                    tabla += "<td class='telefono'>" +
+                                            dato.telefono +
                                             "</td>";
                                     tabla += "<td class='destino'>" +
                                             dato.destino +
@@ -328,6 +331,7 @@ $(document).ready(function () {
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += "<th class='nombre'>Solicitante</th>\n\
+               <th class='telefono'>Telefono</th>\n\
                <th class='origen'>Origen</th>\n\
                <th class='destino'>Destino</th>\n\
                <th class='fecha_hora'>Fecha-Hora</th>\n\
@@ -340,6 +344,9 @@ $(document).ready(function () {
                                     tabla += "<tr>";
                                     tabla += "<td class='nombre'>" +
                                             dato.nombre +
+                                            "</td>";
+                                    tabla += "<td class='telefono'>" +
+                                            dato.telefono +
                                             "</td>";
                                     tabla += "<td class='origen'>" +
                                             dato.origen +
