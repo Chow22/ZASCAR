@@ -29,10 +29,7 @@ session_start();
 
     </head>
     <body>
-        <header>     
-            <div ng-model="idusuario">
-                <input type="text" value="<?php echo ($_SESSION['idusu']); ?>"/>
-            </div>
+        <header>                 
             <div id="logo"><img src="../img/logo.png" alt="">ZASCAR Enterprises
                 <?php
                 $now = time();
@@ -85,15 +82,16 @@ session_start();
                 <div id="listatrayectos">                    
                     <table class="tabla-buscar"> 
                         <tr>
+                            
                             <th>Origen</th>
                             <th>Destino</th>
                             <th>Fecha/Hora</th>
                             <th>Plazas</th>
                             <th>Paradas</th>    
-                            <th>Acciones</th>
-                            <th></th>
+                            <th>Acciones</th>                            
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
+                            <td class="peque" hidden> {{item.idtrayecto}} </td>
                             <td class="peque"> {{item.origen}} </td>
                             <td class="medio"> {{item.destino}} </td>
                             <td class="medio"> {{item.fecha_hora}}</td>
