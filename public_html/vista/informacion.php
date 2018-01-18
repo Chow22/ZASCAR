@@ -8,34 +8,34 @@ session_start();
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link rel="canonical" href="http://html5-templates.com/" />
         <title>Información</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         <header>                         
-            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
 
                 <?php
                 $now = time();
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
+                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                         echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
+                        echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
                         echo ($_SESSION['username']);
                         echo"</font></a>";
                         echo "</p>";
                     } else {
                         session_destroy();
-                        echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
+                        echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
                         echo "<p>Iniciar sesión</p>";
                     }
                     ?>
@@ -44,10 +44,9 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="index.php" >Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#" class="active">Información</a></li>                                                        
-                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
-                    <li><a href="vista/valorarConductores.php">Valora a nuestros conductores</a></li>
+                    <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -68,7 +67,7 @@ session_start();
                         <p class="contenido" align="center">o</p><br>
                         <p class="contenido" align="center">Si quieres visitar el moodle del mismo haz click <a href="http://moodle.fpzornotza.com/">aquí</a>.</p><br>
                         </div>
-                        <img class="img-info" src="img/image.jpg"/>
+                        <img class="img-info" src="../img/image.jpg"/>
                     </div>
                 </section>
             </main>             

@@ -16,30 +16,30 @@ session_start();
         <title>Home</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
+        <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         <header>                         
-            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
+            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
 
                 <?php
                 $now = time();
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
+                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                         echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
+                        echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
                         echo ($_SESSION['username']);
                         echo"</font></a>";
                         echo "</p>";
                     } else {
                         session_destroy();
-                        echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
+                        echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
                         echo "<p>Iniciar sesión</p>";
                     }
                     ?>
@@ -50,7 +50,7 @@ session_start();
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
-                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
             </nav>
@@ -74,19 +74,19 @@ session_start();
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="img/carousel0.png" alt="...">
+                                    <img src="../img/carousel0.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Viaja feliz con tus compañeros de viaje</h2>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/carousel1.png" alt="...">
+                                    <img src="../img/carousel1.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Sin seguros que te aseguren</h2>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/carousel2.jpg" alt="...">
+                                    <img src="../img/carousel2.jpg" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Podrás conocer a gente muy interesante, y sin pagar ni un chavo!</h2>
                                     </div>
@@ -111,19 +111,19 @@ session_start();
                     <ul class="menu">
                         <li class="item1"><a href="#">Opciones de Cuenta</a>
                             <ul>
-                                <li class="subitem1"><a href="vista/miCuenta.php">Modificar Cuenta</a></li>
-                                <li class="subitem1"><a href="vista/miCuenta.php">Eliminar Cuenta</a></li>
+                                <li class="subitem1"><a href="miCuenta.php">Modificar Cuenta</a></li>
+                                <li class="subitem1"><a href="miCuenta.php">Eliminar Cuenta</a></li>
                             </ul>
                         </li>
                         <li class="item2"><a href="#">Zona Conductor</a>
                             <ul>
-                                <li class="subitem1"><a href="vista/insertarTrayectos.php">Publicar Trayecto</a></li>
-                                <li class="subitem2"><a href="vista/consultarTrayectos.php">Consultar Trayecto</a></li>
+                                <li class="subitem1"><a href="insertarTrayectos.php">Publicar Trayecto</a></li>
+                                <li class="subitem2"><a href="consultarTrayectos.php">Consultar Trayecto</a></li>
                             </ul>
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
                             <ul>
-                                <li class="subitem1"><a href="vista/buscarTrayectos.php">Buscar Trayecto</a></li>
+                                <li class="subitem1"><a href="buscarTrayectos.php">Buscar Trayecto</a></li>
                             </ul>
                         </li>
                     </ul>
