@@ -13,7 +13,7 @@ class modelo_usuario {
     }
 
     public function get_usuarios() {
-        $sql = "CALL mostrarUsuarios ()";
+        $sql = "CALL mostrarUsuarios()";
         $consulta = $this->link->query($sql);
         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
             $this->usuario[] = $row;
@@ -34,7 +34,16 @@ class modelo_usuario {
         return $this->usuario;
     }
 
-    
+    public function mostrar_conductores() {
+        $sql = "CALL  mostrar_usuarios_conductores()";
+        $consulta = $this->link->query($sql);
+        while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
+            $this->usuario[] = $row;
+        }
+        $consulta->free_result();
+        $this->link->close();
+        return $this->usuario;
+    }
     
     public function registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
         $this->link->query("CALL insertarUsuarios('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");

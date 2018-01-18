@@ -104,7 +104,7 @@ session_start();
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
                             <ul>
-                                <li class="subitem1"><a href="../vista/buscarTrayectos.html">Buscar Trayecto</a></li>
+                                <li class="subitem1"><a href="../vista/buscarTrayectos.php">Buscar Trayecto</a></li>
                             </ul>
                         </li>
                     </ul>

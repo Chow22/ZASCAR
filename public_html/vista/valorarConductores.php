@@ -1,14 +1,5 @@
 <?php
 session_start();
-//Se necesita estar logueado para ver esta pagina
-//echo ($_SESSION['loggedin']);
-//if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-//
-//} else {
-//    header('Location: ../vista/nolog.php');
-//
-//    exit();
-//}
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="miAplicacion">
@@ -25,14 +16,11 @@ session_start();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../css/style.css">   
         <script src="../js/angular.min.js" type="text/javascript"></script>
-        <script src="../js/cargarDatosTrayectos.js" type="text/javascript"></script>
+        <script src="../js/valoraciones.js" type="text/javascript"></script>
 
     </head>
     <body>
-        <header>     
-            <div ng-model="idusuario">
-                <input type="text" value="<?php echo ($_SESSION['idusu']); ?>"/>
-            </div>
+        <header>                         
             <div id="logo"><img src="../img/logo.png" alt="">ZASCAR Enterprises
                 <?php
                 $now = time();
@@ -54,9 +42,10 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li><a href="../informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="#" class="active">Valora a nuestros conductores</a></li>
                 </ul>
             </nav>
         </header>
@@ -64,12 +53,8 @@ session_start();
         <br>
         <div align="center" ng-controller="mainController">
             <h1>Lista de trayectos</h1>        
-            <br>             
-            <strong class="strindex">Aquí se muestra una lista de los trayectos a los que te puedes agregar o puedes mostrar la informacion del conductor.
-                El icono <img src="../img/infobutton.png" alt="" width="15px" height="15px"/> muestra la informacion del conductor que ha publicado el trayecto, el icono
-                <img src="../img/acceptbutton.png" alt="" width="15px" height="15px"/> manda la peticion al conductor que ha publicado el trayecto que te interesa. La página también dispone de un buscador en el que podras filtrar tu búsqueda según tus preferencias, ya sea por origen, destino, fecha u hora, plazas, paradas, etc....
-
-            </strong>
+            <br>
+           <strong class="strindex">Valora a nuestros conductores</strong>
             <hr>
             <br>               
             <input type="button" value="Buscador" ng-click="Buscar()"> 
@@ -81,26 +66,25 @@ session_start();
                 </form> 
             </div>           
             <div id="zonalista">  
-
                 <div id="listatrayectos">                    
                     <table class="tabla-buscar"> 
-                        <tr>
-                            <th>Origen</th>
-                            <th>Destino</th>
-                            <th>Fecha/Hora</th>
-                            <th>Plazas</th>
-                            <th>Paradas</th>    
-                            <th>Acciones</th>
-                            <th></th>
+                        <tr>      
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>                           
+                            <th>Nombre de Usuario</th>
+<!--                            <th>Votos positivos</th>    
+                            <th>Votos negativos</th>                               -->
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
-                            <td class="peque"> {{item.origen}} </td>
-                            <td class="medio"> {{item.destino}} </td>
-                            <td class="medio"> {{item.fecha_hora}}</td>
-                            <td class="medio"> {{item.plazas}} </td>
-                            <td class="grande"> {{item.paradas}}   </td>
-                            <td class="peque"><span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >&nbsp;
-                            <span class="peque"><img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span></td>
+                            <td class="peque">{{item.nombre}} </td>
+                            <td class="medio">{{item.apellidos}} </td>
+                            <td class="medio">{{item.imagen}}</td>
+                            <td class="medio">{{item.usuario}} </td>
+<!--                            <td class="grande">{{item.positivo}}</td>
+                            <td class="grande">{{item.negativo}}</td>-->
+                            <td class="peque"><span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">                                  
+                            <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span> </td>
                         </tr>                   
                     </table>                                  
                 </div>
