@@ -25,7 +25,7 @@ session_start();
                 <?php
                 $now = time();
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                         echo "<p style='color:white;'>Bienvenido, ";
                         echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
                         echo ($_SESSION['username']);
@@ -33,7 +33,7 @@ session_start();
                         echo "</p>";
                     } else {
                         session_destroy();
-                        echo"<a  href='vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                        echo"<a  href='../vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
                         echo "<p>Iniciar sesión</p>";
                     }
                     ?>
