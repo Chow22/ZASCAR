@@ -51,9 +51,10 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="../informacion.php">Información</a></li>                                                        
+                    <li><a href="index.php" class="active">Home</a></li>
+                    <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
             </nav>
         </header>
@@ -102,5 +103,8 @@ session_start();
                 </div>
             </div>
         </div>
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
+        </footer> 
     </body>
 </html>

@@ -3,13 +3,11 @@ var miAplicacion = angular.module('miAplicacion', []);
 miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, $http) {
         alert($scope);        
         $scope.lista = [];
-        $http.get('../controlador/controlador_mostrar_conductores.php').success(function (data) {
-            alert(data);       
+        $http.get('../controlador/controlador_mostrar_conductores.php').success(function (data) {      
             $scope.lista = data;
         });
 //////////////////////////////////////////////////////////////////////////////////////////////
-       $scope.misdatos = {
-                idusuario: "",
+       $scope.misdatos = {  
                 nombre: "",
                 apellidos: "",
 //                imagen: "",

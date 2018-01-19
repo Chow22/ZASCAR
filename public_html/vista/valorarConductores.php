@@ -73,11 +73,10 @@ session_start();
                             <th>Nombre</th>
                             <th>Apellidos</th>                           
                             <th>Nombre de Usuario</th>
-                            <th>Votos positivos</th>    
-                            <th>Votos negativos</th>                               
+                            <th>Positivos</th>    
+                            <th>Negativos</th>                               
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
-                            <td class="peque">{{item.idusuario}} </td>
                             <td class="peque">{{item.nombre}} </td>
                             <td class="medio">{{item.apellidos}} </td>
 <!--                            <td class="medio">{{item.imagen}}</td>-->
