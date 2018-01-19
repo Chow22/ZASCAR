@@ -1,4 +1,4 @@
-/* ----- Codigo mapa autocompletado google api -----*/
+/* ----------------- Codigo mapa autocompletado google api ----------------- */
 google.maps.event.addDomListener(window, "load", function () {
     const ubicacion = new Localizacion(() => {
         const myLatLng = {lat: ubicacion.latitude, lng: ubicacion.longitude};
@@ -7,10 +7,10 @@ google.maps.event.addDomListener(window, "load", function () {
         const options = {
             center: myLatLng,
             zoom: 14
-        }
-        var map = document.getElementById('mapa-dcha');
+        };
+        var map = document.getElementById('map');
         const mapa = new google.maps.Map(map, options);
-        const marcador = new google.maps.Market({
+        const marcador = new google.maps.Marker({
             position: myLatLng,
             map: mapa,
             title: "Mi primer marcador"
@@ -28,19 +28,3 @@ google.maps.event.addDomListener(window, "load", function () {
         search.bindTo("bounds", mapa);
     });
 });
-
-/* ----- Constructor mapa google api -----*/
-function initMap() {
-    const ubicacion = new Localizacion(() => {
-        const options = {
-            center: {
-                lat: ubicacion.latitude,
-                lng: ubicacion.longitude
-            },
-            zoom: 15
-        };
-        var map = document.getElementById('mapa-dcha');
-        const mapa = new google.maps.Map(map, options);
-    });
-}
-/*----------------------------------------------------------------------------*/

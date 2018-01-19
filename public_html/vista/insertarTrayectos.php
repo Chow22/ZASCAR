@@ -25,17 +25,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="../js/main.js" type="text/javascript"></script>
-        <script src="../js/localizacion.js" type="text/javascript"></script>
         <script src="../js/regist.js" type="text/javascript"></script>
         <script src="../js/registro.js" type="text/javascript"></script>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
-<!--        <style>
-            #map{
-                width: 500px;
-                height: 500px;
-            }
-        </style>-->
     </head>
     <body>
         <header>                         
@@ -68,39 +60,33 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </nav>
         </header>
         <br/>
-                <div id="trayecto-form">
-                    <form action="../controlador/trayectos_controlador.php" method="post" id="trayecto">
-                        <fieldset id="campoviaje">
-                            <legend>Datos del viaje</legend>
-                            <hr>
-                            <label class="trayecto-label">¿Desde donde sales?</label><br/>
-                            <input type="text" name="origen" placeholder="Inicio"/><br/>
-                            <label class="trayecto-label">¿A donde vas?</label><br/>
-                            <input type="text" name="destino" placeholder="Destino"/><br/>
-                            <label class="trayecto-label">Fecha y hora</label><br/>
-                            <input type="datetime-local" name="fechahora"/><br/>
-                            <label class="trayecto-label">Plazas</label><br/>
-                            <input type="text" name="plazas" placeholder="Plazas"/><br/>
-                            <label class="trayecto-label">Paradas</label><br/>
-                            <textarea rows="4" cols="50" name="paradas" placeholder="Introduce tus paradas..." form="trayecto"></textarea><br/>
-        <?php echo '<input type="hidden" name="id" value="' . ($_SESSION['idusu']) . '"/>' . "\n"; ?>
-                        </fieldset>
-                        <br/>
-                        <input type="submit" value="ENVIAR"/> <input type="reset" value="BORRAR"/>
-                    </form>
-                </div>
-                <input type="text" id="autocomplete"/>
-        <div id="mapa-dcha">
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9G3h2-Il9-fwshFj5RiNIFMby_jLi4_4&libraries=places&callback=initMap">
-            </script>
-
-<!--                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1716.51054597435!2d-2.726258970762636!3d43.223020180119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e369c4e0d1637%3A0x78ccbf7525105ab1!2sCIFP+ZORNOTZA+LHII!5e1!3m2!1ses!2ses!4v1513758133494" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        <div id="trayecto-form">
+            <form action="../controlador/trayectos_controlador.php" method="post" id="trayecto">
+                <fieldset id="campoviaje">
+                    <legend>Datos del viaje</legend>
+                    <hr>
+                    <label class="trayecto-label">¿Desde donde sales?</label><br/>
+                    <input type="text" id="autocomplete" name="origen" placeholder="Inicio"/><br/>
+                    <label class="trayecto-label">¿A donde vas?</label><br/>
+                    <input type="text" id="autocomplete" name="destino" placeholder="Destino"/><br/>
+                    <label class="trayecto-label">Fecha y hora</label><br/>
+                    <input type="datetime-local" name="fechahora"/><br/>
+                    <label class="trayecto-label">Plazas</label><br/>
+                    <input type="text" name="plazas" placeholder="Plazas"/><br/>
+                    <label class="trayecto-label">Paradas</label><br/>
+                    <textarea rows="4" cols="50" name="paradas" placeholder="Introduce tus paradas..." form="trayecto"></textarea><br/>
+                    <?php echo '<input type="hidden" name="id" value="' . ($_SESSION['idusu']) . '"/>' . "\n"; ?>
+                </fieldset>
+                <br/>
+                <input type="submit" value="ENVIAR"/> <input type="reset" value="BORRAR"/>
+            </form>
         </div>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9G3h2-Il9-fwshFj5RiNIFMby_jLi4_4&libraries=places">
+        </script>
+        <script src="../js/main.js?version=1.2"></script>
+        <script src="../js/localizacion.js"></script>
 
-<!--        <div id="map">
-
-        </div>-->
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
         </footer>
