@@ -78,11 +78,9 @@ session_start();
                 </form> 
             </div>           
             <div id="zonalista">  
-
                 <div id="listatrayectos">                    
                     <table class="tabla-buscar"> 
-                        <tr>
-                            
+                        <tr>                            
                             <th>Origen</th>
                             <th>Destino</th>
                             <th>Fecha/Hora</th>
@@ -90,7 +88,7 @@ session_start();
                             <th>Paradas</th>    
                             <th>Acciones</th>                            
                         </tr>
-                        <tr ng-repeat="item in lista| filter:TEXTObusqueda">
+                        <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
                             <td class="peque" hidden> {{item.idtrayecto}} </td>
                             <td class="peque"> {{item.origen}} </td>
                             <td class="medio"> {{item.destino}} </td>
