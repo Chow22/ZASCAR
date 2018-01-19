@@ -9,6 +9,8 @@ $(document).ready(function () {
     function esconder() {
         $('#zonaReg').hide();
     }
+    
+    
 });
 
 

@@ -9,6 +9,7 @@ $usuario = htmlspecialchars(trim($_POST['usuario']));
 $pass = htmlspecialchars(trim($_POST['pass']));
 $lista = new modelo_usuario();
 $lista->registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass);
-//print $nombre;
-header('Location: ../index.php'); 
+
+echo "<script type=\"text/javascript\">alert(\"Resgistro satisfactorio\");</script>";  
+header('Location: ../vista/index.php'); 
 ?>

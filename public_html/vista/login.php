@@ -14,7 +14,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/script.js"></script>
-         <script src="../js/regist.js" type="text/javascript"></script>
+        <script src="../js/regist.js" type="text/javascript"></script>
         <script src="../js/registro.js" type="text/javascript"></script>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -28,8 +28,8 @@
             <br>
             <nav>  
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="informacion.php">Información</a></li>                                                        
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                 </ul>
 
@@ -51,57 +51,101 @@
                                 <div class="form-group">                                                                      
                                     <label>Contraseña:</label><input type="password" class="form-control" name="pass">
                                 </div>
-                                <p>
-                                    <!--                                <div class="checkbox">
-                                                                        <label>
-                                                                            <input type="checkbox"> Check me out
-                                                                        </label>
-                                                                    </div>-->
+
                                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                     <div class="btn-group" role="group">
-                                        ¿No tienes cuenta? <a href="#" id="mostrarRegistro" class="btn">Regístrate aquí</a>
-                                    </div>                                    
-                                    <div class="btn-group" role="group">
-                                        <button type="submit" class="btn btn-primary">Login</button>
-                                    </div>
-                                </div>
-                        </fieldset> 
-                        </form>
 
-                            <br>
-                        <div class="popup">
-                        <div id="zonaReg">
-                            <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
-                                <fieldset id="campoviaje">
-                                    <legend>Datos Personales: </legend>
-                                    <br>
-                                    <label>Nombre</label><br/>
-                                    <input type="text" name="nombre" /><br/>
-                                    <label>Apellidos</label><br/>
-                                    <input type="text" name="apellidos"/><br/>
-                                    <label>Teléfono</label><br/>
-                                    <input type="tel" name="telefono" onkeypress="return TeclaPulsada(event)"/><br/>
-                                    <label>Email</label><br/>
-                                    <input type="text" name="email" placeholder="juangarcia@ejemplo.com" onkeypress="return comprobarArroba(event)"/><br/>
-                                    <label>Imagen</label><br/>
-                                    <input type="text" name="imagen"/><br/>
-                                    <label>Nombre de usuario</label><br/>
-                                    <input type="text" name="usuario"/><br/>
-                                    <label>Contraseña</label><br/>
-                                    <input type="password" name="pass" id="clave1"/><br/>
-                                    <label>Repite contraseña</label><br/>
-                                    <input type="password" id="clave2"/><br/>
-                                </fieldset>
-                                <br/><br/>
-                                <br/>
-                                <input type="submit" value="REGISTRARME"/> <input type="reset" value="BORRAR"/>
-                            </form>
-                        </div>
-                        </div>
-                        <hr>
+
+                                    </div>         
+
+                                    <div class="container">
+                                        <div class="unpoquitodemargen">
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
+                                        </div>
+                                    </div>
+                                    </form>
+
+                                </div>
+                                </div>
+
+                                <br>
+
+                                </div>
+                                <hr>
+                                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h4 class="modal-title" id="myModalLabel">Registro</h4>
+                                            </div>
+
+                                            <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
+                                                <div class="modal-body">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nombre</label>
+                                                            <input type="text" name="nombre" class="form-control" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Télefono:</label>
+                                                            <input type="text" name="telefono" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Apellidos</label>
+                                                            <input type="text" name="apellidos" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nombre usuario:</label>
+                                                            <input type="text" name="usuario" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Imagen:</label>
+                                                            <input type="text" name="imagen" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Contraseña:</label>
+                                                            <input type="text" id="clave1" name="pass" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>E-mail</label>
+                                                            <input type="text" name="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Repite contraseña:</label>
+                                                            <input type="text" id="clave2" name="password" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                            </fieldset> 
+
                     </div>
                 </div>
             </div>
-            </div>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
