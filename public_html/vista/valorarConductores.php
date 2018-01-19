@@ -42,8 +42,8 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../informacion.php">Información</a></li>                                                        
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                     <li><a href="#" class="active">Valora a nuestros conductores</a></li>
                 </ul>
@@ -69,20 +69,21 @@ session_start();
                 <div id="listatrayectos">                    
                     <table class="tabla-buscar"> 
                         <tr>      
-                            <th>Imagen</th>
+<!--                            <th>Imagen</th>-->
                             <th>Nombre</th>
                             <th>Apellidos</th>                           
                             <th>Nombre de Usuario</th>
-<!--                            <th>Votos positivos</th>    
-                            <th>Votos negativos</th>                               -->
+                            <th>Votos positivos</th>    
+                            <th>Votos negativos</th>                               
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
+                            <td class="peque">{{item.idusuario}} </td>
                             <td class="peque">{{item.nombre}} </td>
                             <td class="medio">{{item.apellidos}} </td>
-                            <td class="medio">{{item.imagen}}</td>
+<!--                            <td class="medio">{{item.imagen}}</td>-->
                             <td class="medio">{{item.usuario}} </td>
-<!--                            <td class="grande">{{item.positivo}}</td>
-                            <td class="grande">{{item.negativo}}</td>-->
+                            <td class="grande">{{item.positivo}}</td>
+                            <td class="grande">{{item.negativo}}</td>
                             <td class="peque"><span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">                                  
                             <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span> </td>
                         </tr>                   

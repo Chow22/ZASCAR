@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-01-2018 a las 09:54:53
+-- Tiempo de generación: 19-01-2018 a las 10:11:07
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
 
@@ -27,11 +27,33 @@ DELIMITER $$
 -- Procedimientos
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `aceptarPeticion` (IN `p_id` INT, IN `p_idusu` INT)  NO SQL
-UPDATE viajes SET aceptado=1 WHERE idtrayecto=p_id AND idusuario=p_idusu$$
+BEGIN
+UPDATE viajes SET aceptado=1  
+WHERE idtrayecto=p_id AND idusuario=p_idusu;
+
+UPDATE trayecto SET plazas=(plazas-1) 
+WHERE idtrayecto=p_id;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `borrarCuenta` (IN `p_idusu` INT)  NO SQL
+BEGIN
+SET FOREIGN_KEY_CHECKS=0;
+DELETE FROM viajes WHERE idusuario=p_idusu;
+
+DELETE FROM trayecto WHERE idusuario=p_idusu;
+
+DELETE FROM usuarios WHERE idusuario=p_idusu;
+
+DELETE FROM vehiculos WHERE idusuario=p_idusu;
+
+DELETE FROM valoraciones WHERE idusuario=p_idusu;
+
+END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `borrarTrayectoPasajero` (IN `p_id` INT, IN `p_idusu` INT)  NO SQL
 BEGIN
-DELETE FROM viajes WHERE idusuario=p_idusu AND clase='pasajero';
+DELETE FROM viajes WHERE idusuario=p_idusu AND clase='pasajero' AND idtrayecto=p_id;
 
 DELETE FROM trayecto WHERE idtrayecto=p_id AND idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_idusu);
 END$$
@@ -43,7 +65,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listarTrayecto` ()  NO SQL
 BEGIN
-SELECT origen Origen, destino Destino, fecha_hora Fecha_Hora, plazas Plazas, paradas Paradas FROM trayecto;
+SELECT origen , destino , fecha_hora , plazas , paradas  FROM trayecto;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `modificarUsuario` (IN `p_idusuario` INT(11), IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40), IN `p_marca` VARCHAR(40), IN `p_plazas` VARCHAR(40), IN `p_combustible` VARCHAR(40), IN `p_matricula` VARCHAR(40))  NO SQL
@@ -62,20 +84,46 @@ BEGIN
 SELECT * FROM usuarios;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_conductores_trayectos` (IN `p_id` INT)  NO SQL
+BEGIN
+SELECT usuarios.nombre, usuarios.apellidos, usuarios.imagen, usuarios.usuario, valoraciones.positivo, valoraciones.negativo from usuarios join valoraciones on usuarios.idusuario=valoraciones.idusuario 
+where usuarios.idusuario=p_id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_usuarios_conductores` ()  NO SQL
+BEGIN
+SELECT usuarios.idusuario, usuarios.nombre, usuarios.apellidos, usuarios.imagen, usuarios.usuario, valoraciones.positivo, valoraciones.negativo from usuarios join valoraciones on usuarios.idusuario=valoraciones.idusuario 
+where usuarios.idusuario in(SELECT idusuario from viajes where clase='conductor');
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarUsuario` (IN `pnombre` VARCHAR(40), IN `papellidos` VARCHAR(80), IN `ptelefono` VARCHAR(40), IN `pemail` VARCHAR(40), IN `pimagen` VARCHAR(200), IN `pusuario` VARCHAR(40), IN `ppass` VARCHAR(40))  NO SQL
 INSERT INTO usuarios(nombre, apellidos, telefono, email, imagen, usuario, pass) VALUES (pnombre,papellidos,ptelefono,pemail,pimagen,pusuario,ppass)$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_trayecto` (IN `porigen` VARCHAR(40), IN `pdestino` VARCHAR(40), IN `pfechahora` DATETIME, IN `pplazas` INT(2), IN `pparadas` VARCHAR(200), IN `pidusuario` INT(11))  NO SQL
+BEGIN
+
+INSERT INTO trayecto (origen, destino, fecha_hora, plazas, paradas, idusuario) VALUES (porigen, pdestino, pfechahora, pplazas, pparadas, pidusuario);
+
+INSERT INTO viajes (idusuario, idtrayecto, clase, aceptado) VALUES (pidusuario, LAST_INSERT_ID(), 'conductor', 1);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_vehiculo` (IN `pidusuario` INT, IN `pmarca` VARCHAR(40), IN `pplaza` INT(2), IN `pcombustible` VARCHAR(40), IN `pmatricula` VARCHAR(8))  NO SQL
+INSERT INTO vehiculos(idusuario,marca, plazas, combustible, matricula) VALUES (pidusuario,pmarca,pplaza,pcombustible,pmatricula)$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `usuarioPorId` (IN `p_id` INT)  NO SQL
-select usuarios, vehiculos FROM usuarios LEFT JOIN vehiculos ON usuarios.idusuario=vehiculos.idusuario WHERE usuarios.idusuario=p_id$$
+select usuarios.*, vehiculos.* FROM usuarios LEFT JOIN vehiculos ON usuarios.idusuario=vehiculos.idusuario WHERE usuarios.idusuario=p_id$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verPeticiones` (IN `p_id` INT)  NO SQL
-select usuarios.nombre, trayecto.* from trayecto LEFT JOIN usuarios ON usuarios.idusuario=trayecto.idusuario where idtrayecto IN(select idtrayecto from viajes where aceptado=0 and idusuario=p_id and clase="pasajero")$$
+SELECT usuarios.nombre,usuarios.idusuario as idsolic, viajes.*,trayecto.* 
+FROM viajes LEFT JOIN usuarios on usuarios.idusuario=viajes.idusuario LEFT JOIN trayecto on viajes.idtrayecto=trayecto.idtrayecto 
+WHERE viajes.clase="pasajero" and viajes.aceptado=0 and viajes.idtrayecto IN(SELECT idtrayecto 
+FROM trayecto WHERE idusuario=p_id)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosConductor` (IN `p_id` INT)  NO SQL
 select * from trayecto where idtrayecto IN(select idtrayecto from viajes where clase='conductor' and idusuario=p_id)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verTrayectosPasajero` (IN `p_id` INT)  NO SQL
-select * from trayecto where idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_id)$$
+select trayecto.*, usuarios.telefono, viajes.aceptado,viajes.clase from  trayecto  JOIN viajes ON trayecto.idtrayecto=viajes.idtrayecto JOIN usuarios ON viajes.idusuario=usuarios.idusuario WHERE viajes.idtrayecto in (SELECT idtrayecto FROM viajes WHERE idusuario=p_id AND clase='pasajero') AND clase='pasajero' and viajes.idusuario=p_id$$
 
 DELIMITER ;
 
@@ -277,6 +325,41 @@ ALTER TABLE `vehiculos`
 ALTER TABLE `viajes`
   ADD CONSTRAINT `viajes_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON UPDATE CASCADE,
   ADD CONSTRAINT `viajes_ibfk_2` FOREIGN KEY (`idtrayecto`) REFERENCES `trayecto` (`idtrayecto`) ON UPDATE CASCADE;
+
+DELIMITER $$
+--
+-- Eventos
+--
+CREATE DEFINER=`root`@`localhost` EVENT `delete_old` ON SCHEDULE EVERY 1 DAY STARTS '2018-01-17 23:00:42' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'Clears old cache data from the DB' DO BEGIN
+
+-- Variables donde almacenar lo que nos traemos desde el SELECT
+  DECLARE vidtrayecto INT(10);
+
+-- Variable para controlar el fin del bucle
+  DECLARE fin INTEGER DEFAULT 0;
+
+-- El SELECT que vamos a ejecutar
+  DECLARE trayectos_cursor CURSOR FOR 
+    SELECT idtrayecto FROM trayecto WHERE fecha_hora < CURRENT_TIMESTAMP;
+
+-- Condición de salida
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin=1;
+
+  OPEN trayectos_cursor;
+  get_trayectos: LOOP
+    FETCH trayectos_cursor INTO vidtrayecto;
+    IF fin = 1 THEN
+        LEAVE get_trayectos;
+    END IF;
+    SET FOREIGN_KEY_CHECKS=0;
+         DELETE FROM trayecto WHERE idtrayecto=vidtrayecto;
+        DELETE FROM viajes WHERE idtrayecto=vidtrayecto;
+  END LOOP get_trayectos;
+
+  CLOSE trayectos_cursor;
+END$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

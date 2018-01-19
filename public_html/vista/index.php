@@ -30,19 +30,19 @@ session_start();
 
                 <?php
                 $now = time();
-                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
-                        echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
-                        echo ($_SESSION['username']);
-                        echo"</font></a>";
-                        echo "</p>";
-                    } else {
-                        session_destroy();
-                        echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
-                        echo "<p>Iniciar sesión</p>";
-                    }
-                    ?>
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<p style='color:white;'>Bienvenido, ";
+                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
+                    echo ($_SESSION['username']);
+                    echo"</font></a>";
+                    echo "</p>";
+                } else {
+                    session_destroy();
+                    echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
@@ -51,6 +51,7 @@ session_start();
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
 
             </nav>
@@ -107,7 +108,6 @@ session_start();
             </main>
             <aside>
                 <div id="wrapper">
-
                     <ul class="menu">
                         <li class="item1"><a href="#">Opciones de Cuenta</a>
                             <ul>
