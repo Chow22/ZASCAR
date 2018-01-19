@@ -93,25 +93,24 @@ session_start();
                     <ul class="menu">
                         <li class="item1"><a href="#">Opciones de Cuenta</a>
                             <ul>
-                                <li class="subitem1"><a href="../vista/miCuenta.php">Modificar Cuenta</a></li>
-                                <li class="subitem1"><a href="../vista/miCuenta.php">Eliminar Cuenta</a></li>
+                                <li class="subitem1"><a href="miCuenta.php">Modificar Cuenta</a></li>
+                                <li class="subitem1"><a href="miCuenta.php">Eliminar Cuenta</a></li>
                             </ul>
                         </li>
                         <li class="item2"><a href="#">Zona Conductor</a>
                             <ul>
-                                <li class="subitem1"><a href="#">Publicar Trayecto</a></li>
-                                <li class="subitem2"><a href="#">Eliminar Trayecto</a></li>
+                                <li class="subitem1"><a href="insertarTrayectos.php">Publicar Trayecto</a></li>
+                                <li class="subitem2"><a href="consultarTrayectos.php">Consultar Trayecto</a></li>
                             </ul>
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
                             <ul>
-                                <li class="subitem1"><a href="../vista/buscarTrayectos.php">Buscar Trayecto</a></li>
+                                <li class="subitem1"><a href="buscarTrayectos.php">Buscar Trayecto</a></li>
                             </ul>
                         </li>
                     </ul>
 
                 </div>
-
                 <!--initiate accordion-->
                 <script type="text/javascript">
                     $(function () {
