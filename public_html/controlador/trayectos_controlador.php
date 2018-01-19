@@ -9,4 +9,6 @@ $paradas = filter_input(INPUT_POST, 'paradas');
 $id = filter_input(INPUT_POST, 'id');
 $cont = new trayectos();
 $cont->insertar_trayecto($origen, $destino, $fechahora, $plazas, $paradas, $id);
-print $fechahora;
+//print $fechahora;
+header('Location: ../vista/listarTrayectos.php'); 
+?>

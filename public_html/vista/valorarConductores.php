@@ -52,9 +52,9 @@ session_start();
         <br>
         <br>
         <div align="center" ng-controller="mainController">
-            <h1>Lista de trayectos</h1>        
+            <h1>Lista de Usuarios</h1>        
             <br>
-           <strong class="strindex">Valora a nuestros conductores</strong>
+           <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
             <hr>
             <br>               
             <input type="button" value="Buscador" ng-click="Buscar()"> 
@@ -67,22 +67,25 @@ session_start();
             </div>           
             <div id="zonalista">  
                 <div id="listatrayectos">                    
-                    <table class="tabla-buscar"> 
-                        <tr>      
-<!--                            <th>Imagen</th>-->
+                    <table class="tabla-votar"> 
+                        <tr>
+                            <th hidden>IdUSuario</th>
+                            <th>Perfil</th>
                             <th>Nombre</th>
                             <th>Apellidos</th>                           
-                            <th>Nombre de Usuario</th>
+                            <th>Usuario</th>
                             <th>Positivos</th>    
-                            <th>Negativos</th>                               
+                            <th>Negativos</th>
+                            <th>Tu Voto</th>
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
+                            <td class="medio" hidden>{{item.idusuario}}</td>
+                            <td class="grande">{{item.imagen}}</td>                            
                             <td class="peque">{{item.nombre}} </td>
-                            <td class="medio">{{item.apellidos}} </td>
-<!--                            <td class="medio">{{item.imagen}}</td>-->
+                            <td class="medio">{{item.apellidos}} </td>                            
                             <td class="medio">{{item.usuario}} </td>
-                            <td class="grande">{{item.positivo}}</td>
-                            <td class="grande">{{item.negativo}}</td>
+                            <td class="medio">{{item.positivo}}</td>
+                            <td class="medio">{{item.negativo}}</td>
                             <td class="peque"><span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">                                  
                             <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span> </td>
                         </tr>                   
