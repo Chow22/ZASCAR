@@ -25,7 +25,7 @@ session_start();
                 <?php
                 $now = time();
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                         echo "<p style='color:white;'>Bienvenido, ";
                         echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
                         echo ($_SESSION['username']);
@@ -33,7 +33,7 @@ session_start();
                         echo "</p>";
                     } else {
                         session_destroy();
-                        echo"<a  href='vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                        echo"<a  href='../vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
                         echo "<p>Iniciar sesión</p>";
                     }
                     ?>
@@ -42,9 +42,10 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../informacion.php">Información</a></li>                                                        
+                    <li><a href="../vista/index.php">Home</a></li>
+                    <li><a href="../vista/informacion.php">Información</a></li>                                                        
                     <li><a href="#" class="active">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="../vista/valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
             </nav>
         </header>
@@ -137,7 +138,7 @@ session_start();
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
         </footer>   
     </body>
 </html>
