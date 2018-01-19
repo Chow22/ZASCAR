@@ -1,14 +1,14 @@
 <?php
 session_start();
 //Se necesita estar logueado para ver esta pagina
-//echo ($_SESSION['loggedin']);
-//if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-//
-//} else {
-//    header('Location: ../vista/nolog.php');
-//
-//    exit();
-//}
+echo ($_SESSION['loggedin']);
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+} else {
+    header('Location: ../vista/nolog.php');
+
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="miAplicacion">
