@@ -6,7 +6,7 @@ class Conectar {
         $localhost = 'localhost';
         $usuario = 'root';
         $contrasena = '';
-        $bbdd = 'zascar_jenny';
+        $bbdd = 'zascar';
 
         $link = mysqli_connect($localhost, $usuario, $contrasena, $bbdd);
         $link->query("SET NAMES 'utf8'");
