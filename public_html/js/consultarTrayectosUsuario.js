@@ -19,6 +19,7 @@ $(document).ready(function () {
                <th class='fecha_hora'>Fecha-Hora</th>\n\
                <th class='plazas'>Plazas</th>\n\
                <th class='paradas'>Paradas</th>\n\
+               <th class='acciones'>Acciones</th>\n\
                 ";
             midato = JSON.parse(datos);
             $
@@ -40,6 +41,7 @@ $(document).ready(function () {
                                         "</td>";
                                 tabla += "<td class='paradas'>" + dato.paradas +
                                         "</td>";
+                                tabla += "<td class='acciones'><img src='../img/eliminar.png' width='15px' height='15px' alt=''/></td>";
                                 tabla += "</tr>";
                             });
             tabla += "</table>";

@@ -18,7 +18,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Nuevo trayecto</title>
+        <title>Mi lista de trayectos</title>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     </head>
     <body>
         <header>                         
-            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises 
+            <div id="logo"><img src="../img/logo.png" alt=""/>ZASCAR Enterprises 
                 <?php
                 $now = time();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
@@ -65,16 +65,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         </header>
         <br/>
         <br/>
-       
-                                    <h1>Trayectos pasajero</h1>
-            <div>
-                <div id="tablaTrayectos">
 
-                </div>
+
+        <div align="center">
+            <h1>Trayectos de <?php echo ($_SESSION['username']) ?></h1>        
+            <br>
+            <strong class="strindex">Aquí se muestra tu lista de trayectos que 
+                has añadido. Podrás modificar o borrar haciendo click en el boton 
+                <img src="../img/eliminar.png" width="15px" height="15px" alt=""/> en cada una de las filas de la tabla.</strong>
+            
+            <div id="tablaTrayectos">
             </div>
-
-        
-
+        </div>
+        <br/>
+        <br/>
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../contacto.php">Contacto</a></p>
         </footer>
