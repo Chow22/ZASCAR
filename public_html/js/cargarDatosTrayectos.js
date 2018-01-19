@@ -1,7 +1,7 @@
 //alert('hola');
 var miAplicacion = angular.module('miAplicacion', []);
 miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, $http) {
-        //te jakié la computadora      
+        //te jakié la computa     
         $scope.lista = [];
         $http.get('../controlador/controlador_buscarTrayectos.php').success(function (data) {
             //alert(data);       
