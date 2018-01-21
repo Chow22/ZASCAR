@@ -135,7 +135,7 @@ $(document).ready(function () {
     ;
 //////////////////guardar datos/////////////////////////////////////////
     $('#modificar').click(function () {
-//alert("boton modificar");
+alert("boton modificar");
         funcionModificar();
         return false;
     });
@@ -153,10 +153,10 @@ $(document).ready(function () {
         plazas = $('#plazas').val();
         combustible = $('#combustible').val();
         matricula = $('#matricula').val();
-        // alert(nombre);
+      alert(combustible);
         $.ajax({
             type: 'POST',
-            data: "submit=&id=" + id + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&email=" + email + "&imagen=" + imagen + "&user=" + user + "&pass=" + pass + "&marca=" + marca + "&plazas=" + plazas + "&combustible=" + combustible + "&matricula=" + matricula,
+            data: "submit=&id=" + idusu + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&email=" + email + "&imagen=" + imagen + "&user=" + user + "&pass=" + pass + "&marca=" + marca + "&plazas=" + plazas + "&combustible=" + combustible + "&matricula=" + matricula,
             dstaType: 'json',
             url: "../controlador/controlador_modificar_usuario.php",
             success: function (datos) {
