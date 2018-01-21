@@ -5,30 +5,38 @@ $(document).ready(function () {
     idBorrar = 0;
     funcionConsultaTrayectosPasajero();
     rellenarDatos();
+    $('#pasa').addClass('active');
+    
     //alert("0");
     //
-   //////////////////Botones pestañas tablas /////////////////////////////////////////
+    //////////////////Botones pestañas tablas /////////////////////////////////////////
     $('#Pasajero').click(function () {
         //alert("boton Pasajero");
         funcionConsultaTrayectosPasajero();
         setInterval(funcionConsultaTrayectosPasajero, 120000);
-        $('#selected').removeClass();
+        $('#pasa').addClass('active');
+        $('#conduc').removeClass();
+        $('#petic').removeClass();
         return false;
     });
-    
+
     $('#Conductor').click(function () {
         //alert("boton Conductor");
         funcionConsultaTrayectosConductor();
         setInterval(funcionConsultaTrayectosConductor, 120000);
-        $('#selected').removeClass();
+        $('#pasa').removeClass();
+        $('#conduc').addClass('active');
+        $('#petic').removeClass();
         return false;
     });
-    
+
     $('#Peticiones').click(function () {
         //alert("boton Peticiones");
         funcionPeticiones();
         setInterval(funcionPeticiones, 120000);
-        $('#selected').removeClass();
+         $('#pasa').removeClass();
+        $('#conduc').removeClass();
+        $('#petic').addClass('active');
         return false;
     });
 

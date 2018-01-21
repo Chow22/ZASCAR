@@ -124,9 +124,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs pestanas" role="tablist">
-                                    <li role="presentation" id="selected" class="active"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>
-                                    <li role="presentation"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Conductor">Conductor</a></li>
-                                    <li role="presentation"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
+                                    <li role="presentation" id="pasa" ><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>
+                                    <li role="presentation" id="conduc"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Conductor">Conductor</a></li>
+                                    <li role="presentation" id="petic"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
                                 </ul>
 
                             </div>
