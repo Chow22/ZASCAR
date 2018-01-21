@@ -129,12 +129,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                     <li role="presentation"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
                                 </ul>
 
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="pasajero">...</div>
-                                    <div role="tabpanel" class="tab-pane" id="conductor">...</div>
-                                    <div role="tabpanel" class="tab-pane" id="peticiones">...</div>
-                                </div>
                             </div>
                         </div>
                     
