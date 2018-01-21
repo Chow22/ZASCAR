@@ -5,9 +5,9 @@ session_start();
 //echo ($_SESSION['loggedin']);
 //echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                echo "<h1 id='idusuSession' hidden>";
-                echo  ($_SESSION['idusu']);
-                echo "</h1>";
+    echo "<h1 id='idusuSession' hidden>";
+    echo ($_SESSION['idusu']);
+    echo "</h1>";
 } else {
     header('Location: ../vista/nolog.php');
     exit();
@@ -37,8 +37,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <div>
             <div class="container auth">
                 <br><br>
-                
-                <h1 class="text-center">Mi cuenta </h1>
+
+                <h1 class="naranja text-center">Mi cuenta </h1>
                 <div id="big-form" class="well auth-box">
                     <a target="_blank" >
                         <img id="imagen" class="imagenPerfil" src="../img/imagenpredet.png"  alt="imagen"  align="right">
@@ -91,12 +91,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                     <input id="imagenlink" name="textinput"  class="form-control input-md" type="text" required>
                                 </div>
                             </div>
+                            
                             <!-- Login-->
                             <div class="form-group login">
                                 <label class=" control-label" for="textinput">Login</label> <br><br>
                                 <div class="">
                                     <input id="user" name="textinput" placeholder="Usuario.." class="form-control input-md" type="text" required disabled="" >
                                     <input id="pass" name="textinput" placeholder="Contraseña.." class="form-control input-md" type="password" required >
+                                </div>
                                 </div>
                                 <br>
                                 <!-- Coche-->
@@ -110,42 +112,37 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                     </div>
                                     <br>
                                 </div>
-                            </div>
+                            
 
                             <button type="button" id="modificar" name="singlebutton" class="btn btn-default">Guardar datos</button>
                             <button type="button" id="borrarCuenta" name="singlebutton" class="btn btn-default">Borrar cuenta</button>
                         </form>
                 </div>
                 <div id="big-form" class="well auth-box">
-                    <!-- Trayectos pasajero -->
-                    <div class="form-group">
-                        <h2 class=" " for="selectmultiple">Trayectos pasajero</h2>
-                        <div class="scroll">
-                            <div id="tablaPasajero">
+                        <div class="row">
+                            <div class="pestanas">
 
-                            </div>
-                        </div>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs pestanas" role="tablist">
+                                    <li role="presentation" id="selected" class="active"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>
+                                    <li role="presentation"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Conductor">Conductor</a></li>
+                                    <li role="presentation"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
+                                </ul>
 
-                    </div>
-                    <!-- Trayectos conductor -->
-                    <div class="form-group">
-                        <h2 class="" for="selectmultiple">Trayectos conductor</h2>
-                        <div class="scroll">
-                            <div id="tablaConductor"> 
-                            </div>
-                        </div>
-                        <!-- Trayectos peticiones -->
-                        <div class="form-group">
-                            <h2 class="" for="selectmultiple">Peticiones</h2>
-                            <div class="scroll">
-                                <div id="tablaPeticiones">
-
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="pasajero">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="conductor">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="peticiones">...</div>
                                 </div>
-
                             </div>
-
-                            </fieldset>
-
+                        </div>
+                    
+                    <!-- Tablas dinamicas -->
+                    <div class="form-group">
+                        <div class="scroll">
+                            <div id="tablaDinamica"> 
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>

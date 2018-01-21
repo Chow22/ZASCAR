@@ -193,7 +193,12 @@ body{
 
     height: 150px;
     overflow: scroll;
+    overflow-y:auto;
+    overflow-x:auto;
 }
+
+
+
 /*imagen*/
 img {
     border: 1px solid #ddd;
@@ -258,4 +263,9 @@ a.button {
 
     text-decoration: none;
     color: initial;
+}
+
+.naranja{
+    color: orange;
+    
 }

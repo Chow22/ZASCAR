@@ -1,16 +1,41 @@
 $(document).ready(function () {
 //alert("entramos al js preparense");
-    setInterval(funcionConsultaTrayectosPasajero, 120000);
-    setInterval(funcionConsultaTrayectosConductor, 120000);
-    setInterval(funcionPeticiones, 120000);
     idtrayecto = 0;
     idsolic = 0;
     idBorrar = 0;
-    funcionConsultaTrayectosConductor();
     funcionConsultaTrayectosPasajero();
-    funcionPeticiones();
     rellenarDatos();
     //alert("0");
+    //
+   //////////////////Botones pestañas tablas /////////////////////////////////////////
+    $('#Pasajero').click(function () {
+        //alert("boton Pasajero");
+        funcionConsultaTrayectosPasajero();
+        setInterval(funcionConsultaTrayectosPasajero, 120000);
+        $('#selected').removeClass();
+        return false;
+    });
+    
+    $('#Conductor').click(function () {
+        //alert("boton Conductor");
+        funcionConsultaTrayectosConductor();
+        setInterval(funcionConsultaTrayectosConductor, 120000);
+        $('#selected').removeClass();
+        return false;
+    });
+    
+    $('#Peticiones').click(function () {
+        //alert("boton Peticiones");
+        funcionPeticiones();
+        setInterval(funcionPeticiones, 120000);
+        $('#selected').removeClass();
+        return false;
+    });
+
+
+
+
+
     //////////////////eliminar Cuenta/////////////////////////////////////////
     $('#borrarCuenta').click(function (e) {
         var mensaje = confirm("¿Estas seguro? \n Perderas todos tus datos,trayectos incluidos");
@@ -69,7 +94,7 @@ $(document).ready(function () {
     }
     ;
 //////////////////aceptar peticion/////////////////////////////////////////
-    $('#tablaPeticiones').on("click", "#aceptar", function () {
+    $('#tablaDinamica').on("click", "#aceptar", function () {
 //alert('boton aceptar ok');
         idtrayecto = $(this).attr("data-idtrayecto");
         idsolic = $(this).attr("data-idsolic");
@@ -182,8 +207,8 @@ $(document).ready(function () {
     function funcionConsultaTrayectosPasajero() {
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
-        $('#tablaPasajero').html(' ');
-        $('#tablaPasajero').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
+        $('#tablaDinamica').html(' ');
+        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -191,7 +216,7 @@ $(document).ready(function () {
             url: "../controlador/controlador_consulta_trayectos_pasajero.php",
             success: function (datos) {
                 //  alert(datos)
-                $('#tablaPasajero').fadeIn(1000).html("");
+                $('#tablaDinamica').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += " \n\
@@ -235,10 +260,10 @@ $(document).ready(function () {
                 tabla += "</table>";
                 //  alert(tabla)
 
-                $('#tablaPasajero').append(tabla).hide()
+                $('#tablaDinamica').append(tabla).hide()
                         .fadeIn('slow');
                 //////////////////colorear linear tr/////////////////////////////////////////
-                $('#tablaPasajero tr').each(function () {
+                $('#tablaDinamica tr').each(function () {
 
                     if ($(this).attr('data-aceptado') === '0') {
                         $(this).css('background-color', 'rgba(243, 31, 31, 0.4)');
@@ -260,8 +285,8 @@ $(document).ready(function () {
     function funcionConsultaTrayectosConductor() {
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
-        $('#tablaConductor').html(' ');
-        $('#tablaConductor').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
+        $('#tablaDinamica').html(' ');
+        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -269,7 +294,7 @@ $(document).ready(function () {
             url: "../controlador/controlador_consulta_trayectos_conductor.php",
             success: function (datos) {
                 //  alert(datos)
-                $('#tablaConductor').fadeIn(1000).html("");
+                $('#tablaDinamica').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += "\n\
@@ -303,7 +328,7 @@ $(document).ready(function () {
                                 });
                 tabla += "</table>";
                 //  alert(tabla)
-                $('#tablaConductor').append(tabla).hide()
+                $('#tablaDinamica').append(tabla).hide()
                         .fadeIn('slow');
                 return false;
             },
@@ -318,8 +343,8 @@ $(document).ready(function () {
     function funcionPeticiones() {
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
-        $('#tablaPeticiones').html(' ');
-        $('#tablaPeticiones').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
+        $('#tablaDinamica').html(' ');
+        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -327,7 +352,7 @@ $(document).ready(function () {
             url: "../controlador/controlador_consulta_trayectos_peticiones.php",
             success: function (datos) {
                 //  alert(datos)
-                $('#tablaPeticiones').fadeIn(1000).html("");
+                $('#tablaDinamica').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
                 tabla += "<th class='nombre'>Solicitante</th>\n\
@@ -363,7 +388,7 @@ $(document).ready(function () {
                                 });
                 tabla += "</table>";
                 //  alert(tabla)
-                $('#tablaPeticiones').append(tabla).hide()
+                $('#tablaDinamica').append(tabla).hide()
                         .fadeIn('slow');
                 return false;
             },
@@ -375,4 +400,6 @@ $(document).ready(function () {
     }
     ;
 });
+
+
 
