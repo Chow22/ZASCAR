@@ -117,7 +117,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Contraseña:</label>
-                                                            <input type="text" id="clave1" name="pass" class="form-control">
+                                                            <input type="password" id="clave1" name="pass" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -129,7 +129,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Repite contraseña:</label>
-                                                            <input type="text" id="clave2" name="password" class="form-control">
+                                                            <input type="password" id="clave2" name="password" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
