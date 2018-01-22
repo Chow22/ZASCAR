@@ -194,7 +194,7 @@ body > section {
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-    border-radius: 15px;
+    border-radius: 4px;
 }
 
 .carousel-caption {
