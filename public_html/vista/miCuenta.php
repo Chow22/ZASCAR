@@ -121,7 +121,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <div id="big-form" class="well auth-box">
                         <div class="row">
                             <div class="pestanas">
-
+                                <h3 style="color:white;">Trayectos</h3>
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs pestanas" role="tablist">
                                     <li role="presentation" id="pasa" ><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>

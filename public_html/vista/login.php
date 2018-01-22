@@ -40,7 +40,7 @@
             <div class="container">
                 <div class="row">                                           
                     <div class="col-md-4 col-md-offset-4 login">                              
-                        <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Login</h1>    
+                        <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Iniciar Sesion</h1>    
                         <br>
                         <form method="POST" action="../controlador/login_controlador.php">
                             <fieldset>
@@ -60,7 +60,7 @@
 
                                     <div class="container">
                                         <div class="unpoquitodemargen">
-                                            <button type="submit" class="btn btn-primary">Login</button>
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
                                         </div>
                                     </div>
