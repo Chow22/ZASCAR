@@ -24,19 +24,19 @@ session_start();
 
                 <?php
                 $now = time();
-                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
-                        echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='../vista/miCuenta.php' style='color:orange;'>";
-                        echo ($_SESSION['username']);
-                        echo"</font></a>";
-                        echo "</p>";
-                    } else {
-                        session_destroy();
-                        echo"<a  href='../vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
-                        echo "<p>Iniciar sesión</p>";
-                    }
-                    ?>
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<p style='color:white;'>Bienvenido, ";
+                    echo "<font color = 'orange'><a  href='../vista/miCuenta.php' style='color:orange;'>";
+                    echo ($_SESSION['username']);
+                    echo"</font></a>";
+                    echo "</p>";
+                } else {
+                    session_destroy();
+                    echo"<a  href='../vista/login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
@@ -60,29 +60,38 @@ session_start();
         <section id="pageContent">
             <main role="main">
                 <section class="section-white">
+                   
                     <div class="container-main">
-                        <table align="center" border="6">
-                            <tr>                
-                                <td><strong>Origen</strong></td>
-                                <td ><strong>Destino</strong></td>
-                                <td><strong>Fecha/Hora</strong></td>
-                                <td><strong>Plazas</strong></td>                                   
-                                <td><strong>Paradas</strong></td>   
-                            </tr>
+                    <div class="listWrap">
+                         <div class="margenes">
+                        <ul class="list" >
+
+                            <li>
+                                <span>Origen</span>
+                                <span>Destino</span>
+                                <span>Fecha/Hora</span>
+                                <span>Plazas</span>
+                                <span>Paradas</span>
+
+                            </li>
                             <?php
                             foreach ($pd as $trayecto) {
                                 ?>
-                                <tr>                   
-                                    <td><?php echo $trayecto["origen"]; ?></td>
-                                    <td><?php echo $trayecto["destino"]; ?></td>
-                                    <td><?php echo $trayecto["fecha_hora"]; ?></td> 
-                                    <td><?php echo $trayecto["plazas"]; ?></td>
-                                    <td><?php echo $trayecto["paradas"]; ?></td>                   
-                                </tr>
+                                <li>
+
+                                    <span><?php echo $trayecto["origen"]; ?></span>
+                                    <span><?php echo $trayecto["destino"]; ?></span>
+                                    <span><?php echo $trayecto["fecha_hora"]; ?></span>
+                                    <span><?php echo $trayecto["plazas"]; ?></span>
+                                    <span><?php echo $trayecto["paradas"]; ?></span>
+                                </li>
                                 <?php
                             }
                             ?>
-                        </table>
+                        </ul>
+
+                    </div>
+                    </div>
                     </div>
                 </section>
             </main>
