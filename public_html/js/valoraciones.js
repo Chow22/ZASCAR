@@ -8,7 +8,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
         });
 //////////////////////////////////////////////////////////////////////////////////////////////
         $scope.misdatos = {
-            idusuario:"",
+            idusuario: "",
             imagen: "",
             nombre: "",
             apellidos: "",
@@ -21,17 +21,39 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
 //    $scope.verAgregaralumno=false;
         $scope.VerMenu = true;
 /////////////////////////////////////////////////////////////////////////////////////////////
-    $scope.positivo = function (index,item) {
-        $idUsu = item.idusuario;
-        alert($idUsu);
-    };
-         
+        $scope.positivo = function (index, item) {
+            $idUsu = item.idusuario;
+            //alert($idUsu);        
+            //mandar el id del conductor al controlador
+            
+            $http({url: '../controlador/controlador_enviar_valoraciones_positivas.php',
+                method: "GET", //recoger el idusuario
+
+                params: {value: $idUsu}
+            }).success(function (response) {
+                $scope.misdatos.idusuario = response[0].idusuario;
+            });
+            alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
+
+        };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
-    $scope.negativo = function (index,item) {
-         $idUsu = item.idusuario;
-        alert($idUsu);
-    };
-        
+        $scope.negativo = function (index, item) {
+            $idUsu = item.idusuario;
+            //alert($idUsu);
+            //
+            //mandar el id del conductor al controlador
+            $http({url: '../controlador/controlador_enviar_valoraciones_negativas.php',
+                method: "GET", //recoger el idtrayecto
+
+                params: {value: $idUsu}
+            }).success(function (response) {
+                $scope.misdatos.idusuario = response[0].idusuario;
+            });
+            alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
+
+        };
+
 /////////////////////////////////////////////////////////////////////////////////////////////     
 //  //Se busca por cualquiera de los caract.Proemro (anti-emro) se da al boton 
 //  //iniciar busqueda para ver los campos de busqueda y luego se filtra//

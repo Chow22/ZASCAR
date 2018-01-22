@@ -44,7 +44,12 @@ class modelo_usuario {
         $this->link->close();
         return $this->usuario;
     }
-    
+     public function enviar_valoracion_positiva($idUsu) {
+        $this->link->query("CALL enviarValoracionPositiva('$idUsu')");
+    }
+    public function enviar_valoracion_negativa($idUsu) {
+        $this->link->query("CALL enviarValoracionNegativa('$idUsu')");
+    }
     public function registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass) {
         $this->link->query("CALL insertarUsuarios('$nombre','$apellidos','$telefono','$email','$imagen','$usuario','$pass')");
     }

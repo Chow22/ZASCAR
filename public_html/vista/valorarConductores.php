@@ -80,7 +80,7 @@ session_start();
                         </tr>
                         <tr ng-repeat="item in lista| filter:TEXTObusqueda">
                             <td class="medio" hidden>{{item.idusuario}}</td>
-                            <td class="grande">{{item.imagen}}</td>                            
+                            <td class="grande"><img src='{{item.imagen}}'width='70' height='70'/></td>                            
                             <td class="peque">{{item.nombre}} </td>
                             <td class="medio">{{item.apellidos}} </td>                            
                             <td class="medio">{{item.usuario}} </td>
