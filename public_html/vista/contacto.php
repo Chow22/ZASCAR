@@ -46,7 +46,7 @@ session_start();
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
-                    <li><a href="listarTrayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="../controlador/listarTrayectos.php">¿Quiéres conocer los viajes?</a></li>
                     <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
 
