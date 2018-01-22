@@ -25,7 +25,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
             $idUsu = item.idusuario;
             //alert($idUsu);        
             //mandar el id del conductor al controlador
-            
+
             $http({url: '../controlador/controlador_enviar_valoraciones_positivas.php',
                 method: "GET", //recoger el idusuario
 
@@ -52,8 +52,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
             });
             alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
 
-        };
-
+        };  
 /////////////////////////////////////////////////////////////////////////////////////////////     
 //  //Se busca por cualquiera de los caract.Proemro (anti-emro) se da al boton 
 //  //iniciar busqueda para ver los campos de busqueda y luego se filtra//

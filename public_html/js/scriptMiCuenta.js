@@ -294,7 +294,7 @@ alert("boton modificar");
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
         $('#tablaDinamica').html(' ');
-        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
+        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../img/carga.svg" width="130" height="130"></></div>');
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,
@@ -352,7 +352,7 @@ alert("boton modificar");
         //alert('funcionnnnn')
         idusu = $('#idusuSession').text();
         $('#tablaDinamica').html(' ');
-        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
+        $('#tablaDinamica').html('<div><img class="imgCarga" align="center" src="../img/carga.svg" width="130" height="130"></></div>');
         $.ajax({
             type: 'POST',
             data: "submit=&idusu=" + idusu,

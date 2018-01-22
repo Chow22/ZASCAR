@@ -27,7 +27,7 @@ session_start();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
                     echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'>";
+                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";                   
                     echo ($_SESSION['username']);
                     echo"</font>";
                     echo "</p>";
