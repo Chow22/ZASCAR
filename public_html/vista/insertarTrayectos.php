@@ -66,9 +66,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <legend>Datos del viaje</legend>
                     <hr>
                     <label class="trayecto-label">¿Desde donde sales?</label><br/>
-                    <input type="text" id="autocomplete" name="origen" placeholder="Inicio"/><br/>
+                    <input type="text" id="autocompleteOrigen" name="origen" placeholder="Inicio"/><br/>
                     <label class="trayecto-label">¿A donde vas?</label><br/>
-                    <input type="text" id="autocomplete" name="destino" placeholder="Destino"/><br/>
+                    <input type="text" id="autocompleteDestino" name="destino" placeholder="Destino"/><br/>
                     <label class="trayecto-label">Fecha y hora</label><br/>
                     <input type="datetime-local" name="fechahora"/><br/>
                     <label class="trayecto-label">Plazas</label><br/>

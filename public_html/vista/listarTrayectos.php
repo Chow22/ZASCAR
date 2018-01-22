@@ -82,8 +82,6 @@ session_start();
                                 <?php
                             }
                             ?>
-                            </td>
-                            </tr>
                         </table>
                     </div>
                 </section>
