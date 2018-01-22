@@ -3,7 +3,7 @@ session_start();
 //Se necesita estar logueado para ver esta pagina
 echo ($_SESSION['loggedin']);
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-
+    
 } else {
     header('Location: ../vista/nolog.php');
 
@@ -79,45 +79,43 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </form> 
             </div>     
             <div class="container">
+                <div class="listWrap">
+                    <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+                    <ul class="list" >
+                        <li>
+                            <span>Origen</span>
+                            <span>Destino</span>
+                            <span>Fecha/Hora</span>
+                            <span>Plazas</span>
+                            <span>Paradas</span>
+                            <span>Acciones</span>
+                        </li>
+                        <li ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+                            <h1 hidden> {{item.idtrayecto}}</h1>
+                            <span>{{item.origen}}</span>
+                            <span>{{item.destino}}</span>
+                            <span>{{item.fecha_hora}}</span>
+                            <span>{{item.plazas}}</span>
+                            <span>{{item.paradas}}</span>
+                            <span>
+                                <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                    <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
+                                        <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
+                                </div>
+                            </span>
 
-    <div class="listWrap">
-    <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
-        <ul class="list" >
-        
-            <li>
-                <span>Origen</span>
-                <span>Destino</span>
-                <span>Fecha/Hora</span>
-                <span>Plazas</span>
-                <span>Paradas</span>
-                <span>Acciones</span>
-            </li>
-            <li ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
-                <h1 hidden> {{item.idtrayecto}}</h1>
-                <span>{{item.origen}}</span>
-                <span>{{item.destino}}</span>
-                <span>{{item.fecha_hora}}</span>
-                <span>{{item.plazas}}</span>
-                <span>{{item.paradas}}</span>
-                <span>
-                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                        <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
-                            <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
-                    </div>
-                </span>
-                
-            </li>
-            <li>
+                        </li>
+                        <li>
 
-            </li>
-        </ul>
+                        </li>
+                    </ul>
 
-    </div>
+                </div>
 
             </div>
 
-        <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
-        </footer> 
+            <footer>
+                <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
+            </footer> 
     </body>
 </html>

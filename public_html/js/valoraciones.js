@@ -34,7 +34,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
             }).success(function (response) {
                 $scope.misdatos.idusuario = response[0].idusuario;
             });
-            alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
+            //alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
 
         };
 
@@ -52,7 +52,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
             }).success(function (response) {
                 $scope.misdatos.idusuario = response[0].idusuario;
             });
-            alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
+            //alert('Su votacion ha sido enviada correctamente, gracias por colaborar :)');
 
         };  
 /////////////////////////////////////////////////////////////////////////////////////////////     

@@ -27,7 +27,7 @@ session_start();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
                     echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";                   
+                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
                     echo ($_SESSION['username']);
                     echo"</font>";
                     echo "</p>";
@@ -54,7 +54,7 @@ session_start();
         <div align="center" ng-controller="mainController">
             <h1>Lista de Usuarios</h1>        
             <br>
-           <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
+            <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
             <hr>
             <br>               
             <input type="button" value="Buscador" ng-click="Buscar()"> 
@@ -64,34 +64,31 @@ session_start();
                 <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar: <input type="text" ng-model="TEXTObusqueda"> 
                     <input type="submit" value="Buscar"/> 
                 </form> 
-            </div>           
-            <div id="zonalista">  
-                <div id="listatrayectos">                    
-                    <table class="tabla-votar"> 
-                        <tr>
-                            <th hidden>IdUSuario</th>
-                            <th>Perfil</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>                           
-                            <th>Usuario</th>
-                            <th>Positivos</th>    
-                            <th>Negativos</th>
-                            <th>Tu Voto</th>
-                        </tr>
-                        <tr ng-repeat="item in lista| filter:TEXTObusqueda">
-                            <td class="medio" hidden>{{item.idusuario}}</td>
-                            <td class="grande"><img src='{{item.imagen}}'width='70' height='70'/></td>                            
-                            <td class="peque">{{item.nombre}} </td>
-                            <td class="medio">{{item.apellidos}} </td>                            
-                            <td class="medio">{{item.usuario}} </td>
-                            <td class="medio">{{item.positivo}}</td>
-                            <td class="medio">{{item.negativo}}</td>
-                            <td class="peque"><span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">                                  
-                            <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span> </td>
-                        </tr>                   
-                    </table>                                  
+            </div>  
+            <div ng-repeat="item in lista| filter:TEXTObusqueda"class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="well well-sm">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <img src='{{item.imagen}}' alt="" class="img-rounded img-responsive" />
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <h4>{{item.nombre}}</h4>
+                                    <h4>{{item.apellidos}}</h4>
+                                    <p>
+                                        <h4>{{item.usuario}}</h4>                                                                        
+                                    <div class="btn-group">                                            
+                                        <p>Vota </p>                                      
+                                        <span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">{{item.positivo}}</span>                                             {{item.positivo}}                                  
+                                        <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt="">{{item.negativo}}</span>                                                                             
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div>           
         </div>
     </body>
 </html>
