@@ -1,7 +1,7 @@
 <?php
 session_start();
 //Se necesita estar logueado para ver esta pagina
-echo ($_SESSION['loggedin']);
+//echo ($_SESSION['loggedin']);
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 } else {
