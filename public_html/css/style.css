@@ -249,6 +249,7 @@ body > section {
 
     .container {
         max-width: 930px;
+        margin-right: 20%;
     }
 
 }
