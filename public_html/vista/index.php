@@ -75,7 +75,7 @@ session_start();
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="../img/carousel0.png" alt="...">
+                                    <img src="../img/carousel0.jpg" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Viaja feliz con tus compañeros de viaje</h2>
                                     </div>
@@ -87,7 +87,7 @@ session_start();
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="../img/carousel2.jpg" alt="...">
+                                    <img src="../img/carousel2.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Podrás conocer a gente muy interesante, y sin pagar ni un chavo!</h2>
                                     </div>

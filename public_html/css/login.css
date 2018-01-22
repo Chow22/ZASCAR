@@ -25,4 +25,13 @@ body{
     color: #b3ff1a;
     font-size: 18px;
 }
+.campoviaje{
+    color: white;
+}
+.campoviaje legend{
+    color:white;
+}
+.campoviaje label{
+    color:white;
+}
 
