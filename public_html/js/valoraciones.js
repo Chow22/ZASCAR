@@ -23,9 +23,10 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
 /////////////////////////////////////////////////////////////////////////////////////////////
         $scope.positivo = function (index, item) {
             $idUsu = item.idusuario;
-            //alert($idUsu);        
+            //alert($idUsu); 
+             //Actualiza los votos positivos de la tabla
+            item.positivo = parseInt(item.positivo)+1;       
             //mandar el id del conductor al controlador
-
             $http({url: '../controlador/controlador_enviar_valoraciones_positivas.php',
                 method: "GET", //recoger el idusuario
 
@@ -41,7 +42,8 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
         $scope.negativo = function (index, item) {
             $idUsu = item.idusuario;
             //alert($idUsu);
-            //
+            //Actualiza los votos negativos de la tabla
+            item.negativo = parseInt(item.negativo)+1;
             //mandar el id del conductor al controlador
             $http({url: '../controlador/controlador_enviar_valoraciones_negativas.php',
                 method: "GET", //recoger el idtrayecto
