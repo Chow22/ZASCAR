@@ -80,7 +80,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <br/>
                 <input type="submit" value="ENVIAR"/> <input type="reset" value="BORRAR"/>
             </form>
-        </div>
+        </div>        
         <div id="map"></div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9G3h2-Il9-fwshFj5RiNIFMby_jLi4_4&libraries=places">
         </script>
