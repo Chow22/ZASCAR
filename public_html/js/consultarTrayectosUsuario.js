@@ -41,7 +41,7 @@ $(document).ready(function () {
                                         "</td>";
                                 tabla += "<td class='paradas'>" + dato.paradas +
                                         "</td>";
-                                tabla += "<td class='acciones'><img src='../img/eliminar.png' width='15px' height='15px' alt=''/></td>";
+                                tabla += "<td><input type='image' class='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
                                 tabla += "</tr>";
                             });
             tabla += "</table>";
@@ -55,4 +55,36 @@ $(document).ready(function () {
                     " " + xhr.statusText);
         }
     });
+    
+    $(".borrarTrayecto").on("click", function(){
+        alert("hola");
+//        window.alert("¿Seguro que desea borrar trayecto?");
+//        borrarTrayecto();
+//        return false;
+    });
+    
+    
+    function borrarTrayecto(idTrayecto) {
+
+//        idusu = $('#idusuSession').text();
+        //alert(idtrayecto);
+        //alert(idsolic);
+
+        $.ajax({
+            type: 'POST',
+            data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idsolic,
+            dstaType: 'json',
+            url: "../controlador/controlador_borrar_trayecto.php",
+            success: function (datos) {
+                alert("Peticion aceptada");
+                //alert(datos);
+                funcionPeticiones();
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status +
+                        " " + xhr.statusText);
+            }
+        });
+    }
+    
 }); 

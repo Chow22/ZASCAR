@@ -29,7 +29,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/consultarTrayectosUsuario.js" type="text/javascript"></script>
-        <link href="../css/style.css" rel="stylesheet" type="text/css"/>    
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>                         
