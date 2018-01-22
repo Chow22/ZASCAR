@@ -1,7 +1,7 @@
 <?php
 session_start();
 //Se necesita estar logueado para ver esta pagina
-//echo ($_SESSION['loggedin']);
+echo ($_SESSION['loggedin']);
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 } else {
@@ -70,39 +70,52 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </strong>
             <hr>
             <br>               
-            <input type="button" value="Buscador" ng-click="Buscar()"> 
+            <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
             <br>
             <br>
             <div id="dcha" ng-show="VerMenu === true"> 
-                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar: <input type="text" ng-model="TEXTObusqueda"> 
-                    <input type="submit" value="Buscar"/> 
+                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><h5 style="color:white;">Escriba dato a buscar:</h5> <input type="text" ng-model="TEXTObusqueda"> 
+                    <input type="submit" class="btn btn-default" value="Cerrar"/> 
                 </form> 
-            </div>           
-            <div id="zonalista">  
-                <div id="listatrayectos">                    
-                    <table class="tabla-buscar"> 
-                        <tr>                            
-                            <th>Origen</th>
-                            <th>Destino</th>
-                            <th>Fecha/Hora</th>
-                            <th>Plazas</th>
-                            <th>Paradas</th>    
-                            <th>Acciones</th>                            
-                        </tr>
-                        <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
-                            <td class="peque" hidden> {{item.idtrayecto}} </td>
-                            <td class="peque"> {{item.origen}} </td>
-                            <td class="medio"> {{item.destino}} </td>
-                            <td class="medio"> {{item.fecha_hora}}</td>
-                            <td class="medio"> {{item.plazas}} </td>
-                            <td class="grande"> {{item.paradas}}   </td>
-                            <td class="peque"><span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >&nbsp;
-                            <span class="peque"><img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span></td>
-                        </tr>                   
-                    </table>                                  
-                </div>
+            </div>     
+            <div class="container">
+
+    <div class="listWrap">
+    <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+        <ul class="list" >
+        
+            <li>
+                <span>Origen</span>
+                <span>Destino</span>
+                <span>Fecha/Hora</span>
+                <span>Plazas</span>
+                <span>Paradas</span>
+                <span>Acciones</span>
+            </li>
+            <li ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+                <h1 hidden> {{item.idtrayecto}}</h1>
+                <span>{{item.origen}}</span>
+                <span>{{item.destino}}</span>
+                <span>{{item.fecha_hora}}</span>
+                <span>{{item.plazas}}</span>
+                <span>{{item.paradas}}</span>
+                <span>
+                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                        <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
+                            <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
+                    </div>
+                </span>
+                
+            </li>
+            <li>
+
+            </li>
+        </ul>
+
+    </div>
+
             </div>
-        </div>
+
         <footer>
             <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
         </footer> 

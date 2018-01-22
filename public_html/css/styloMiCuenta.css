@@ -266,8 +266,9 @@ a.button {
 }
 
 .naranja{
-    color: orange;
-    
+    color: white;
+    font:bold 25px ; 
+    font-weight:bold;
 }
 
 
