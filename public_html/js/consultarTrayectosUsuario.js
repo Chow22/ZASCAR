@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     idusu = $('#idusuSession').text();
     $('#tablaTrayectos').html(' ');
-//        $('#tablaTrayectos').html('<div><img class="imgCarga" align="center" src="../IMG/carga.svg" width="130" height="130"></></div>');
     $.ajax({
         type: 'POST',
         data: "submit=&idusu=" + idusu,
@@ -41,11 +40,11 @@ $(document).ready(function () {
                                         "</td>";
                                 tabla += "<td class='paradas'>" + dato.paradas +
                                         "</td>";
-                                tabla += "<td><input type='image' class='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
+                                tabla += "<td><input type='image' id='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
                                 tabla += "</tr>";
                             });
             tabla += "</table>";
-            //  alert(tabla)
+//              alert(tabla);
             $('#tablaTrayectos').append(tabla).hide()
                     .fadeIn('slow');
             return false;
@@ -55,36 +54,30 @@ $(document).ready(function () {
                     " " + xhr.statusText);
         }
     });
-    
-    $(".borrarTrayecto").on("click", function(){
-        alert("hola");
-//        window.alert("¿Seguro que desea borrar trayecto?");
-//        borrarTrayecto();
-//        return false;
-    });
-    
-    
-    function borrarTrayecto(idTrayecto) {
 
-//        idusu = $('#idusuSession').text();
-        //alert(idtrayecto);
-        //alert(idsolic);
+    $("#tablaTrayectos").on("click", "#borrarTrayecto", function () {
+
+        var confirmar = confirm("¿Seguro que desea borrar trayecto?");
+        if (!confirmar) {
+            return false;
+        }
+        idtrayecto = $(this).attr("data-idtrayecto");
 
         $.ajax({
             type: 'POST',
-            data: "submit=&idtrayecto=" + idtrayecto + "&idusu=" + idsolic,
+            data: "submit=&idusu=" + idusu + "&idtrayecto=" + idtrayecto,
             dstaType: 'json',
-            url: "../controlador/controlador_borrar_trayecto.php",
+            url: "../controlador/controlador_borrar_trayectoConductor.php",
             success: function (datos) {
-                alert("Peticion aceptada");
+                alert("Su trayecto se ha borrado");
                 //alert(datos);
-                funcionPeticiones();
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status +
                         " " + xhr.statusText);
             }
         });
-    }
-    
+
+    });
+
 }); 

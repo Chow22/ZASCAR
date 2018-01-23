@@ -69,7 +69,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <h1>Trayectos de <?php echo ($_SESSION['username']) ?></h1>        
             <br>
             <strong class="strindex">Aquí se muestra tu lista de trayectos que 
-                has añadido. Podrás modificar o borrar haciendo click en el boton 
+                has añadido. Podrás borrar haciendo click en el boton 
                 <img src="../img/eliminar.png" width="15px" height="15px" alt=""/> en cada una de las filas de la tabla.</strong>
             
             <div id="tablaTrayectos">

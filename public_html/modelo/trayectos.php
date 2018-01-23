@@ -55,7 +55,8 @@ class trayectos {
         $this->link->close();
         return $this->usuario;
     }
-      public function mostrar_conductores_trayectos($miId) {
+
+    public function mostrar_conductores_trayectos($miId) {
         $sql = "CALL mostrar_conductores_trayectos('$miId')";
         $consulta = $this->link->query($sql);
         while ($row = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
@@ -68,6 +69,10 @@ class trayectos {
 
     public function borrarTrayectoPasajero($id, $idusu) {
         $consulta = $this->link->query("CALL borrarTrayectoPasajero ('$id','$idusu')");
+    }
+
+    public function borrarTrayectoConductor($idusu, $idtrayecto) {
+        $consulta = $this->link->query("CALL borrarTrayectoConductor ('$idusu','$idtrayecto')");
     }
 
     public function aceptarPeticion($idtrayecto, $idusu) {
