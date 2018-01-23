@@ -26,7 +26,7 @@ function Clave() {
         return true;
     }
 }
-function TeclaPulsada(e) {
+function SoloNumeros(e) {
     var keychar;
     var teclanum;
     teclanum = e.which; //codigo ASCII de la tecla pulsada
@@ -40,7 +40,7 @@ function TeclaPulsada(e) {
         return true;
     }
 }
-function comprobarArroba(e) { //Evitar doble @ en una caja de texto.
+function ComprobarArroba(e) { //Evitar doble @ en una caja de texto.
     var caracterTecla;
     var codigoTecla;
 

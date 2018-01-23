@@ -78,7 +78,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <?php echo '<input type="hidden" name="id" value="' . ($_SESSION['idusu']) . '"/>' . "\n"; ?>
                 </fieldset>
                 <br/>
-                <input type="submit" value="ENVIAR"/> <input type="reset" value="BORRAR"/>
+                <button type="submit" class="btn btn-primary">Publicar</button>
             </form>
         </div>        
         <div id="map"></div>
