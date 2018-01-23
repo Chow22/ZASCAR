@@ -6,7 +6,7 @@ $(document).ready(function () {
     funcionConsultaTrayectosPasajero();
     rellenarDatos();
     $('#pasa').addClass('active');
-    
+
     //alert("0");
     //
     //////////////////Botones pestañas tablas /////////////////////////////////////////
@@ -34,7 +34,7 @@ $(document).ready(function () {
         //alert("boton Peticiones");
         funcionPeticiones();
         setInterval(funcionPeticiones, 120000);
-         $('#pasa').removeClass();
+        $('#pasa').removeClass();
         $('#conduc').removeClass();
         $('#petic').addClass('active');
         return false;
@@ -135,7 +135,7 @@ $(document).ready(function () {
     ;
 //////////////////guardar datos/////////////////////////////////////////
     $('#modificar').click(function () {
-alert("boton modificar");
+        //alert("boton modificar");
         funcionModificar();
         return false;
     });
@@ -153,7 +153,7 @@ alert("boton modificar");
         plazas = $('#plazas').val();
         combustible = $('#combustible').val();
         matricula = $('#matricula').val();
-      alert(combustible);
+        //alert(combustible);
         $.ajax({
             type: 'POST',
             data: "submit=&id=" + idusu + "&nombre=" + nombre + "&apellido=" + apellido + "&telefono=" + telefono + "&email=" + email + "&imagen=" + imagen + "&user=" + user + "&pass=" + pass + "&marca=" + marca + "&plazas=" + plazas + "&combustible=" + combustible + "&matricula=" + matricula,

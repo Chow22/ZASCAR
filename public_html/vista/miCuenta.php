@@ -91,47 +91,48 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                     <input id="imagenlink" name="textinput"  class="form-control input-md" type="text" required>
                                 </div>
                             </div>
-                            
+
                             <!-- Login-->
-                            <div class="form-group login">
-                                <label class=" control-label" for="textinput">Login</label> <br><br>
+                            <div class="login">
+                                <label class="" for="textinput">Login</label> <br><br>
                                 <div class="">
                                     <input id="user" name="textinput" placeholder="Usuario.." class="form-control input-md" type="text" required disabled="" >
                                     <input id="pass" name="textinput" placeholder="Contraseña.." class="form-control input-md" type="password" required >
                                 </div>
+                            </div>
+                            <br>
+                            <!-- Coche-->
+                            <div class="coche">
+                                <label class="" for="textinput">Vehiculo</label> <br><br>
+                                <div class="">
+                                    <input id="marca" name="textinput" placeholder="Marca.." class="form-control input-md" type="text" >
+                                    <input id="plazas" name="textinput" placeholder="Plazas.." class="form-control input-md" type="text" >
+                                    <input id="combustible" name="textinput" placeholder="Combustible.." class="form-control input-md" type="text" >
+                                    <input id="matricula" name="textinput" placeholder="Matricula.." class="form-control input-md" type="text" >
                                 </div>
                                 <br>
-                                <!-- Coche-->
-                                <div class="form-group coche">
-                                    <label class=" control-label" for="textinput">Coche</label> <br><br>
-                                    <div class="">
-                                        <input id="marca" name="textinput" placeholder="Marca.." class="form-control input-md" type="text" >
-                                        <input id="plazas" name="textinput" placeholder="Plazas.." class="form-control input-md" type="text" >
-                                        <input id="combustible" name="textinput" placeholder="Combustible.." class="form-control input-md" type="text" >
-                                        <input id="matricula" name="textinput" placeholder="Matricula.." class="form-control input-md" type="text" >
-                                    </div>
-                                    <br>
-                                </div>
-                            
+                            </div>
 
-                            <button type="button" id="modificar" name="singlebutton" class="btn btn-default">Guardar datos</button>
-                            <button type="button" id="borrarCuenta" name="singlebutton" class="btn btn-default">Borrar cuenta</button>
+                            <div class="botonesmicuenta">
+                                <button type="button" id="modificar" name="singlebutton" class="btn btn-default">Guardar datos</button>
+                                <button type="button" id="borrarCuenta" name="singlebutton" class="btn btn-default">Borrar cuenta</button>
+                            </div>
                         </form>
                 </div>
                 <div id="big-form" class="well auth-box">
-                        <div class="row">
-                            <div class="pestanas">
-                                <h3 style="color:white;">Trayectos</h3>
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs pestanas" role="tablist">
-                                    <li role="presentation" id="pasa" ><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>
-                                    <li role="presentation" id="conduc"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Conductor">Conductor</a></li>
-                                    <li role="presentation" id="petic"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
-                                </ul>
+                    <div class="row">
+                        <div class="pestanas">
+                            <h3 style="color:white;">Trayectos</h3>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs pestanas" role="tablist">
+                                <li role="presentation" id="pasa" ><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Pasajero" >Pasajero</a></li>
+                                <li role="presentation" id="conduc"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Conductor">Conductor</a></li>
+                                <li role="presentation" id="petic"><a href="#" class="naranja" aria-controls="" role="tab" data-toggle="tab" id="Peticiones">Peticiones</a></li>
+                            </ul>
 
-                            </div>
                         </div>
-                    
+                    </div>
+
                     <!-- Tablas dinamicas -->
                     <div class="form-group">
                         <div class="scroll">

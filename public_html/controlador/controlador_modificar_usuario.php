@@ -16,5 +16,5 @@ require_once '../modelo/modelo_usuario.php';
  
 $cont = new modelo_usuario();
 $cont->modificar_usuario($id,$nombre,$apellido,$telefono,$email,$imagen,$user,$pass,$marca,$plazas,$combustible,$matricula);
-print($combustible);
+//print($combustible);
 ?>

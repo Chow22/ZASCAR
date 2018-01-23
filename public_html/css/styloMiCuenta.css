@@ -179,7 +179,7 @@ body{
 .auth .control-label{
     width: 25%;
     float: left;
-    
+
 }
 .auth label.label-floatlabel {
     font-weight: 300;
@@ -240,21 +240,32 @@ tr:nth-child(even) {
     width:25%
 }
 .login{
-
-    float: top; 
+    margin-top: 5%;
+    width: 
+        40%;
+    float: right; 
 }
 .coche{
-    float: top; 
-   
+    margin-top: 2%;
+    width: 60%;
+    float: left; 
+
 }
+
+.botonesmicuenta{
+    margin-top: 33%;
+    float: bottom; 
+
+}
+
 .trnoaceptado{
     background-color: red; 
-   
+
 }
 
 .traceptado{
     background-color: greenyellow; 
-   
+
 }
 a.button {
     -webkit-appearance: button;
