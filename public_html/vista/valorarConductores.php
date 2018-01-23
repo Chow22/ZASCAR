@@ -13,10 +13,10 @@ session_start();
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">                
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../css/style.css">   
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
         <script src="../js/angular.min.js" type="text/javascript"></script>
         <script src="../js/valoraciones.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/style.css">   
 
     </head>
     <body>
@@ -49,9 +49,10 @@ session_start();
                 </ul>
             </nav>
         </header>
+         <div class="tablita-conductora"> 
         <br>
         <br>
-        <div align="center" ng-controller="mainController">
+        <div align="center" ng-controller="mainController" class="valorar">
             <h1>Lista de Usuarios</h1>        
             <br>
             <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
@@ -65,30 +66,36 @@ session_start();
                     <input type="submit" value="Buscar"/> 
                 </form> 
             </div>  
-            <div ng-repeat="item in lista| filter:TEXTObusqueda"class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="well well-sm">
-                            <div class="row">
-                                <div class="col-sm-6 col-md-4">
-                                    <img src='{{item.imagen}}' alt="" class="img-rounded img-responsive" />
-                                </div>
-                                <div class="col-sm-6 col-md-8">
-                                    <h4>{{item.nombre}}</h4>
-                                    <h4>{{item.apellidos}}</h4>
-                                    <p>
-                                        <h4>{{item.usuario}}</h4>                                                                        
-                                    <div class="btn-group">                                            
-                                        <p>Vota </p>                                      
-                                        <span> <img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt="">{{item.positivo}}</span>                                             {{item.positivo}}                                  
-                                        <img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt="">{{item.negativo}}</span>                                                                             
+           
+            <div ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">                        
+                            <div class="well well-sm">                            
+                                <div class="row">                                                            
+                                    <div class="col-sm-6 col-md-4">
+                                        <img src='{{item.imagen}}' alt="" class="img-rounded img-responsive" />
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <br>
+                                        <strong>Nombre:</strong><h4>{{item.nombre}}</h4>
+                                        <p>                                       
+                                            <strong>Apellidos:</strong><h4>{{item.apellidos}}</h4>
+                                        <p>                                           
+                                            <strong>Nombre de Usuario:</strong><h4>{{item.usuario}}</h4>                                                                                                         
+                                        <div class="btn-group">                                            
+                                            <p>Vota </p>                                       
+                                            <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt=""></span>&nbsp;&nbsp;&nbsp;
+                                            <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span>  
+                                            <br> 
+                                            <span>&nbsp;&nbsp;&nbsp;{{item.positivo}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;&nbsp;&nbsp;{{item.negativo}}</span>                                                                                                                    
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>           
+                </div> 
+            </div>
         </div>
     </body>
 </html>

@@ -627,12 +627,9 @@ iframe{
         margin-right: 12%;
 
 }
-
-/*valoracion de conductores */
-.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
-
-small {
-display: block;
-line-height: 1.428571429;
-color: #999;
-}
+/*-----------------------------valoracion de conductores-------------------------------*/
+.glyphicon {margin-bottom: 150px;margin-right: 150px;}
+small {display:block;line-height: 1.428571429;color: #999;}
+/*tabla conductores*/
+.valorar{width: 100%;}
+tablita-conductora{margin-left:500px ;margin-right: 500px;}
