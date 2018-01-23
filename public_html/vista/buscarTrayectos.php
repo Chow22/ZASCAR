@@ -103,17 +103,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                         <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
                                 </div>
                             </span>
-
                         </li>
                         <li>
-
                         </li>
                     </ul>
-
                 </div>
-
             </div>
-
             <footer>
                 <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
             </footer> 

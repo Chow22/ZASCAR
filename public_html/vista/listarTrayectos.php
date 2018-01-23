@@ -27,7 +27,7 @@ session_start();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
                     echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'><a  href='../vista/miCuenta.php' style='color:orange;'>";
+                    echo "<font color = 'orange'><a  href='../vista/miCuenta.php' style='color:orange;'>"; //manda a micuenta clicando en el nombre de usuario
                     echo ($_SESSION['username']);
                     echo"</font></a>";
                     echo "</p>";
@@ -53,45 +53,42 @@ session_start();
             <h1 align="center">Lista de trayectos que pueden interesarte</h1>
             <hr>
             <br> 
-            <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores, se ofrecen diferentes trayectos 
-                con diferente origen,fecha y hora,plazas y paradas elige el viaje que mas te convenga, agregate y espera 
+            <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores 
+                con diferente origen,fecha y hora,plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
                 la respuesta del conductor.<br>
                 Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > Buscar trayecto del menú desplegable</strong>        </section>
         <section id="pageContent">
             <main role="main">
                 <section class="section-white">
-                   
+
                     <div class="container-main">
-                    <div class="listWrap">
-                         <div class="margenes">
-                        <ul class="list" >
+                        <div class="listWrap">
+                            <div class="margenes">
+                                <ul class="list" >
+                                    <li>
+                                        <span>Origen</span>
+                                        <span>Destino</span>
+                                        <span>Fecha/Hora</span>
+                                        <span>Plazas</span>
+                                        <span>Paradas</span>
+                                    </li>
+                                    <?php
+                                    foreach ($pd as $trayecto) {
+                                        ?>
+                                        <li>
+                                            <span><?php echo $trayecto["origen"]; ?></span>
+                                            <span><?php echo $trayecto["destino"]; ?></span>
+                                            <span><?php echo $trayecto["fecha_hora"]; ?></span>
+                                            <span><?php echo $trayecto["plazas"]; ?></span>
+                                            <span><?php echo $trayecto["paradas"]; ?></span>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
 
-                            <li>
-                                <span>Origen</span>
-                                <span>Destino</span>
-                                <span>Fecha/Hora</span>
-                                <span>Plazas</span>
-                                <span>Paradas</span>
-
-                            </li>
-                            <?php
-                            foreach ($pd as $trayecto) {
-                                ?>
-                                <li>
-
-                                    <span><?php echo $trayecto["origen"]; ?></span>
-                                    <span><?php echo $trayecto["destino"]; ?></span>
-                                    <span><?php echo $trayecto["fecha_hora"]; ?></span>
-                                    <span><?php echo $trayecto["plazas"]; ?></span>
-                                    <span><?php echo $trayecto["paradas"]; ?></span>
-                                </li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
-
-                    </div>
-                    </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
