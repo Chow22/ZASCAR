@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <!-- Codigo para permitir acceso a usuarios logados solamente -->
-
+<?php
+session_start();
+//echo ($_SESSION['loggedin']);
+//echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo '<script>window.history.go(-3)</script>';
+} 
+?>
 <html lang ="en" >
     <head>
         <title>Mi cuenta</title>

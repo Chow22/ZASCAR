@@ -39,7 +39,8 @@
             <hr>
             <div class="container">
                 <div class="row">                                           
-                    <div class="col-md-4 col-md-offset-4 login">                              
+                    <div class="col-md-4 col-md-offset-4 login">              
+                        <br>
                         <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Iniciar Sesion</h1>    
                         <br>
                         <form method="POST" action="../controlador/login_controlador.php">
