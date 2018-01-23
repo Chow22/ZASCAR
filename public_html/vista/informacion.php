@@ -20,25 +20,25 @@ session_start();
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
-    <body>
+    <body id="page-body">
         <header>                         
             <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
 
                 <?php
                 $now = time();
-                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
-                        echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
-                        echo ($_SESSION['username']);
-                        echo"</font></a>";
-                        echo "</p>";
-                    } else {
-                        session_destroy();
-                        echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
-                        echo "<p>Iniciar sesión</p>";
-                    }
-                    ?>
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<p style='color:white;'>Bienvenido, ";
+                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
+                    echo ($_SESSION['username']);
+                    echo"</font></a>";
+                    echo "</p>";
+                } else {
+                    session_destroy();
+                    echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
@@ -52,6 +52,10 @@ session_start();
 
             </nav>
         </header>
+        <fieldset>
+            <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+            <input name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+        </fieldset>  
         <section>
             <strong class="strindex">ZASCAR ha sido formada para facilitar el acceso al centro a aquellos que no tienen coche o que quieren compartirlo</strong>
         </section>
@@ -61,12 +65,12 @@ session_start();
                     <div class="presentacion">                        
                         <div class="texto-info">
                             <p class="info"><strong class="strong-info">Nuestra empresa ha nacido como un reto presentado por el equipo docente del segundo curso del grado superior de Desarrollo de Aplicaciones Web.</strong></p><br>
-                        <p class="contenido">La aplicacion consiste en una página web que permite crear trayectos concertados hacia y desde el centro para aquellos alumnos que no tienen un vehículo o que quieren viajar en grupo.</p><br>
-                        <p class="contenido">Los usuarios que disponen de un vehículo publicarán su punto de partida y sus posibles paradas, para que los usuarios que quieren unirse al trayecto puedan consultar si les interesa el viaje en cuestión.</p><br>
-                        <br>
-                        <p class="contenido" align="center">Si quieres visitar la página del centro haz click <a href="http://www.fpzornotza.hezkuntza.net/web/guest/inicio1">aquí</a>.</p><br>
-                        <p class="contenido" align="center">o</p><br>
-                        <p class="contenido" align="center">Si quieres visitar el moodle del mismo haz click <a href="http://moodle.fpzornotza.com/">aquí</a>.</p><br>
+                            <p class="contenido">La aplicacion consiste en una página web que permite crear trayectos concertados hacia y desde el centro para aquellos alumnos que no tienen un vehículo o que quieren viajar en grupo.</p><br>
+                            <p class="contenido">Los usuarios que disponen de un vehículo publicarán su punto de partida y sus posibles paradas, para que los usuarios que quieren unirse al trayecto puedan consultar si les interesa el viaje en cuestión.</p><br>
+                            <br>
+                            <p class="contenido" align="center">Si quieres visitar la página del centro haz click <a href="http://www.fpzornotza.hezkuntza.net/web/guest/inicio1">aquí</a>.</p><br>
+                            <p class="contenido" align="center">o</p><br>
+                            <p class="contenido" align="center">Si quieres visitar el moodle del mismo haz click <a href="http://moodle.fpzornotza.com/">aquí</a>.</p><br>
                         </div>
                         <img class="img-info" src="../img/image.jpg"/>
                     </div>

@@ -56,11 +56,16 @@ session_start();
 
             </nav>
         </header>
+        <fieldset>
+            <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+            <input name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+        </fieldset>
         <section>
             <strong class="strindex">En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>
         </section>
         <section id="pageContent">
             <main role="main">
+                <p>Si te registras en Zascar podrás apuntarte a viajes para llegar a tu destino, y si registras un coche propio puedes publicar viajes también, no olvides puntuar a tu conductor tras cada viaje!</p>
                 <section class="section-white">
                     <div class="container-main">
 

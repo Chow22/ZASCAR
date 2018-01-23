@@ -21,24 +21,24 @@ session_start();
     </head>
 
     <body>
-        <header>                         
-           <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
+        <header>
+            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
 
-                 <?php
+                <?php
                 $now = time();
-                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                        echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
-                        echo "<p style='color:white;'>Bienvenido, ";
-                        echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
-                        echo ($_SESSION['username']);
-                        echo"</font></a>";
-                        echo "</p>";
-                    } else {
-                        session_destroy();
-                        echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
-                        echo "<p>Iniciar sesión</p>";
-                    }
-                    ?>
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<p style='color:white;'>Bienvenido, ";
+                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
+                    echo ($_SESSION['username']);
+                    echo"</font></a>";
+                    echo "</p>";
+                } else {
+                    session_destroy();
+                    echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                    echo "<p>Iniciar sesión</p>";
+                }
+                ?>
             </div>
             <br>
             <br>
@@ -52,14 +52,18 @@ session_start();
 
             </nav>
         </header>
+        <fieldset>
+                <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+                <input name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+            </fieldset>
         <section>
             <strong class="strindex">Puedes contactar con nosotros de las siguientes formas</strong>
         </section>
         <section id="pageContent">
-                <section class="section-white">
-                    <div class="contacto">
-                        <img src="../img/office.jpg"/>
-                        <div class="texto">
+            <section class="section-white">
+                <div class="contacto">
+                    <img src="../img/office.jpg"/>
+                    <div class="texto">
                         <p class="info">Somos una empresa abierta a sugerencias y dispuesta a resolver las dudas y posibles problemas de los usuarios, tenemos gente a disponibilidad de los usuarios si estos lo requieren.</p>
                         <p>Si quieres contactar con nosotros por teléfono |</p>
                         <p class="contenido"> 946 73 02 51</p><br>
@@ -67,10 +71,10 @@ session_start();
                         <p class="contenido"> Barrio Urritxe, 0 S/N, 48340 Amorebieta-Etxano, BILBAO</p><br>
                         <p>Si prefieres llegar a nosotros vía E-mail |</p>
                         <p class="contenido">E-mail a  <a href="mailto:ethazi3@gmail.com">Zascar Enterprises</a></p>
-                        </div>
                     </div>
-                </section>
-    </section>      
+                </div>
+            </section>
+        </section>      
         <footer>
             <p>&copy; El centro tendrá sus puertas abiertas en todo día lectivo en el siguiente horario |  8:30–21:00</p>
         </footer>   

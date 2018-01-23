@@ -97,5 +97,8 @@ session_start();
                 </div> 
             </div>
         </div>
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a></p>
+        </footer> 
     </body>
 </html>
