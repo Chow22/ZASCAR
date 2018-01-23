@@ -1,5 +1,5 @@
 .margin-top-20{
-    margin-top: 20px;
+    margin-top: 15px;
 }
 body{
     background:url("../img/bg_cordon_negro.jpg");
@@ -7,7 +7,7 @@ body{
     background-attachment: fixed; 
     background-repeat:no-repeat;
     font-family: 'Open Sans', sans-serif;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 .auth h1{
     color:#fff!important;
@@ -240,12 +240,14 @@ tr:nth-child(even) {
     width:25%
 }
 .login{
+    margin:auto;
     margin-top: 5%;
     width: 
         40%;
     float: right; 
 }
 .coche{
+    margin:auto;
     margin-top: 2%;
     width: 60%;
     float: left; 
