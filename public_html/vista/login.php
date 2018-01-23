@@ -60,7 +60,7 @@
 
                                     <div class="container">
                                         <div class="unpoquitodemargen">
-                                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
                                         </div>
                                     </div>
@@ -92,8 +92,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label>Télefono:</label>
-                                                            <input type="text" name="telefono" class="form-control">
+                                                            <label>Teléfono:</label>
+                                                            <input type="text" name="telefono" class="form-control" onkeypress="return SoloNumeros(event)">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -123,7 +123,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>E-mail</label>
-                                                            <input type="text" name="email" class="form-control">
+                                                            <input type="text" name="email" class="form-control" onkeypress="return ComprobarArroba(event)">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
