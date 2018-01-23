@@ -632,8 +632,12 @@ iframe{
 .btn-group{margin-left: 175px}
 /*imagenes perfiles de usuario*/
 .imagencitas{width:150px;height:150px;}
+/*datos del conductor*/
+.datos-conductor{margin-left: 20px;text-align: center}
 /*tabla conductores*/
-tablita-conductora{margin-left: 800px;}
+.valorar{margin-left: 480px}
+/*alineando el botonsito de busqueda*/
+.alineando-botonsito{margin-left: 620px}
 
 small {
 display: block;

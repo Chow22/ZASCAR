@@ -49,53 +49,57 @@ session_start();
                 </ul>
             </nav>
         </header>
-          
+
         <br>
         <br>
-        <div align="center" ng-controller="mainController" class="valorar">
+        <div ng-controller="mainController" >
             <h1>Lista de Usuarios</h1>        
             <br>
             <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
             <hr>
-            <br>               
-            <input type="button" value="Buscador" ng-click="Buscar()"> 
-            <br>
-            <br>
-            <div id="dcha" ng-show="VerMenu === true"> 
-                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()">Escriba dato a buscar: <input type="text" ng-model="TEXTObusqueda"> 
-                    <input type="submit" value="Buscar"/> 
-                </form> 
-            </div>  
-           
-            <div ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
-                <div class="tablita-conductora">    
-                <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">                        
-                            <div class="well well-sm">                            
-                                <div class="row">                                                            
-                                    <div class="col-sm-6 col-md-4">
-                                        <img class="imagencitas" src='{{item.imagen}}' alt=""/>
-                                    </div>
-                                    <div class="col-sm-6 col-md-8">
-                                        <br>
-                                        <strong>Nombre:</strong><h4>{{item.nombre}}</h4>
-                                        <p>                                       
-                                            <strong>Apellidos:</strong><h4>{{item.apellidos}}</h4>
-                                        <p>                                           
-                                            <strong>Nombre de Usuario:</strong><h4>{{item.usuario}}</h4>                                                                                                         
-                                        <div class="btn-group">                                            
-                                            <p>Vota </p>                                       
-                                            <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt=""></span>&nbsp;&nbsp;&nbsp;
-                                            <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span>  
-                                            <br> 
-                                            <span>&nbsp;&nbsp;&nbsp;{{item.positivo}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;&nbsp;&nbsp;{{item.negativo}}</span>                                                                                                                    
+            <br>   
+            <div class="alineando-botonsito">
+                <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
+                <br>
+                <br>
+                <div id="dcha" ng-show="VerMenu === true"> 
+                    <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><h5 style="color:white;">Escriba dato a buscar:</h5> <input type="text" ng-model="TEXTObusqueda"> 
+                        <input type="submit" class="btn btn-default" value="Cerrar"/> 
+                    </form> 
+                </div>   
+            </div>
+            <div class="valorar">
+                <div  ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
+                    <div class="tablita-conductora">    
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">                        
+                                <div class="well well-sm">                            
+                                    <div class="row">                                                            
+                                        <div class="col-sm-6 col-md-4">
+                                            <img class="imagencitas" src='{{item.imagen}}' alt=""/>
+                                        </div>
+                                        <div class="col-sm-6 col-md-8">
+                                            <div class="datos-conductor">
+                                                <br>
+                                                <strong>Nombre:</strong><h4>{{item.nombre}}</h4>
+                                                <p>                                       
+                                                    <strong>Apellidos:</strong><h4>{{item.apellidos}}</h4>
+                                                <p>                                           
+                                                    <strong>Nombre de Usuario:</strong><h4>{{item.usuario}}</h4>  
+                                            </div>                                           
+                                            <div class="btn-group">                                                                                                                                
+                                                <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt=""></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span>&nbsp;&nbsp;<img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span>  
+                                                <br> 
+                                                <span>&nbsp;&nbsp;&nbsp;{{item.positivo}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;&nbsp;&nbsp;{{item.negativo}}</span>                                                                                                                    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> 
+                    </div> 
+                </div>
             </div>
         </div>
         <footer>
