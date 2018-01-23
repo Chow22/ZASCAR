@@ -74,7 +74,7 @@ session_start();
                             <div class="well well-sm">                            
                                 <div class="row">                                                            
                                     <div class="col-sm-6 col-md-4">
-                                        <img src='{{item.imagen}}' alt="" class="img-rounded img-responsive" />
+                                        <img class="imagencitas" src='{{item.imagen}}' alt=""/>
                                     </div>
                                     <div class="col-sm-6 col-md-8">
                                         <br>
