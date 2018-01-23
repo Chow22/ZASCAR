@@ -61,7 +61,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         </header>
         <br/>
         <div id="trayecto-form">
-            <form action="../controlador/trayectos_controlador.php" method="post" id="trayecto">
+            <form action="../controlador/trayectos_controlador.php"  method="post" id="trayecto">
                 <fieldset id="campoviaje">
                     <legend>Datos del viaje</legend>
                     <hr>
