@@ -115,6 +115,11 @@ session_start();
                                 <li class="subitem1"><a href="buscarTrayectos.php">Buscar Trayecto</a></li>
                             </ul>
                         </li>
+                        <li class="item4"><a href="#">Zona Administrador</a>
+                            <ul>
+                                <li class="subitem1"><a href="#">Gestión de Usuarios</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                 </div>
