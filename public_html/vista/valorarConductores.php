@@ -49,7 +49,7 @@ session_start();
                 </ul>
             </nav>
         </header>
-         <div class="tablita-conductora"> 
+          
         <br>
         <br>
         <div align="center" ng-controller="mainController" class="valorar">
@@ -68,7 +68,8 @@ session_start();
             </div>  
            
             <div ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
-                    <div class="row">
+                <div class="tablita-conductora">    
+                <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">                        
                             <div class="well well-sm">                            
                                 <div class="row">                                                            
