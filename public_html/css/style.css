@@ -517,22 +517,16 @@ iframe{
 
     height: 800px;
     width: 1000px;
-
 }
-
-.list {
-
+.list {    
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: table;
-    white-space: nowrap;
-    width: 100%;
-
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    white-space: none;
+    margin-left: 100px;
 }
-
 .list li {
-
     background-color: #f0f0f0;
     display: table-row;
     color: #5c5c5c;
@@ -550,7 +544,7 @@ iframe{
 
 .list li:nth-child(odd):hover {
 
-    background-color: #dadada;
+    background-color: none;
 
 }
 
@@ -566,22 +560,16 @@ iframe{
 .list li:nth-child(even):hover {
 
     background-color: #dadada;
-
 }
-
 .list li:nth-child(1) span:first-child {
 
     border-top-left-radius: 6px;
-
 }
-
 .list li:nth-child(1) span:last-child {
 
     border-top-right-radius: 6px;
 
 }
-
-
 .list li:nth-child(1) {
 
     background-color: #201c2b;
@@ -592,39 +580,27 @@ iframe{
 
 
 }
-
-.list li:nth-child(1):hover {
-
-
-
-}
-
-
-
 .list li:nth-child(1) span {
 
     border-bottom: 2px solid #7d5bbe;
     padding: 14px;
 
 }
-
 .list span {
 
-    text-align: left;
+    text-align: right;
     display: table-cell;
-    padding: 6px;
-    vertical-align: middle;
+    padding: 5px;
+    vertical-align: center;
 
 }
-
-
 .list span:nth-child(2) {
 
 
 }
 
 .margenes{
-        margin-right: 12%;
+        margin-right: 1200px;
 
 }
 /*-----------------------------valoracion de conductores-------------------------------*/
@@ -643,6 +619,12 @@ small {
 display: block;
 line-height: 1.428571429;
 color: #999;
+}
+.btn-color{
+    margin-left: 20px;
+}
+.btn-color button{
+    margin-left: 10px;
 }
 .tamano{
     margin-left: 100px;
