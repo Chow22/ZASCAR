@@ -36,7 +36,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
                     echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
+                   echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
                     echo ($_SESSION['username']);
                     echo"</font></a>";
                     echo "</p>";
@@ -90,9 +90,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <span>Paradas</span>
                             <span>Acciones</span>
                         </li>
-                        <li ng-repeat="item in lista| filter:TEXTObusqueda">
+                        <li ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
                             <h1 hidden> {{item.idtrayecto}}</h1>
-                            <span  ng-style="colores{{$index}}">{{item.origen}}</span>
+                            <span>{{item.origen}}</span>
                             <span>{{item.destino}}</span>
                             <span>{{item.fecha_hora}}</span>
                             <span>{{item.plazas}}</span>

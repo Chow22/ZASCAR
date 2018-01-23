@@ -521,6 +521,7 @@ iframe{
 }
 
 .list {
+
     list-style: none;
     margin: 0;
     padding: 0;
@@ -549,7 +550,7 @@ iframe{
 
 .list li:nth-child(odd):hover {
 
-    background-color:none ;
+    background-color: #dadada;
 
 }
 
@@ -627,14 +628,15 @@ iframe{
 
 }
 /*-----------------------------valoracion de conductores-------------------------------*/
-/*alineamiento de las tarjetas y de los planetas*/
-.sentrado{width:123% ;}
-/*botones votos votados que no revotan*/
-.btn-group{margin-left: 175px}
-/*imagenes perfiles de usuario*/
-.imagencitas{width:150px;height:150px;}
+.glyphicon {margin-bottom: 150px;margin-right: 150px;}
+small {display:block;line-height: 1.428571429;color: #999;}
 /*tabla conductores*/
+.valorar{width: 100%;}
 tablita-conductora{margin-left:500px ;margin-right: 500px;}
+
+/*valoracion de conductores */
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
 small {
 display: block;
 line-height: 1.428571429;
