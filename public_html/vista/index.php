@@ -58,8 +58,12 @@ session_start();
         </header>        
         <section>
             <fieldset>
-                <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
-                <input class="strindex-button" name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+                <p class="intro tamano">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+                <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano"></button>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-zoom-in"></span> Zoom
+                </button>	
+            
             </fieldset>
              <br>
             <strong class="strindex">En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>           
