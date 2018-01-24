@@ -55,13 +55,14 @@ session_start();
                 </ul>
 
             </nav>
-        </header>
-        <fieldset>
-            <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
-            <input name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
-        </fieldset>
+        </header>        
         <section>
-            <strong class="strindex">En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>
+            <fieldset>
+                <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+                <input class="strindex-button" name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+            </fieldset>
+             <br>
+            <strong class="strindex">En ZASCAR podrás encontrar gente con la que viajar, ahorrando así el nivel de emisiones hacia el medio ambiente, y agilizando el tráfico en la carretera</strong>           
         </section>
         <section id="pageContent">
             <main role="main">
@@ -82,7 +83,7 @@ session_start();
                                 <div class="item active">
                                     <img src="../img/carousel0.jpg" alt="...">
                                     <div class="carousel-caption">
-                                        <h2>Viaja feliz con tus compañeros de viaje</h2>
+                                        <h2>Podrás conocer a gente muy interesante, y sin pagar ni un chavo!</h2>
                                     </div>
                                 </div>
                                 <div class="item">
@@ -94,7 +95,7 @@ session_start();
                                 <div class="item">
                                     <img src="../img/carousel2.png" alt="...">
                                     <div class="carousel-caption">
-                                        <h2>Podrás conocer a gente muy interesante, y sin pagar ni un chavo!</h2>
+                                        <h2>Viaja feliz con tus compañeros de viaje</h2>
                                     </div>
                                 </div>
                             </div>

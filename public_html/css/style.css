@@ -535,14 +535,14 @@ iframe{
 
 }
 
-.list li:not (.plazasACero)  {
+.list li:not(.plazasACero)  {
 
     background-color: #f0f0f0;
     display: table-row;
     color: #5c5c5c;
 }
 
-.list li:nth-child(odd) {
+.list li:nth-child(odd):not(.plazasACero) {
 
     background-color: #f2f2f2;
     display: table-row;
@@ -557,16 +557,14 @@ iframe{
 
 }
 
-.list li:nth-child(even) {
+.list li:nth-child(even):not(.plazasACero) {
 
     background-color: #e8e8e8;
-    display: table-row;
-    font-size: 11pt;
-    color: #5c5c5c;
+
 
 }
 
-.list li:nth-child(even):hover {
+.list li:nth-child(even):not(.plazasACero):hover {
 
     background-color: none;
 
@@ -585,7 +583,7 @@ iframe{
 }
 
 
-.list li:nth-child(1) {
+.list li:nth-child(1):not(.plazasACero) {
 
     background-color: #201c2b;
     text-transform: uppercase;
@@ -595,57 +593,44 @@ iframe{
 
 
 }
-
-.list li:nth-child(1):hover {
-
-
-
-}
-
-
-
 .list li:nth-child(1) span {
 
     border-bottom: 2px solid #7d5bbe;
     padding: 14px;
 
 }
-
 .list span {
-
     text-align: left;
     display: table-cell;
     padding: 6px;
     vertical-align: middle;
-
 }
-
-
-.list span:nth-child(2) {
-
-
-}
-
 .margenes{
-
     margin-right: 30%;
 
 }
-
 .margeneslista{
     align-content: center;
     margin-left: auto;
     margin-right: 5%;
-
 }
-
 .margeneslogin{
     align-content: center;
     margin-left: -55%;
     margin-right: 30%;
-
 }
-
+.plazasACero{
+    background-color: darksalmon;
+    display: table-row;
+    font-size: 11pt;
+    color: #5c5c5c;
+}
+.tabla-campos{
+    width:500px;
+    overflow:hidden; /* Escondemos la parte sobrante */
+    white-space:nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
+    text-overflow: ellipsis; /* Ponemos los dos puntos */
+}
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}

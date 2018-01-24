@@ -10,7 +10,7 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
         });
 //////////////////////////////////////////////////////////////////////////////////////////////
         $scope.misdatos = {
-            idtrayecto:"",
+            idtrayecto: "",
             origen: "",
             destino: "",
             fecha_hora: "",
@@ -54,35 +54,30 @@ miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, 
             });
         };
 //////////////////////////////////////////////////////////////////////////////////////////////
-      $scope.peticion = function (index,item) {
-          //crear la variable de idtrayecto
-            $idtray = item.idtrayecto;            
+        $scope.peticion = function (index, item) {
+            //crear la variable de idtrayecto
+            $idtray = item.idtrayecto;
             //alert($idtray);                            
-                      
-            //mandar el idtrayecto al controlador
-            $http({url: '../controlador/controlador_mandar_peticiones.php',
-                method: "GET",//recoger el idtrayecto
-                
-                params: {value: $idtray}
-            }).success (function (response){                
-                $scope.misdatos.idtrayecto = response[0].idtrayecto;                                                                                     
-              });
-               alert('Su petición ha sido enviada correctamente, espere a que el conductor acepte su petición :)'); 
-               
-//                if(misdatos.plazas = 0){
-//                  ng-style
-//                  alert('Las plazas están agotadas, busque otro trayecto');
-//                    $scope.peticion.block;
-//                }
-       
-      };
+            if (item.plazas == 0) {
+                alert('Plazas agotadas, busque otro trayecto');
+            } else {
+                $http({url: '../controlador/controlador_mandar_peticiones.php',
+                    method: "GET", //recoger el idtrayecto
+
+                    params: {value: $idtray}
+                }).success(function (response) {
+                    $scope.misdatos.idtrayecto = response[0].idtrayecto;
+                });
+                alert('Su petición ha sido enviada correctamente, espere a que el conductor acepte su petición :)');
+            }          
+        };
 
 //////////////////////////////////////////////////////////////////////////////////////////////        
 //Se busca por cualquiera de los caract.Proemro se da al boton 
 //iniciar busqueda para ver los campos de busqueda y luego se filtra
         $scope.VerFormBusqueda = false;
         $scope.Buscar = function () {
-        $scope.VerFormBusqueda = true;
+            $scope.VerFormBusqueda = true;
         };
 ////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.finbuscar = function () {

@@ -81,7 +81,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <div class="margeneslista">
             <div class="container">
                 <div class="listWrap">
-                    <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+                    <tr ng-repeat="item in lista| filter:TEXTObusqueda">
                     <ul class="list" >
                         <li>
                             <span>Origen</span>
@@ -89,15 +89,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <span>Fecha/Hora</span>
                             <span>Plazas</span>
                             <span>Paradas</span>
-                            <span>Acciones</span>
+                            <span></span>
                         </li>
-                       <li ng-class="{plazasACero:item.plazas=='0'}" ng-repeat="item in lista| filter:TEXTObusqueda">
+                       <li ng-class="{plazasACero:item.plazas==0}" ng-repeat="item in lista| filter:TEXTObusqueda">
                             <h1 hidden> {{item.idtrayecto}}</h1>
-                            <span>{{item.origen}}</span>
-                            <span>{{item.destino}}</span>
+                            <span class="tabla-campos">{{item.origen}}</span>
+                            <span class="tabla-campos">{{item.destino}}</span>
                             <span>{{item.fecha_hora}}</span>
                             <span>{{item.plazas}}</span>
-                            <span>{{item.paradas}}</span>
+                            <span class="tabla-campos">{{item.paradas}}</span>
                             <span>
                                 <div class="btn-group btn-group-xs" role="group" aria-label="...">
                                     <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
