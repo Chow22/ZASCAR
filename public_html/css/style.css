@@ -639,6 +639,13 @@ iframe{
 
 }
 
+.margeneslogin{
+    align-content: center;
+    margin-left: -55%;
+    margin-right: 30%;
+
+}
+
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}

@@ -58,8 +58,8 @@
 
 
                                     </div>         
-
-                                    <div class="container">
+                                    
+                                    <div class="margeneslogin">
                                         <div class="unpoquitodemargen">
                                             <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
