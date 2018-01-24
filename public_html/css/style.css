@@ -606,7 +606,7 @@ iframe{
     vertical-align: middle;
 }
 .margenes{
-    margin-right: 30%;
+    margin-right: 500px;
 
 }
 .margeneslista{
@@ -626,11 +626,12 @@ iframe{
     color: #5c5c5c;
 }
 .tabla-campos{
-    width:500px;
-    overflow:hidden; /* Escondemos la parte sobrante */
-    white-space:nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
+    max-width: 150px;
+    overflow: hidden; /* Escondemos la parte sobrante */
+    white-space: nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
     text-overflow: ellipsis; /* Ponemos los dos puntos */
 }
+.tabla-campos:hover{height: auto;overflow:visible;white-space:normal;}
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}
@@ -655,6 +656,6 @@ small {
     margin-left: 10px;
 }
 .tamano{
-    margin-left: 25px;
+    margin-left: 100px;
 }
 /*kalakuli*/

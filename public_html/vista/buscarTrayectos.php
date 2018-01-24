@@ -66,7 +66,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <strong class="strindex">Aquí se muestra una lista de los trayectos a los que te puedes agregar o puedes mostrar la informacion del conductor.
                 El icono <img src="../img/infobutton.png" alt="" width="15px" height="15px"/> muestra la informacion del conductor que ha publicado el trayecto, el icono
                 <img src="../img/acceptbutton.png" alt="" width="15px" height="15px"/> manda la peticion al conductor que ha publicado el trayecto que te interesa. La página también dispone de un buscador en el que podras filtrar tu búsqueda según tus preferencias, ya sea por origen, destino, fecha u hora, plazas, paradas, etc....
-
             </strong>
             <hr>
             <br>               
@@ -82,7 +81,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <div class="container">
                 <div class="listWrap">
                     <tr ng-repeat="item in lista| filter:TEXTObusqueda">
-                    <ul class="list" >
+                    <ul class="list">
                         <li>
                             <span>Origen</span>
                             <span>Destino</span>

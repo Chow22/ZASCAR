@@ -49,104 +49,44 @@ session_start();
                 </ul>
             </nav>
         </header>
-        <section>
-            <h1 align="center">Lista de trayectos que pueden interesarte</h1>
-            <hr>
-            <br> 
-            <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores 
-                con diferente origen,fecha y hora,plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
-                la respuesta del conductor.<br>
-                Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > Buscar trayecto del menú desplegable</strong>        </section>
-        <section id="pageContent">
-            <main role="main">
-                <section class="section-white">
-
-                    <div class="container-main">
-                        <div class="listWrap">
-                            <div class="margenes">
-                                <ul class="list" >
-                                    <li>
-                                        <span>Origen</span>
-                                        <span>Destino</span>
-                                        <span>Fecha/Hora</span>
-                                        <span>Plazas</span>
-                                        <span>Paradas</span>
-                                    </li>
-                                    <?php
-                                    foreach ($pd as $trayecto) {
-                                        ?>
-                                        <li>
-                                            <span><?php echo $trayecto["origen"]; ?></span>
-                                            <span><?php echo $trayecto["destino"]; ?></span>
-                                            <span><?php echo $trayecto["fecha_hora"]; ?></span>
-                                            <span><?php echo $trayecto["plazas"]; ?></span>
-                                            <span><?php echo $trayecto["paradas"]; ?></span>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <aside>
-                <div id="wrapper">
-                    <ul class="menu">
-                        <li class="item1"><a href="#">Opciones de Cuenta</a>
-                            <ul>
-                                <li class="subitem1"><a href="../vista/miCuenta.php">Modificar Cuenta</a></li>
-                                <li class="subitem1"><a href="../vista/miCuenta.php">Eliminar Cuenta</a></li>
-                            </ul>
+        <h1 align="center">Lista de trayectos que pueden interesarte</h1>
+        <hr>
+        <br> 
+        <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores 
+            con diferente origen,fecha y hora,plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
+            la respuesta del conductor.<br>
+            Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > Buscar trayecto del menú desplegable</strong>     
+        <div class="margeneslista">
+            <div class="container">
+                <div class="listWrap">
+                    <ul class="list" >
+                        <li>
+                            <span>Origen</span>
+                            <span>Destino</span>
+                            <span>Fecha/Hora</span>
+                            <span>Plazas</span>
+                            <span>Paradas</span>
                         </li>
-                        <li class="item2"><a href="#">Zona Conductor</a>
-                            <ul>
-                                <li class="subitem1"><a href="../vista/insertarTrayectos.php">Publicar Trayecto</a></li>
-                                <li class="subitem2"><a href="../vista/consultarTrayectos.php">Consultar Trayecto</a></li>
-                            </ul>
-                        </li>
-                        <li class="item3"><a href="#">Zona Pasajero</a>
-                            <ul>
-                                <li class="subitem1"><a href="../vista/buscarTrayectos.php">Buscar Trayecto</a></li>
-                            </ul>
-                        </li>
-                        <li class="item4"><a href="#">Zona Administrador</a>
-                            <ul>
-                                <li class="subitem1"><a href="#">Gestión de Usuarios</a></li>
-                            </ul>
-                        </li>
+                        <?php
+                        foreach ($pd as $trayecto) {
+                            ?>
+                            <li>
+                                <span class="tabla-campos"><?php echo $trayecto["origen"]; ?></span>
+                                <span class="tabla-campos"><?php echo $trayecto["destino"]; ?></span>
+                                <span><?php echo $trayecto["fecha_hora"]; ?></span>
+                                <span><?php echo $trayecto["plazas"]; ?></span>
+                                <span class="tabla-campos"><?php echo $trayecto["paradas"]; ?></span>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
-
                 </div>
-                <!--initiate accordion-->
-                <script type="text/javascript">
-                    $(function () {
-
-                        var menu_ul = $('.menu > li > ul'),
-                                menu_a = $('.menu > li > a');
-
-                        menu_ul.hide();
-
-                        menu_a.click(function (e) {
-                            e.preventDefault();
-                            if (!$(this).hasClass('active')) {
-                                menu_a.removeClass('active');
-                                menu_ul.filter(':visible').slideUp('normal');
-                                $(this).addClass('active').next().stop(true, true).slideDown('normal');
-                            } else {
-                                $(this).removeClass('active');
-                                $(this).next().stop(true, true).slideUp('normal');
-                            }
-                        });
-
-                    });
-                </script>
-            </aside>
-        </section>
-        <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
-        </footer>   
-    </body>
+            </div>
+        </div>
+</div>                               
+<footer>
+    <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
+</footer>   
+</body>
 </html>
