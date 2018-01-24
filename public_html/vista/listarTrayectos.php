@@ -83,8 +83,7 @@ session_start();
                     </ul>
                 </div>
             </div>
-        </div>
-</div>                               
+        </div>                            
 <footer>
     <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
 </footer>   

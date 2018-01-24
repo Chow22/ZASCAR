@@ -529,13 +529,12 @@ iframe{
 
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 20;
     display: table;
     white-space: nowrap;
     width: 100%;
 
 }
-
 .list li:not(.plazasACero)  {
 
     background-color: #f0f0f0;
@@ -615,13 +614,9 @@ iframe{
     margin-left: auto;
     margin-right: 5%;
 }
-.margeneslogin{
-  
-}
 .plazasACero{
     background-color: darksalmon;
     display: table-row;
-    font-size: 11pt;
     color: #5c5c5c;
 }
 .tabla-campos{
