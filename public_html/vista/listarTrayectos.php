@@ -56,16 +56,17 @@ session_start();
             con diferente origen,fecha y hora,plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
             la respuesta del conductor.<br>
             Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > Buscar trayecto del menú desplegable</strong>     
-        <div class="margeneslista">
+        <div class="">
             <div class="container">
                 <div class="listWrap">
-                    <ul class="list" >
+                    <ul class="list tabla-listar" >
                         <li>
                             <span>Origen</span>
                             <span>Destino</span>
                             <span>Fecha/Hora</span>
                             <span>Plazas</span>
                             <span>Paradas</span>
+                            <span></span>
                         </li>
                         <?php
                         foreach ($pd as $trayecto) {
@@ -76,6 +77,8 @@ session_start();
                                 <span><?php echo $trayecto["fecha_hora"]; ?></span>
                                 <span><?php echo $trayecto["plazas"]; ?></span>
                                 <span class="tabla-campos"><?php echo $trayecto["paradas"]; ?></span>
+                                <span><p></span>
+                                <span><p></span>
                             </li>
                             <?php
                         }
@@ -84,8 +87,8 @@ session_start();
                 </div>
             </div>
         </div>                            
-<footer>
-    <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
-</footer>   
-</body>
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
+        </footer>   
+    </body>
 </html>
