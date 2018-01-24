@@ -1,5 +1,4 @@
 //alert('hola')
-
 var miAplicacion = angular.module('miAplicacion', []);
 miAplicacion.controller('mainController', ["$scope", "$http", function ($scope, $http) {
         //te jakié la computa     

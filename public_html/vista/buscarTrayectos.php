@@ -73,7 +73,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <br>
             <br>
             <div id="dcha" ng-show="VerMenu === true"> 
-                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><h5 style="color:white;">Escriba dato a buscar:</h5> <input type="text" ng-model="TEXTObusqueda"> 
+                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><p class="texto-buscador">Escriba dato a buscar:</p> <input type="text" ng-model="TEXTObusqueda"> 
                     <input type="submit" class="btn btn-default" value="Cerrar"/> 
                 </form> 
             </div>     
@@ -85,8 +85,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <li>
                                 <span>Origen</span>
                                 <span>Destino</span>
-                                <span>Fecha/Hora</span>
-                                <span>Plazas</span>
+                                <span class="alineacion-fechahora">Fecha/Hora</span>
+                                <span class="alineacion-plazas">Plazas</span>
                                 <span>Paradas</span>
                                 <span></span>
                             </li>

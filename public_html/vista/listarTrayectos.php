@@ -16,6 +16,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/cargarDatosTrayectos.js" type="text/javascript"></script>
 <!--        <script src="../js/script.js"></script>        -->
     </head>
     <body>
@@ -49,15 +50,19 @@ session_start();
                 </ul>
             </nav>
         </header>
+        <br>
+        <br>
         <h1 align="center">Lista de trayectos que pueden interesarte</h1>
-        <hr>
-        <br> 
-        <strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores 
-            con diferente origen,fecha y hora,plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
-            la respuesta del conductor.<br>
-            Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > Buscar trayecto del menú desplegable</strong>     
-        <div class="">
-            <div class="container">
+        <br>
+        <p><strong class="strindex">En esta página se muestra los trayectos publicados por nuestros conductores 
+            con diferente origen, fecha y hora, plazas y paradas. elige el viaje que mas te convenga, agregate y espera 
+            la respuesta del conductor.<p>
+                Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > <strong><a href="../vista/buscarTrayectos.php"> Buscar trayecto </a></strong> del menú desplegable
+            </strong> </p>
+        <hr>             
+        <div class="margeneslista">           
+            <br>
+            <div class="container">             
                 <div class="listWrap">
                     <ul class="list tabla-listar" >
                         <li>
@@ -76,9 +81,10 @@ session_start();
                                 <span class="tabla-campos"><?php echo $trayecto["destino"]; ?></span>
                                 <span><?php echo $trayecto["fecha_hora"]; ?></span>
                                 <span><?php echo $trayecto["plazas"]; ?></span>
-                                <span class="tabla-campos"><?php echo $trayecto["paradas"]; ?></span>
+                                <span><?php echo $trayecto["paradas"]; ?></span>
                                 <span><p></span>
                                 <span><p></span>
+                                <span><p></span>                            
                             </li>
                             <?php
                         }

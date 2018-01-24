@@ -535,75 +535,49 @@ iframe{
 }
 
 .list li:nth-child(odd):not(.plazasACero) {
-
     background-color: #f2f2f2;
     display: table-row;
     font-size: 11pt;
     color: #5c5c5c;
-
 }
-
 .list li:nth-child(odd):hover {
-
     background-color: none;
-
 }
-
 .list li:nth-child(even):not(.plazasACero) {
-
     background-color: #e8e8e8;
-
-
 }
-
 .list li:nth-child(even):not(.plazasACero):hover {
-
     background-color: none;
-
 }
-
 .list li:nth-child(1) span:first-child {
-
     border-top-left-radius: 6px;
-
 }
-
 .list li:nth-child(1) span:last-child {
-
     border-top-right-radius: 6px;
-
 }
-
-
 .list li:nth-child(1):not(.plazasACero) {
-
     background-color: #201c2b;
     text-transform: uppercase;
     font-size: 10pt;
     font-weight: bold;
     color: #b8b5c0;
-
-
 }
 .list li:nth-child(1) span {
-
     border-bottom: 2px solid #7d5bbe;
     padding: 14px;
-
 }
 .list span {
     text-align: left;
     display: table-cell;
-    padding: 6px;
+    padding: 7px;
     vertical-align: middle;
 }
 .margenes{
     margin-right: 500px;
-
 }
 .margeneslista{
     align-content: center;
-    margin-left: auto;
+    margin-left: 245px;
     margin-right: 5%;
 }
 .plazasACero{
@@ -612,7 +586,7 @@ iframe{
     color: #5c5c5c;
 }
 .tabla-campos{
-    max-width: 100px;
+    max-width: 170px;
     overflow: hidden; /* Escondemos la parte sobrante */
     white-space: nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
     text-overflow: ellipsis; /* Ponemos los dos puntos */
@@ -622,8 +596,9 @@ iframe{
     max-width: 150px;
     margin-right: 500%;
     margin-left: -500%;
-    padding: 10px;    
+    padding: 7px;    
 }
+.texto-buscador{margin-right: 125px;color:#FFF;font-size: 17px}
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}
