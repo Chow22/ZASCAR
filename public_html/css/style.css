@@ -500,7 +500,8 @@ iframe{
 }
 
 .unpoquitodemargen{
-    margin-left: 6%;
+    margin-left: -35%;
+    margin-right: 90%;
 }
 
 
@@ -615,9 +616,7 @@ iframe{
     margin-right: 5%;
 }
 .margeneslogin{
-    align-content: center;
-    margin-left: -55%;
-    margin-right: 30%;
+  
 }
 .plazasACero{
     background-color: darksalmon;

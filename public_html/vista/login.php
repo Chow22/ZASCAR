@@ -41,8 +41,10 @@
                 <div class="row">                                           
                     <div class="col-md-4 col-md-offset-4 login">              
                         <br>
+                        <div class="margeneslogin">
                         <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Iniciar Sesion</h1>    
                         <br>
+                        
                         <form method="POST" action="../controlador/login_controlador.php">
                             <fieldset>
                                 <div class="form-group" style="color:white;">                                                                        
@@ -57,13 +59,14 @@
                                     <div class="btn-group" role="group">
 
 
-                                    </div>         
+                                       
                                     
-                                    <div class="margeneslogin">
+                                    
                                         <div class="unpoquitodemargen">
-                                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button><br><br>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
                                         </div>
+                                           </div>   
                                     </div>
                                     </form>
 
