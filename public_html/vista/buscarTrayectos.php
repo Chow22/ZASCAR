@@ -91,7 +91,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <span>Paradas</span>
                             <span>Acciones</span>
                         </li>
-                        <li ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
+                       <li ng-class="{plazasACero:item.plazas=='0'}" ng-repeat="item in lista| filter:TEXTObusqueda">
                             <h1 hidden> {{item.idtrayecto}}</h1>
                             <span>{{item.origen}}</span>
                             <span>{{item.destino}}</span>

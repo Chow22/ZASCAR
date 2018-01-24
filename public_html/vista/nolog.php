@@ -5,7 +5,7 @@ session_start();
 //echo ($_SESSION['loggedin']);
 //echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo '<script>window.history.go(-3)</script>';
+    echo '<script>window.history.go(-5)</script>';
 } 
 ?>
 <html lang ="en" >

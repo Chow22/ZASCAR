@@ -515,6 +515,8 @@ iframe{
 
 /*--------------------Tablas--------------------*/
 
+
+
 .listWrap {
 
     height: 800px;
@@ -533,12 +535,11 @@ iframe{
 
 }
 
-.list li {
+.list li:not (.plazasACero)  {
 
     background-color: #f0f0f0;
     display: table-row;
     color: #5c5c5c;
-
 }
 
 .list li:nth-child(odd) {
