@@ -45,11 +45,11 @@
                         <br>
                         <form method="POST" action="../controlador/login_controlador.php">
                             <fieldset>
-                                <div class="form-group">                                                                        
+                                <div class="form-group" style="color:white;">                                                                        
                                     <label>Usuario:</label><input type="text" class="form-control" name="usuario">
                                 </div>
                                 <p>
-                                <div class="form-group">                                                                      
+                                <div class="form-group" style="color:white;">                                                                      
                                     <label>Contraseña:</label><input type="password" class="form-control" name="pass">
                                 </div>
 
