@@ -1,5 +1,7 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-body{line-height:1; font-family: arial;}
+body{line-height:1;
+     font-family: arial;
+}
 h1{font-size: 25px;color: white;margin-left: 25px;margin-right: 25px;}h2{font-size: 21px;}h3{font-size: 18px;}h4{font-size: 16px;}
 p{font-size: 15px;color: white;margin-left: 25px;margin-right: 25px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -517,16 +519,22 @@ iframe{
 
     height: 800px;
     width: 1000px;
+
 }
-.list {    
+
+.list {
+
     list-style: none;
-    margin: 0px;
-    padding: 0px;
-    display: block;
-    white-space: none;
-    margin-left: 100px;
+    margin: 0;
+    padding: 0;
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+
 }
+
 .list li {
+
     background-color: #f0f0f0;
     display: table-row;
     color: #5c5c5c;
@@ -559,17 +567,23 @@ iframe{
 
 .list li:nth-child(even):hover {
 
-    background-color: #dadada;
+    background-color: none;
+
 }
+
 .list li:nth-child(1) span:first-child {
 
     border-top-left-radius: 6px;
+
 }
+
 .list li:nth-child(1) span:last-child {
 
     border-top-right-radius: 6px;
 
 }
+
+
 .list li:nth-child(1) {
 
     background-color: #201c2b;
@@ -580,29 +594,50 @@ iframe{
 
 
 }
+
+.list li:nth-child(1):hover {
+
+
+
+}
+
+
+
 .list li:nth-child(1) span {
 
     border-bottom: 2px solid #7d5bbe;
     padding: 14px;
 
 }
+
 .list span {
 
-    text-align: right;
+    text-align: left;
     display: table-cell;
-    padding: 5px;
-    vertical-align: center;
+    padding: 6px;
+    vertical-align: middle;
 
 }
+
+
 .list span:nth-child(2) {
 
 
 }
 
 .margenes{
-        margin-right: 1200px;
+
+    margin-right: 30%;
 
 }
+
+.margeneslista{
+    align-content: center;
+    margin-left: auto;
+    margin-right: 5%;
+
+}
+
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}
@@ -616,9 +651,9 @@ iframe{
 .alineando-botonsito{margin-left: 620px}
 
 small {
-display: block;
-line-height: 1.428571429;
-color: #999;
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
 }
 .btn-color{
     margin-left: 20px;

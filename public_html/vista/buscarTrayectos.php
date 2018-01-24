@@ -78,6 +78,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <input type="submit" class="btn btn-default" value="Cerrar"/> 
                 </form> 
             </div>     
+            <div class="margeneslista">
             <div class="container">
                 <div class="listWrap">
                     <tr ng-style="" ng-repeat="item in lista| filter:TEXTObusqueda">
@@ -108,6 +109,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
             <footer>
                 <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
