@@ -1,7 +1,9 @@
-/* ----------------- Codigo mapa autocompletado google api ----------------- */
+/* ---------- Codigo mapa mostrar el mapa con sus características ---------- */
 google.maps.event.addDomListener(window, "load", function () {
     const ubicacion = new Localizacion(() => {
+        //se recogen los valores de latitud y longitud en una constante llamada 'myLatLng'. 
         const myLatLng = {lat: ubicacion.latitude, lng: ubicacion.longitude};
+        //en la variable texto se guardará el contenido que mostrará al colocarse el marcador en nuestra posición.
         var texto = '<h1> Esta es tu ubicación actual </h1>' + '<p> Descripcion del lugar </p>' +
                 '<a href="https://www.google.com">Pagina web</a>';
         const options = {
@@ -11,22 +13,30 @@ google.maps.event.addDomListener(window, "load", function () {
         var map = document.getElementById('map');
         const mapa = new google.maps.Map(map, options);
         const marcador = new google.maps.Marker({
+            //atributos del marcador.
             position: myLatLng,
             map: mapa
 
         });
-
+        
+//        var gCoder = new google.maps.Geocoder();
+        
         var informacion = new google.maps.InfoWindow({
             content: texto
         });
 
+        //evento para abrir la ventana de información.
         marcador.addListener('click', function () {
             informacion.open(mapa, marcador);
         });
+
+        /* -------------- Codigo de autocompletado de Origen y destino -------------- */
+
         var autocompleteOrigen = document.getElementById('autocompleteOrigen');
         var autocompleteDestino = document.getElementById('autocompleteDestino');
         const searchOrigen = new google.maps.places.Autocomplete(autocompleteOrigen);
         const searchDestino = new google.maps.places.Autocomplete(autocompleteDestino);
+        //el método binTo restringirá los resultados de busqueda. 
         searchOrigen.bindTo("bounds", mapa);
         searchDestino.bindTo("bounds", mapa);
 
@@ -38,7 +48,7 @@ google.maps.event.addDomListener(window, "load", function () {
             var place = searchOrigen.getPlace();
 
             if (!place.geometry.viewport) {
-                window.alert("Error al mostrar el lugar");
+                window.alert("Error al mostrar el lugar de origen");
                 return;
             }
             if (place.geometry.viewport) {
@@ -70,7 +80,7 @@ google.maps.event.addDomListener(window, "load", function () {
             var place = searchDestino.getPlace();
 
             if (!place.geometry.viewport) {
-                window.alert("Error al mostrar el lugar");
+                window.alert("Error al mostrar el lugar de destino");
                 return;
             }
             if (place.geometry.viewport) {
@@ -94,5 +104,32 @@ google.maps.event.addDomListener(window, "load", function () {
             informacion.setContent('<div><strong>' + place.name + '</strong><br>' + address);
             informacion.open(map, marcador);
         });
+
+//        var objconfigDR = {
+//            map: mapa
+//           suppressMarkers: true
+//        };
+//
+//        alert(autocompleteOrigen);
+//        var objConfigDS = {
+//            origin: autocompleteOrigen, //LatLong - String domicilio.
+//            destination: autocompleteDestino,
+//            travelMode: google.maps.TravelMode.DRIVING
+//        };
+//
+//        var ds = new google.maps.DirectionsService(); //obtener coordenadas.
+//        var dr = new google.maps.DirectionsRenderer(objconfigDR); //traduce coordenadas a la ruta visible
+//
+//        ds.route(objConfigDS, fnRutear);
+//
+//        function fnRutear(resultados, status) {
+//            //mostrar la línea entre A y B.
+//            if (status === 'OK') {
+//                dr.setDirections(resultados);
+//            } else {
+//                alert('Error ' + status);
+//            }
+//        }
+
     });
 });
