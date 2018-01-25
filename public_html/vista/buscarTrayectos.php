@@ -69,50 +69,49 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </strong>
             <hr>
             <br>   
-            <div class="alineando-botonsito2"           
-                 <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
+            <div class="alineando-botonsito2">           
+                <input type="button" class="btn btn-default" value="Buscar" ng-click="Buscar()"> 
             </div>      
             <br>
-            <div id="dcha" ng-show="VerMenu === true"> 
-                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><p class="texto-buscador">Escriba dato a buscar:</p> <input type="text" ng-model="TEXTObusqueda"> 
-                    <input type="submit" class="btn btn-default" value="Cerrar"/> 
+            <div id="alineando-buscador2" ng-show="VerMenu === true"> 
+                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><p class="texto-buscador2">Escriba dato a buscar:</p> <input type="text" ng-model="TEXTObusqueda"> 
+                    <input type="submit" class="btn btn-default" value="Cerrar"> 
                 </form> 
             </div>     
             <div class="margeneslista">
                 <div class="container">
                     <div class="listWrap">
-                        <tr ng-repeat="item in lista| filter:TEXTObusqueda"/>
+                        <tr ng-repeat="item in lista| filter:TEXTObusqueda">
                         <ul class="list">
                             <li>
                                 <span>Origen</span>
                                 <span>Destino</span>
-                                <span class="alineacion-fechahora">Fecha/Hora</span>
-                                <span class="alineacion-plazas">Plazas</span>
-                                <span>Paradas</span>
+                                <span>Fecha/Hora</span>
+                                <span>Plazas</span>
+                                <span>Paradas</span>                           
+                                <span></span>    
                                 <span></span>
-                            </li>
+                            </li>                            
                             <li ng-class="{plazasACero:item.plazas == 0}" ng-repeat="item in lista| filter:TEXTObusqueda">
                                 <h1 hidden> {{item.idtrayecto}}</h1>
-                                <span class="tabla-campos">{{item.origen}}</span>
-                                <span class="tabla-campos">{{item.destino}}</span>
+                                <span class="tabla-campos2">{{item.origen}}</span>
+                                <span class="tabla-campos2">{{item.destino}}</span>
                                 <span>{{item.fecha_hora}}</span>
-                                <span>{{item.plazas}}</span>
-                                <span class="tabla-campos">{{item.paradas}}</span>
-                                <span>
-                                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                        <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
-                                            <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
-                                    </div>
-                                </span>
-                            </li>
-                            <li>
-                            </li>
+                                <span>{{item.plazas}}</span>                                
+                                <span class="tabla-campos">{{item.paradas}}</span> 
+                                <span></span>
+                                <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                    <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >
+                                        <img src="../img/acceptbutton.png" class="txiki" style="cursor:pointer;" ng-click='peticion($index, item)' alt="" ></span>
+                                </div>
+                            </li>                         
                         </ul>
                     </div>
                 </div>
             </div>
-            <footer>
-                <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
-            </footer> 
+        </div>
+        <footer>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="../vista/contacto.php">Contacto</a></p>
+        </footer> 
     </body>
 </html>

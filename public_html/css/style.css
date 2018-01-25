@@ -522,7 +522,7 @@ iframe{
 .list {
     list-style: none;
     margin: 0;
-    padding: 20;
+    padding: 9;
     display: table;
     white-space: nowrap;
     width: 100%;
@@ -586,19 +586,23 @@ iframe{
     color: #5c5c5c;
 }
 .tabla-campos{
-    max-width: 170px;
+    max-width: 100px;
     overflow: hidden; /* Escondemos la parte sobrante */
     white-space: nowrap; /* Indicamos que no realice salto de linea si no cabe en la anchura indicada */
     text-overflow: ellipsis; /* Ponemos los dos puntos */
 }
 .tabla-campos:hover{height: auto;overflow:visible;white-space:normal;}
 .tabla-listar span {
-    max-width: 150px;
+    max-width: 400px;
     margin-right: 500%;
     margin-left: -500%;
     padding: 7px;    
 }
+/*alineando el botonsito de busqueda*/
+.alineando-botonsito{margin-left: 680px}
+/*alinamiento del texto del buscador en valoraciones*/
 .texto-buscador{margin-right: 125px;color:#FFF;font-size: 17px}
+
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
 .btn-group{margin-left: 175px}
@@ -608,9 +612,12 @@ iframe{
 .datos-conductor{margin-left: 20px;text-align: center}
 /*tabla conductores*/
 .valorar{margin-left: 500px}
-/*alineando el botonsito de busqueda*/
-.alineando-botonsito{margin-left: 680px}
-.alineando-botonsito2{margin-left: 600px}
+/*alineando el botonsito de busqueda de la tabla buscarTrayectos*/
+.alineando-botonsito2{margin-left: 5px}
+/*alineando el cajetin de buscador de buscarTrayectos*/
+.alineando-buscador{margin-left: 12px}
+/*alinamiento del texto del buscador de la pagina buscarTrayectos*/
+.texto-buscador2{margin-right: 120px;color:#FFF;font-size: 17px}
 
 small {
     display: block;

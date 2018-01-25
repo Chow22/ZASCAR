@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
         <link rel="canonical" href="http://html5-templates.com/" />
-        <title>Buscar Trayectos</title>
+        <title>Valora a nuestros conductores</title>
         <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">                
@@ -61,7 +61,7 @@ session_start();
             <hr>
             <br>   
             <div class="alineando-botonsito">
-                <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
+                <input type="button" class="btn btn-default" value="Buscar" ng-click="Buscar()"> 
             </div>
             <br>          
             <div id="dcha" ng-show="VerMenu === true"> 
@@ -69,7 +69,6 @@ session_start();
                     <input type="submit" class="btn btn-default" value="Cerrar"/> 
                 </form> 
             </div>   
-
             <div class="valorar">
                 <div  ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
                     <div class="tablita-conductora">    
