@@ -81,7 +81,7 @@ session_start();
                                 <span class="tabla-campos"><?php echo $trayecto["destino"]; ?></span>
                                 <span><?php echo $trayecto["fecha_hora"]; ?></span>
                                 <span><?php echo $trayecto["plazas"]; ?></span>
-                                <span><?php echo $trayecto["paradas"]; ?></span>
+                                <span class="tabla-campos"><?php echo $trayecto["paradas"]; ?></span>
                                 <span><p></span>
                                 <span><p></span>
                                 <span><p></span>                            
