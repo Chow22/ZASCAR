@@ -573,7 +573,7 @@ iframe{
 .list span {
     text-align: left;
     display: table-cell;
-    padding: 7px;
+    padding: 20px;
     vertical-align: middle;
 }
 .margenes{
@@ -600,7 +600,7 @@ iframe{
     max-width: 400px;
     margin-right: 500%;
     margin-left: -500%;
-    padding: 7px;    
+    padding: 10px;    
 }
 /*alineando el botonsito de busqueda*/
 .alineando-botonsito{margin-left: 680px}

@@ -60,8 +60,7 @@ session_start();
                 Si te interesa alguno de estos viajes debes estar <strong><a href="../vista/login.php">LOGEADO</a></strong> y entrar Zona Pasajero > <strong><a href="../vista/buscarTrayectos.php"> Buscar trayecto </a></strong> del menú desplegable
             </strong> </p>
         <hr>             
-        <div class="margeneslista">           
-            <br>
+        <div class="margeneslista">                      
             <div class="container">             
                 <div class="listWrap">
                     <ul class="list tabla-listar" >
