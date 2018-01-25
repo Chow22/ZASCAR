@@ -15,8 +15,8 @@ google.maps.event.addDomListener(window, "load", function () {
         const marcador = new google.maps.Marker({
             //atributos del marcador.
             position: myLatLng,
-            map: mapa
-
+            map: mapa,
+            title: "Ubicación"
         });
         
 //        var gCoder = new google.maps.Geocoder();

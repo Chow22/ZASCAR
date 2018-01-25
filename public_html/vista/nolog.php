@@ -6,11 +6,11 @@ session_start();
 //echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo '<script>window.location.href = "../vista/index.php";</script>';
-} 
+}
 ?>
 <html lang ="en" >
     <head>
-        <title>Mi cuenta</title>
+        <title>No se puede mostrar la página web</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
@@ -29,30 +29,30 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
-        <div>
-            <div class="container auth">
-                <br><br>
+
+        <div class="container auth">
+            <br/><br/>
 
 
-                <div id="big-form" class="well auth-box">
+            <div id="big-form" class="well auth-box">
 
-                    <fieldset>
-                        <div class="center-block">
 
-                            <img src="../img/nolog.png" alt=""/>
-                            <br>
-                            <h2 class="text-left">Esta pagina es solo para usuarios registrados, porfavor logeate.</h2>
-                            <br>
-                            <div class='container'>
-                                <a href='../vista/login.php' class="btn btn-default">Login</a>
-                            </div>
-                            <br>
-                            <div class='container'>
-                                <a href='../vista/login.php' class="btn btn-default">Registrarme</a>
-                            </div>
-                        </div>
+                <div class="center-block">
+
+                    <img src="../img/nolog.png" alt="" />
+                    <br/>
+                    <h2 class="text-left">Esta página es solo para usuarios registrados, por favor logueate.</h2>
+                    <br/>
+                    <div class='container'>
+                        <a href='../vista/login.php' class="btn btn-default">Login</a>
+                    </div>
+                    <br/>
+                    <div class='container'>
+                        <a href='../vista/login.php' class="btn btn-default">Registrarme</a>
+                    </div>
                 </div>
-
             </div>
+
+        </div>
     </body>
 </html>

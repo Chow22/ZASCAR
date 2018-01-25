@@ -35,9 +35,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <?php
                 $now = time();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                    echo "<a  href='controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
+                    echo "<font color = 'orange'><a  href='../vista/miCuenta.php' style='color:orange;'>";
                     echo ($_SESSION['username']);
                     echo"</font></a>";
                     echo "</p>";
@@ -67,15 +67,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <legend>Datos del viaje</legend>
                     <hr>
                     <label class="trayecto-label">¿Desde donde sales?</label><br/>
-                    <input type="text" id="autocompleteOrigen" name="origen" placeholder="Inicio"/><br/>
+                    <input type="text" class="form-control" id="autocompleteOrigen" name="origen" placeholder="Origen" required /><br/>
                     <label class="trayecto-label">¿A donde vas?</label><br/>
-                    <input type="text" id="autocompleteDestino" name="destino" placeholder="Destino"/><br/>
+                    <input type="text" class="form-control" id="autocompleteDestino" name="destino" placeholder="Destino" required /><br/>
                     <label class="trayecto-label">Fecha y hora</label><br/>
-                    <input type="datetime-local" name="fechahora"/><br/>
+                    <input type="datetime-local" class="form-control" name="fechahora" required /><br/>
                     <label class="trayecto-label">Plazas</label><br/>
-                    <input type="text" name="plazas" placeholder="Plazas"/><br/>
+                    <input type="text" class="form-control" name="plazas" placeholder="Plazas" required /><br/>
                     <label class="trayecto-label">Paradas</label><br/>
-                    <textarea rows="4" cols="50" name="paradas" placeholder="Introduce tus paradas..." form="trayecto"></textarea><br/>
+                    <textarea rows="4" cols="50" class="form-control" name="paradas" placeholder="Introduce tus paradas..." form="trayecto"></textarea><br/>
                     <?php echo '<input type="hidden" name="id" value="' . ($_SESSION['idusu']) . '"/>' . "\n"; ?>
                 </fieldset>
                 <br/>
@@ -97,7 +97,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                 <a href="mailto:pepa_la@cerda.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
             </div>
-        </div>
-    </footer>   
+        </footer>   
     </body>
 </html>

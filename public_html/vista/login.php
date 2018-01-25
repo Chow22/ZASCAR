@@ -42,11 +42,11 @@
                     <div class="col-md-4 col-md-offset-4 login">              
                         <br>
                         <div class="margeneslogin">
-                        <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Iniciar Sesion</h1>    
-                        <br>
-                        
-                        <form method="POST" action="../controlador/login_controlador.php">
-                            <fieldset>
+                            <h1 class="text-center"><i class="glyphicon glyphicon-user"></i>Iniciar Sesion</h1>    
+                            <br>
+
+                            <form method="POST" action="../controlador/login_controlador.php">
+
                                 <div class="form-group" style="color:white;">                                                                        
                                     <label>Usuario:</label><input type="text" class="form-control" name="usuario">
                                 </div>
@@ -59,97 +59,90 @@
                                     <div class="btn-group" role="group">
 
 
-                                       
-                                    
-                                    
+
+
+
                                         <div class="unpoquitodemargen">
                                             <button type="submit" class="btn btn-primary">Iniciar Sesión</button><br><br>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
                                         </div>
-                                           </div>   
-                                    </div>
-                                    </form>
-
+                                    </div>   
                                 </div>
-                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <hr>
+                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="myModalLabel">Registro</h4>
+                            </div>
 
-                                <br>
-
-                                </div>
-                                <hr>
-                                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                <h4 class="modal-title" id="myModalLabel">Registro</h4>
-                                            </div>
-
-                                            <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
-                                                <div class="modal-body">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Nombre</label>
-                                                            <input type="text" name="nombre" class="form-control" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Teléfono:</label>
-                                                            <input type="text" name="telefono" class="form-control" onkeypress="return SoloNumeros(event)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Apellidos</label>
-                                                            <input type="text" name="apellidos" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Nombre usuario:</label>
-                                                            <input type="text" name="usuario" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Imagen:</label>
-                                                            <input type="text" name="imagen" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Contraseña:</label>
-                                                            <input type="password" id="clave1" name="pass" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>E-mail</label>
-                                                            <input type="text" name="email" class="form-control" onkeypress="return ComprobarArroba(event)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Repite contraseña:</label>
-                                                            <input type="password" id="clave2" name="password" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                                </div>
-                                            </form>
+                            <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
+                                <div class="modal-body">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input type="text" name="nombre" class="form-control" required />
                                         </div>
                                     </div>
-                            </fieldset> 
 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Teléfono:</label>
+                                            <input type="text" name="telefono" class="form-control" onkeypress="return SoloNumeros(event)" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Apellidos</label>
+                                            <input type="text" name="apellidos" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Nombre usuario:</label>
+                                            <input type="text" name="usuario" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Imagen:</label>
+                                            <input type="text" name="imagen" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Contraseña:</label>
+                                            <input type="password" id="clave1" name="pass" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>E-mail</label>
+                                            <input type="text" name="email" class="form-control" onkeypress="return ComprobarArroba(event)" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Repite contraseña:</label>
+                                            <input type="password" id="clave2" name="password" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
