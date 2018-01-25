@@ -53,21 +53,23 @@ session_start();
         <br>
         <br>
         <div ng-controller="mainController" >
-            <h1>Lista de Usuarios</h1>        
-            <br>
-            <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
+            <div align="center">
+                <h1>Lista de Usuarios</h1>        
+                <br>
+                <strong class="strindex">En esta página se muestran los conductores a los que quieras valorar.</strong>
+            </div>
             <hr>
             <br>   
             <div class="alineando-botonsito">
                 <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
-                <br>
-                <br>
-                <div id="dcha" ng-show="VerMenu === true"> 
-                    <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><h5 style="color:white;">Escriba dato a buscar:</h5> <input type="text" ng-model="TEXTObusqueda"> 
-                        <input type="submit" class="btn btn-default" value="Cerrar"/> 
-                    </form> 
-                </div>   
             </div>
+            <br>          
+            <div id="dcha" ng-show="VerMenu === true"> 
+                <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><h5 style="color:white;">Escriba dato a buscar:</h5> <input type="text" ng-model="TEXTObusqueda"> 
+                    <input type="submit" class="btn btn-default" value="Cerrar"/> 
+                </form> 
+            </div>   
+
             <div class="valorar">
                 <div  ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
                     <div class="tablita-conductora">    

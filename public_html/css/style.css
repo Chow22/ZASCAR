@@ -326,7 +326,7 @@ listatrayectos {display:none;padding:50px;}
 listatrayectos li span li span{display:block;}
 .peque{width:50px;}
 acciones{width:80%;margin:auto;text-align: center}
-#izda ,#dcha{}
+#izda ,#dcha{margin-left: 600px}
 table.tabla-buscar, tr, td{ border:solid black 1px;}
 form{color: black;}
 /*------imagenes pagina buscarTrayecto-------*/
@@ -607,9 +607,9 @@ iframe{
 /*datos del conductor*/
 .datos-conductor{margin-left: 20px;text-align: center}
 /*tabla conductores*/
-.valorar{margin-left: 480px}
+.valorar{margin-left: 500px}
 /*alineando el botonsito de busqueda*/
-.alineando-botonsito{margin-left: 620px}
+.alineando-botonsito{margin-left: 680px}
 
 small {
     display: block;
