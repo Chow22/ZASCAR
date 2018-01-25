@@ -31,6 +31,7 @@
                     <li><a href="../vista/index.php">Home</a></li>
                     <li><a href="../vista/informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="../vista/valorarConductores.php">Valora a nuestros conductores</a></li> 
                 </ul>
 
             </nav>
@@ -57,11 +58,6 @@
 
                                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                     <div class="btn-group" role="group">
-
-
-
-
-
                                         <div class="unpoquitodemargen">
                                             <button type="submit" class="btn btn-primary">Iniciar Sesión</button><br><br>
                                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
@@ -81,50 +77,49 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <h4 class="modal-title" id="myModalLabel">Registro</h4>
                             </div>
-
                             <form action="../controlador/registro_controlador.php" method="post" name="registro" onsubmit="return Envio()">
                                 <div class="modal-body">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Nombre</label>
-                                            <input type="text" name="nombre" class="form-control" required />
+                                            <input type="text" name="nombre" class="form-control" required >
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Teléfono:</label>
-                                            <input type="text" name="telefono" class="form-control" onkeypress="return SoloNumeros(event)" required />
+                                            <input type="text" name="telefono" class="form-control" onkeypress="return SoloNumeros(event)" required >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Apellidos</label>
-                                            <input type="text" name="apellidos" class="form-control" required />
+                                            <input type="text" name="apellidos" class="form-control" required >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Nombre usuario:</label>
-                                            <input type="text" name="usuario" class="form-control" required />
+                                            <input type="text" name="usuario" class="form-control" required >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Imagen:</label>
-                                            <input type="text" name="imagen" class="form-control" />
+                                            <input type="text" name="imagen" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Contraseña:</label>
-                                            <input type="password" id="clave1" name="pass" class="form-control" required />
+                                            <input type="password" id="clave1" name="pass" class="form-control" required >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>E-mail</label>
-                                            <input type="text" name="email" class="form-control" onkeypress="return ComprobarArroba(event)" required />
+                                            <input type="text" name="email" class="form-control" onkeypress="return ComprobarArroba(event)" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

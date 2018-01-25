@@ -48,7 +48,7 @@ $(document).ready(function () {
     $('#borrarCuenta').click(function (e) {
         var mensaje = confirm("¿Estas seguro? \n Perderas todos tus datos,trayectos incluidos");
         if (mensaje) {
-            alert("¡Gracias por aceptar!, Satan ira en tu busqueda por borrar tu cuenta :/");
+            alert("¡Hasta nunca!, Satan ira en tu búsqueda por borrar tu cuenta >:[ ");
             idusu = $('#idusuSession').text();
             $.ajax({
                 type: 'POST',
@@ -58,7 +58,7 @@ $(document).ready(function () {
                 success: function (datos) {
                     alert("Se ha eliminado con exito");
                     //alert(datos);
-                    window.location.href = "../index.php";
+                    window.location.href = "../vista/index.php";
                 },
                 error: function (xhr) {
                     alert("An error occured: " + xhr.status +

@@ -41,7 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                     <img src="../img/nolog.png" alt="" />
                     <br/>
-                    <h2 class="text-left">Esta página es solo para usuarios registrados, por favor logueate.</h2>
+                    <h2 class="text-left">Esta página es solo para usuarios registrados, por favor logueate o registrate, si no a la caca >:/</h2>
                     <br/>
                     <div class='container'>
                         <a href='../vista/login.php' class="btn btn-default">Login</a>
