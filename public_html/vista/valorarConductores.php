@@ -29,7 +29,7 @@ session_start();
                     echo "<p style='color:white;'>Bienvenido, ";
                     echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
                     echo ($_SESSION['username']);
-                    echo"</font>";
+                    echo"</font></a>";
                     echo "</p>";
                 } else {
                     session_destroy();
@@ -42,14 +42,13 @@ session_start();
             <br>
             <nav>  
                 <ul>
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
-                    <li><a href="#" class="active">Valora a nuestros conductores</a></li>
+                    <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
             </nav>
         </header>
-
         <br>
         <br>
         <div ng-controller="mainController" >
@@ -104,7 +103,15 @@ session_start();
             </div>
         </div>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a></p>
-        </footer> 
-    </body>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a>
+            <div class="">   
+                <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                <a href="mailto:pepa_la@cerda.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+            </div>
+        </div>
+    </footer>  
+</body>
 </html>
