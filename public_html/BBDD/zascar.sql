@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-01-2018 a las 10:11:07
+-- Tiempo de generación: 25-01-2018 a las 10:45:10
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
 
@@ -48,14 +48,29 @@ DELETE FROM usuarios WHERE idusuario=p_idusu;
 DELETE FROM vehiculos WHERE idusuario=p_idusu;
 
 DELETE FROM valoraciones WHERE idusuario=p_idusu;
-
+SET FOREIGN_KEY_CHECKS=1;
 END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `borrarTrayectoConductor` (IN `p_idusu` INT, IN `p_idtrayecto` INT)  NO SQL
+BEGIN DELETE FROM viajes WHERE idusuario=p_idusu AND clase='conductor' AND idtrayecto=p_idtrayecto; DELETE FROM trayecto WHERE idtrayecto=p_idtrayecto AND idtrayecto=(select idtrayecto from viajes where clase='conductor' and idusuario=p_idusu); END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `borrarTrayectoPasajero` (IN `p_id` INT, IN `p_idusu` INT)  NO SQL
 BEGIN
 DELETE FROM viajes WHERE idusuario=p_idusu AND clase='pasajero' AND idtrayecto=p_id;
 
 DELETE FROM trayecto WHERE idtrayecto=p_id AND idtrayecto=(select idtrayecto from viajes where clase='pasajero' and idusuario=p_idusu);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `enviarValoracionNegativa` (IN `p_idusu` INT)  NO SQL
+BEGIN
+UPDATE valoraciones SET negativo=(negativo+1) 
+WHERE idusuario=p_idusu;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `enviarValoracionPositiva` (IN `p_idusu` INT)  NO SQL
+BEGIN
+UPDATE valoraciones SET positivo=(positivo+1) 
+WHERE idusuario=p_idusu;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertarUsuarios` (IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40))  NO SQL
@@ -65,7 +80,12 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `listarTrayecto` ()  NO SQL
 BEGIN
-SELECT origen , destino , fecha_hora , plazas , paradas  FROM trayecto;
+SELECT idtrayecto,origen , destino , fecha_hora , plazas , paradas, idusuario  FROM trayecto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mandarPeticiones` (IN `p_idusu` INT, IN `p_idtrayecto` INT)  NO SQL
+BEGIN
+INSERT INTO viajes (idusuario, idtrayecto, clase, aceptado) VALUES (p_idusu, p_idtrayecto, 'pasajero', 0);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `modificarUsuario` (IN `p_idusuario` INT(11), IN `p_nombre` VARCHAR(40), IN `p_apellidos` VARCHAR(40), IN `p_telefono` VARCHAR(40), IN `p_email` VARCHAR(40), IN `p_imagen` VARCHAR(200), IN `p_usuario` VARCHAR(40), IN `p_pass` VARCHAR(40), IN `p_marca` VARCHAR(40), IN `p_plazas` VARCHAR(40), IN `p_combustible` VARCHAR(40), IN `p_matricula` VARCHAR(40))  NO SQL
@@ -74,9 +94,13 @@ UPDATE usuarios
 set nombre = p_nombre, apellidos = p_apellidos, telefono = p_telefono, email = p_email, imagen = p_imagen, usuario = p_usuario, pass = p_pass
 where idusuario = p_idusuario;
 
-UPDATE vehiculos
-set marca = p_marca, plazas = p_plazas, combustible = p_combustible, matricula = p_matricula
-where idusuario = p_idusuario;
+IF EXISTS (SELECT * FROM vehiculos WHERE idusuario = p_idusuario) THEN
+   UPDATE vehiculos
+	set marca = p_marca, plazas = p_plazas, combustible = 				p_combustible, matricula = p_matricula
+	where idusuario = p_idusuario;
+ELSE
+   INSERT INTO vehiculos(idusuario,marca, plazas, combustible, 			matricula) VALUES 						 							(p_idusuario,p_marca,p_plazas,p_combustible,p_matricula);
+END IF;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrarUsuarios` ()  NO SQL
@@ -92,7 +116,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_usuarios_conductores` ()  NO SQL
 BEGIN
-SELECT usuarios.idusuario, usuarios.nombre, usuarios.apellidos, usuarios.imagen, usuarios.usuario, valoraciones.positivo, valoraciones.negativo from usuarios join valoraciones on usuarios.idusuario=valoraciones.idusuario 
+SELECT usuarios.idusuario,usuarios.nombre, usuarios.apellidos, usuarios.imagen, usuarios.usuario, valoraciones.positivo, valoraciones.negativo from usuarios join valoraciones on usuarios.idusuario=valoraciones.idusuario 
 where usuarios.idusuario in(SELECT idusuario from viajes where clase='conductor');
 END$$
 
@@ -114,7 +138,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `usuarioPorId` (IN `p_id` INT)  NO S
 select usuarios.*, vehiculos.* FROM usuarios LEFT JOIN vehiculos ON usuarios.idusuario=vehiculos.idusuario WHERE usuarios.idusuario=p_id$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `verPeticiones` (IN `p_id` INT)  NO SQL
-SELECT usuarios.nombre,usuarios.idusuario as idsolic, viajes.*,trayecto.* 
+SELECT usuarios.nombre,usuarios.telefono,usuarios.idusuario as idsolic, viajes.*,trayecto.* 
 FROM viajes LEFT JOIN usuarios on usuarios.idusuario=viajes.idusuario LEFT JOIN trayecto on viajes.idtrayecto=trayecto.idtrayecto 
 WHERE viajes.clase="pasajero" and viajes.aceptado=0 and viajes.idtrayecto IN(SELECT idtrayecto 
 FROM trayecto WHERE idusuario=p_id)$$
@@ -149,7 +173,9 @@ CREATE TABLE `trayecto` (
 
 INSERT INTO `trayecto` (`idtrayecto`, `origen`, `destino`, `fecha_hora`, `plazas`, `paradas`, `idusuario`) VALUES
 (1, 'Sevilla', 'Urritxe', '2017-12-21 04:04:07', 4, 'Madrid,Burgos', 7),
-(2, 'marruecos', 'noruega', '2017-12-29 00:00:00', 2, 'Francia, España, Portugal', 9);
+(2, 'Marruecos', 'Noruega', '2017-12-29 00:00:00', 2, 'Francia, España, Portugal', 9),
+(3, 'Donostia', 'Amorebieta', '2018-01-18 04:30:00', 4, 'Elgoibar,Eibar,Ermua,Durango', 18),
+(4, 'Sestao, España', 'Reinosa, España', '2018-01-26 05:00:00', 4, 'uganda,swefwrfwaefdwewferfergvervgrfgrtgwrgffdserergfev', 7);
 
 -- --------------------------------------------------------
 
@@ -175,8 +201,10 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellidos`, `telefono`, `email`, `imagen`, `permisos`, `usuario`, `pass`) VALUES
 (7, 'jennifer', 'Hernandez Macias', '688659988', 'jennifer@gmail.com', 'https://blog.fotolia.com/es/files/2015/09/Screenshot1.png', 0, 'jennerys', '55555'),
-(9, 'Mikel', 'Martin Culoprieto', '999999999', 'mikel@gmail.com', 'https://www.gazetaesportiva.com/wp-content/uploads/imagem/2015/12/31/008340131-1024x682.jpg', 0, 'mikelsito', '123456'),
-(10, 'prueba', 'prueva', 'pruefa', 'prrueba', 'prrueva', 0, 'prruefa', 'prruebha');
+(9, 'mikel', 'turuta', '69458715', 'mikelsillo@hotmail.com', 'https://vice-images.vice.com/images/content-images/2016/07/05/lo-que-tu-foto-de-perfil-de-facebook-dice-sobre-ti-body-image-1467737247.jpg?output-quality=75', 0, 'mikelsito', '123456'),
+(10, 'prueba', 'prueva', 'pruefa', 'prrueba', 'prrueva', 0, 'prruefa', 'prruebha'),
+(18, 'Ander', 'Lopez Moñigo', '47512369', 'andermoño@gmail.com', 'https://pbs.twimg.com/profile_images/3379609989/4cd28b985d64cc2c1623563d792d476b_400x400.jpeg', 0, 'Moñigito69', '1234567'),
+(19, 'lucas', 'aaaa', '87451269', 'lucas@gmail.com', 'https://lsfu.files.wordpress.com/2010/08/foto-perfil-perfil.jpg', 0, 'lucas55', '12345');
 
 -- --------------------------------------------------------
 
@@ -190,6 +218,15 @@ CREATE TABLE `valoraciones` (
   `positivo` int(11) NOT NULL,
   `negativo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `valoraciones`
+--
+
+INSERT INTO `valoraciones` (`idvaloracion`, `idusuario`, `positivo`, `negativo`) VALUES
+(1, 7, 13, 1),
+(2, 9, 1, 15),
+(3, 18, 8, 8);
 
 -- --------------------------------------------------------
 
@@ -211,7 +248,9 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`idcoche`, `idusuario`, `marca`, `plazas`, `combustible`, `matricula`) VALUES
-(1, 7, 'Megane', 4, 'Dieselss', '25824 JH');
+(1, 7, 'Megane', 4, 'Dieselssxcc', '25824 JH'),
+(2, 19, 'peugot', 1000, 'Excrementos', '1234HGT'),
+(3, 9, 'Seat Leonardo', 4, 'Excremento', '12345HFR');
 
 -- --------------------------------------------------------
 
@@ -233,7 +272,10 @@ CREATE TABLE `viajes` (
 INSERT INTO `viajes` (`idusuario`, `idtrayecto`, `clase`, `aceptado`) VALUES
 (7, 1, 'conductor', 1),
 (7, 2, 'pasajero', 0),
-(9, 1, 'pasajero', 0);
+(7, 4, 'conductor', 1),
+(9, 1, 'pasajero', 0),
+(10, 3, 'pasajero', 1),
+(18, 2, 'pasajero', 0);
 
 --
 -- Índices para tablas volcadas
@@ -281,22 +323,26 @@ ALTER TABLE `viajes`
 -- AUTO_INCREMENT de la tabla `trayecto`
 --
 ALTER TABLE `trayecto`
-  MODIFY `idtrayecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idtrayecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  MODIFY `idvaloracion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idvaloracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcoche` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -330,7 +376,7 @@ DELIMITER $$
 --
 -- Eventos
 --
-CREATE DEFINER=`root`@`localhost` EVENT `delete_old` ON SCHEDULE EVERY 1 DAY STARTS '2018-01-17 23:00:42' ON COMPLETION NOT PRESERVE ENABLE COMMENT 'Clears old cache data from the DB' DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `delete_old` ON SCHEDULE EVERY 1 DAY STARTS '2018-01-19 23:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
 -- Variables donde almacenar lo que nos traemos desde el SELECT
   DECLARE vidtrayecto INT(10);
@@ -354,6 +400,7 @@ CREATE DEFINER=`root`@`localhost` EVENT `delete_old` ON SCHEDULE EVERY 1 DAY STA
     SET FOREIGN_KEY_CHECKS=0;
          DELETE FROM trayecto WHERE idtrayecto=vidtrayecto;
         DELETE FROM viajes WHERE idtrayecto=vidtrayecto;
+        SET FOREIGN_KEY_CHECKS=1;
   END LOOP get_trayectos;
 
   CLOSE trayectos_cursor;
