@@ -68,9 +68,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <img src="../img/acceptbutton.png" alt="" width="15px" height="15px"/> manda la peticion al conductor que ha publicado el trayecto que te interesa. La página también dispone de un buscador en el que podras filtrar tu búsqueda según tus preferencias, ya sea por origen, destino, fecha u hora, plazas, paradas, etc....
             </strong>
             <hr>
-            <br>               
-            <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
-            <br>
+            <br>   
+            <div class="alineando-botonsito2"           
+                 <input type="button" class="btn btn-default" value="Buscador" ng-click="Buscar()"> 
+            </div>      
             <br>
             <div id="dcha" ng-show="VerMenu === true"> 
                 <form id="formulariobuscar" ng-show="VerFormBusqueda" ng-submit="finbuscar()"><p class="texto-buscador">Escriba dato a buscar:</p> <input type="text" ng-model="TEXTObusqueda"> 
