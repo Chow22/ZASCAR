@@ -53,8 +53,12 @@ session_start();
             </nav>
         </header>
         <fieldset>
-            <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
-            <input name="botonModificar" type="button" value="Modificar Tamaño" onclick="Tamanyo()" clas="tamano"/>	
+            <br>
+             <p class="intro tamano">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+                <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano"></button>
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-zoom-in"></span> Zoom
+                    </button>	
         </fieldset>  
         <section>
             <strong class="strindex">ZASCAR ha sido formada para facilitar el acceso al centro a aquellos que no tienen coche o que quieren compartirlo</strong>
