@@ -5,8 +5,8 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeControl: false,
-        center: {lat: -33.8688, lng: 151.2195},
-        zoom: 13
+        center: {lat: 43.2204286, lng: -2.69838679999998},
+        zoom: 10
     });
 
     new AutocompleteDirectionsHandler(map);
@@ -39,8 +39,8 @@ function AutocompleteDirectionsHandler(map) {
     this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
     this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+//    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+//    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
 //    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
 }
 
