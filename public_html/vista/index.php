@@ -139,7 +139,7 @@ session_start();
                         </li>
                         <li class="item4"><a href="#">Zona Administrador</a>
                             <ul>
-                                <li class="subitem1"><a href="#">Gestión de Usuarios</a></li>
+                                <li class="subitem1"><a href="gestionPagina.php">Gestión de Usuarios</a></li>
                             </ul>
                         </li>
                     </ul>
