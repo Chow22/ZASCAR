@@ -12,11 +12,15 @@ $(document).ready(function () {
             dstaType: 'json',
             url: "../controlador/controlador_consulta_trayectos_conductor.php",
             success: function (datos) {
-                //  alert(datos)
-                $('#tablaTrayectos').fadeIn(1000).html("");
+//                  alert(datos);
+                if (Object.keys(datos).length === 2) {
+                    var p = "<br/><br/><strong class='strindex'>Este usuario no tiene trayectos, añádelo <a href='../vista/insertarTrayectos.php'>aquí</a></strong>";
+                    $("#tablaTrayectos").append(p);
+                } else {
+                    $('#tablaTrayectos').fadeIn(1000).html("");
                 var tabla = "<br> \n\
               <table class='tabla'>";
-                tabla += "\n\
+                    tabla += "\n\
                <th class='origen'>Origen</th>\n\
                <th class='destino'>Destino</th>\n\
                <th class='fecha_hora'>Fecha-Hora</th>\n\
@@ -24,34 +28,35 @@ $(document).ready(function () {
                <th class='paradas'>Paradas</th>\n\
                <th class='acciones'>Acciones</th>\n\
                 ";
-                midato = JSON.parse(datos);
-                $
-                        .each(
-                                midato,
-                                function (i, dato) {
-                                    tabla += "<tr>";
-                                    tabla += "<td class='origen'>" +
-                                            dato.origen +
-                                            "</td>";
-                                    tabla += "<td class='destino'>" +
-                                            dato.destino +
-                                            "</td>";
-                                    tabla += "<td class='fecha_hora'>" +
-                                            dato.fecha_hora +
-                                            "</td>";
-                                    tabla += "<td class='plazas'>" +
-                                            dato.plazas +
-                                            "</td>";
-                                    tabla += "<td class='paradas'>" + dato.paradas +
-                                            "</td>";
-                                    tabla += "<td><input type='image' id='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
-                                    tabla += "</tr>";
-                                });
-                tabla += "</table>";
+                    midato = JSON.parse(datos);
+                    $
+                            .each(
+                                    midato,
+                                    function (i, dato) {
+                                        tabla += "<tr>";
+                                        tabla += "<td class='origen'>" +
+                                                dato.origen +
+                                                "</td>";
+                                        tabla += "<td class='destino'>" +
+                                                dato.destino +
+                                                "</td>";
+                                        tabla += "<td class='fecha_hora'>" +
+                                                dato.fecha_hora +
+                                                "</td>";
+                                        tabla += "<td class='plazas'>" +
+                                                dato.plazas +
+                                                "</td>";
+                                        tabla += "<td class='paradas'>" + dato.paradas +
+                                                "</td>";
+                                        tabla += "<td><input type='image' id='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
+                                        tabla += "</tr>";
+                                    });
+                    tabla += "</table>";
 //              alert(tabla);
-                $('#tablaTrayectos').append(tabla).hide()
-                        .fadeIn('slow');
-                return false;
+                    $('#tablaTrayectos').append(tabla).hide()
+                            .fadeIn('slow');
+                    return false;
+                }
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status +
