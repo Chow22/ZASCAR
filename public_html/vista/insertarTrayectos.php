@@ -67,9 +67,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <legend>Datos del viaje</legend>
                     <hr>
                     <label class="trayecto-label">¿Desde donde sales?</label><br/>
-                    <input type="text" class="form-control" id="autocompleteOrigen" name="origen" placeholder="Origen" required /><br/>
+                    <input type="text" class="form-control" id="origin-input" name="origen" placeholder="Origen" required /><br/>
                     <label class="trayecto-label">¿A donde vas?</label><br/>
-                    <input type="text" class="form-control" id="autocompleteDestino" name="destino" placeholder="Destino" required /><br/>
+                    <input type="text" class="form-control" id="destination-input" name="destino" placeholder="Destino" required /><br/>
                     <label class="trayecto-label">Fecha y hora</label><br/>
                     <input type="datetime-local" class="form-control" name="fechahora" required /><br/>
                     <label class="trayecto-label">Plazas</label><br/>
@@ -83,7 +83,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </form>
         </div>        
         <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9G3h2-Il9-fwshFj5RiNIFMby_jLi4_4&libraries=places">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9G3h2-Il9-fwshFj5RiNIFMby_jLi4_4&libraries=places&callback=initMap"
+                async defer>
         </script>
         <script src="../js/main.js?version=1.2"></script>
         <script src="../js/localizacion.js"></script>
