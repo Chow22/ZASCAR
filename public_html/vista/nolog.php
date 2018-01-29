@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<!-- Codigo para permitir acceso a usuarios logados solamente -->
 <?php
 session_start();
-//echo ($_SESSION['loggedin']);
-//echo "<h1 id='prueba'>" + ($_SESSION['loggedin']) + "</h1>";
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo '<script>window.location.href = "../vista/index.php";</script>';
+    echo '<script>window.location.href = "../index.php";</script>';
 }
 ?>
-<html lang ="en" >
+<html>
     <head>
         <title>No se puede mostrar la página web</title>
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- jQuery library -->
-        <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <link href="../css/styloMiCuenta.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="../img/favicon.ico"/> <!--Para el logo de las pestañas en los navegadores-->
-        <script src="../js/scriptMiCuenta.js" type="text/javascript"></script>
     </head>
     <body>
 

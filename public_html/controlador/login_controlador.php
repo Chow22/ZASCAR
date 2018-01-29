@@ -30,3 +30,4 @@ if($idusu!=null) {
     echo '<script> window.location="../vista/login.php"; </script>';
 }
 ?>
+<link rel="stylesheet" href="../css/style.css">
