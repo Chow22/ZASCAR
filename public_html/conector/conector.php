@@ -1,7 +1,6 @@
 <?php
 
 class Conectar {
-
     public static function conexion() {
         $localhost = 'localhost';
         $usuario = 'root';
