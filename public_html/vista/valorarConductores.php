@@ -51,10 +51,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <br>
             <nav>  
                 <ul>
-                    <li><a href="../index.php" class="active">Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
-                    <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
+                    <li><a href="valorarConductores.php" class="active">Valora a nuestros conductores</a></li>
                 </ul>
             </nav>
         </header>
