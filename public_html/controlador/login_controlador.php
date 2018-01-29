@@ -22,7 +22,7 @@ if($idusu!=null) {
 
     // acceso permitido
     echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
-    echo '<script>window.location.href = "../vista/index.php";</script>';
+    echo '<script>window.location.href = "../index.php";</script>';
     
     // acceso bloqueado y redireccionamiento a la pagina de login
 } else {
