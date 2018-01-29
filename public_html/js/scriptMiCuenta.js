@@ -262,7 +262,7 @@ $(document).ready(function () {
                                     tabla += "<td class='aceptado'>" + dato.aceptado +
                                             "</td>";
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input id='borrar' data-idBorrar='" + dato.idtrayecto + "' type=image src='../../../../ZASCAR/public_html/img/eliminar.png' width='18' height='15' ></td>";
+                                    tabla += "<input id='borrar' data-idBorrar='" + dato.idtrayecto + "' type=image src='../img/eliminar.png' width='18' height='15' ></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
@@ -391,7 +391,7 @@ $(document).ready(function () {
                                             dato.fecha_hora +
                                             "</td>";
                                     tabla += "<td class='opciones'>";
-                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "' data-idsolic='" + dato.idsolic + "'  type=image src='../../../../ZASCAR/public_html/img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
+                                    tabla += "<input id='aceptar' data-idtrayecto='" + dato.idtrayecto + "' data-idsolic='" + dato.idsolic + "'  type=image src='../img/aceptar.png' style='cursor:pointer;' ng-click='modificar()' width='20' height='17'></td>";
                                     tabla += "</tr>";
                                 });
                 tabla += "</table>";
