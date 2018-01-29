@@ -18,43 +18,48 @@ $(document).ready(function () {
                     $("#tablaTrayectos").append(p);
                 } else {
                     $('#tablaTrayectos').fadeIn(1000).html("");
-                var tabla = "<br> \n\
-              <table class='tabla'>";
-                    tabla += "\n\
-               <th class='origen'>Origen</th>\n\
-               <th class='destino'>Destino</th>\n\
-               <th class='fecha_hora'>Fecha-Hora</th>\n\
-               <th class='plazas'>Plazas</th>\n\
-               <th class='paradas'>Paradas</th>\n\
-               <th class='acciones'>Acciones</th>\n\
-                ";
+                    var tabla = "<br> \n\
+                    <div class='margeneslista'>\n\
+                    <div class='container'>\n\
+                    <div class='listWrap'>\n\
+                    <ul class='list tabla-listar'>";
+                    tabla += "<li>\n\
+                    <span>Origen</span>\n\
+                    <span>Destino</span>\n\
+                    <span>Fecha-Hora</span>\n\
+                    <span>Plazas</span>\n\
+                    <span>Paradas</span>\n\
+                    <span>Acciones</span>\n\
+                    </li>";
                     midato = JSON.parse(datos);
                     $
                             .each(
                                     midato,
                                     function (i, dato) {
-                                        tabla += "<tr>";
-                                        tabla += "<td class='origen'>" +
+                                        tabla += "<li>";
+                                        tabla += "<span class='tabla-campos'>" +
                                                 dato.origen +
-                                                "</td>";
-                                        tabla += "<td class='destino'>" +
+                                                "</span>";
+                                        tabla += "<span class='tabla-campos'>" +
                                                 dato.destino +
-                                                "</td>";
-                                        tabla += "<td class='fecha_hora'>" +
+                                                "</span>";
+                                        tabla += "<span>" +
                                                 dato.fecha_hora +
-                                                "</td>";
-                                        tabla += "<td class='plazas'>" +
+                                                "</span>";
+                                        tabla += "<span>" +
                                                 dato.plazas +
-                                                "</td>";
-                                        tabla += "<td class='paradas'>" + dato.paradas +
-                                                "</td>";
-                                        tabla += "<td><input type='image' id='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></td>";
-                                        tabla += "</tr>";
+                                                "</span>";
+                                        tabla += "<span class='tabla-campos'>" + dato.paradas +
+                                                "</span>";
+                                        tabla += "<span><input type='image' class='tabla-campos' id='borrarTrayecto' src='../img/eliminar.png' data-idtrayecto='" + dato.idtrayecto + " ' alt='' width='15' height='15'></span>";
+                                        tabla +="</li>";
                                     });
-                    tabla += "</table>";
+                    tabla += "</ul>\n\
+                    <div/>\n\
+                    <div/>\n\
+                    <div/>";
 //              alert(tabla);
-                    $('#tablaTrayectos').append(tabla).hide()
-                            .fadeIn('slow');
+                    $('#tablaTrayectos').append(tabla).hide().fadeIn('slow');
                     return false;
                 }
             },
