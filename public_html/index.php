@@ -27,20 +27,20 @@ session_start();
 
     <body>
         <header>                         
-            <div id="logo"><img src="../img/logo.png">ZASCAR Enterprises
+            <div id="logo"><img src="img/logo.png">ZASCAR Enterprises
 
                 <?php
                 $now = time();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true && $now < $_SESSION['expire']) {
-                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='../img/logoutbutton.png'/></a>";
+                    echo "<a  href='../controlador/logout.php'><img class='login-img' src='img/logoutbutton.png'/></a>";
                     echo "<p style='color:white;'>Bienvenido, ";
-                    echo "<font color = 'orange'><a  href='miCuenta.php' style='color:orange;'>";
+                    echo "<font color = 'orange'><a  href='vista/miCuenta.php' style='color:orange;'>";
                     echo ($_SESSION['username']);
                     echo"</font></a>";
                     echo "</p>";
                 } else {
                     session_destroy();
-                    echo"<a  href='login.php'><img class='login-img' src='../img/loginbutton.png'/></a>";
+                    echo"<a  href='vista/login.php'><img class='login-img' src='img/loginbutton.png'/></a>";
                     echo "<p>Iniciar sesión</p>";
                 }
                 ?>
@@ -50,9 +50,9 @@ session_start();
             <nav>  
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="informacion.php">Información</a></li>                                                        
-                    <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
-                    <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
+                    <li><a href="vista/informacion.php">Información</a></li>                                                        
+                    <li><a href="controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
+                    <li><a href="vista/valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
 
             </nav>
@@ -86,19 +86,19 @@ session_start();
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="../img/carousel0.jpg" alt="...">
+                                    <img src="img/carousel0.jpg" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Podrás conocer a gente muy interesante, y sin pagar ni un chavo!</h2>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="../img/carousel1.png" alt="...">
+                                    <img src="img/carousel1.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Sin seguros que te aseguren</h2>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="../img/carousel2.png" alt="...">
+                                    <img src="img/carousel2.png" alt="...">
                                     <div class="carousel-caption">
                                         <h2>Viaja feliz con tus compañeros de viaje</h2>
                                     </div>
@@ -122,24 +122,24 @@ session_start();
                     <ul class="menu">
                         <li class="item1"><a href="#">Opciones de Cuenta</a>
                             <ul>
-                                <li class="subitem1"><a href="miCuenta.php">Modificar Cuenta</a></li>
-                                <li class="subitem1"><a href="miCuenta.php">Eliminar Cuenta</a></li>
+                                <li class="subitem1"><a href="vita/miCuenta.php">Modificar Cuenta</a></li>
+                                <li class="subitem1"><a href="vista/miCuenta.php">Eliminar Cuenta</a></li>
                             </ul>
                         </li>
                         <li class="item2"><a href="#">Zona Conductor</a>
                             <ul>
-                                <li class="subitem1"><a href="insertarTrayectos.php">Publicar Trayecto</a></li>
-                                <li class="subitem2"><a href="consultarTrayectos.php">Consultar Trayecto</a></li>
+                                <li class="subitem1"><a href="vista/insertarTrayectos.php">Publicar Trayecto</a></li>
+                                <li class="subitem2"><a href="vista/consultarTrayectos.php">Consultar Trayecto</a></li>
                             </ul>
                         </li>
                         <li class="item3"><a href="#">Zona Pasajero</a>
                             <ul>
-                                <li class="subitem1"><a href="buscarTrayectos.php">Buscar Trayecto</a></li>
+                                <li class="subitem1"><a href="vista/buscarTrayectos.php">Buscar Trayecto</a></li>
                             </ul>
                         </li>
                         <li class="item4"><a href="#">Zona Administrador</a>
                             <ul>
-                                <li class="subitem1"><a href="gestionPagina.php">Gestión de Usuarios</a></li>
+                                <li class="subitem1"><a href="vista/gestionPagina.php">Gestión de Usuarios</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -172,7 +172,7 @@ session_start();
             </aside>
         </section>
         <footer>
-            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="contacto.php">Contacto</a>
+            <p>&copy; Puedes contactar con nosotros en el siguiente enlace | <a href="vista/contacto.php">Contacto</a>
             <div class="">   
                 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                 <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
