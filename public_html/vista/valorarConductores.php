@@ -68,7 +68,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </div>
             <hr>
             <br>   
-            <div class="alineando-botonsito">
+            <div class="alineando-botonsito" align= "center">
                 <input type="button" class="btn btn-default" value="Buscar" ng-click="Buscar()"> 
             </div>
             <br>          
@@ -77,12 +77,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <input type="submit" class="btn btn-default" value="Cerrar"/> 
                 </form> 
             </div>   
-            <div class="valorar">
-                <div  ng-repeat="item in lista| filter:TEXTObusqueda"class="container">                               
-                    <div class="tablita-conductora">    
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6">                        
-                                <div class="well well-sm">                            
+            <div class="valorar" align= "center">
+                <div  ng-repeat="item in lista| filter:TEXTObusqueda"class="">                               
+                    <div class="tablita-conductora" align= "center">    
+                        
+                            <div class="">                        
+                                <div class="well well-sm" align= "center">                            
                                     <div class="row">                                                            
                                         <div class="col-sm-6 col-md-4">
                                             <img class="imagencitas" src='{{item.imagen}}' alt=""/>
@@ -103,7 +103,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                                 <br> 
                                                 <span>&nbsp;&nbsp;&nbsp;{{item.positivo}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;&nbsp;&nbsp;{{item.negativo}}</span>                                                                                                                    
                                             </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

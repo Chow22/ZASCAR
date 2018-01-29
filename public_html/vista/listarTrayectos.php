@@ -62,8 +62,8 @@ session_start();
         <hr>             
         <div class="margeneslista">                      
             <div class="container">             
-                <div class="listWrap">
-                    <ul class="list tabla-listar" >
+                <div class="">
+                    <ul class="list" >
                         <li>
                             <span>Origen</span>
                             <span>Destino</span>
