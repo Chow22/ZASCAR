@@ -21,7 +21,6 @@ if($idusu!=null) {
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 
     // acceso permitido
-    echo 'Iniciando sesion para ' . $_SESSION['username'] . ' <p>';
     echo '<script>window.location.href = "../index.php";</script>';
     
     // acceso bloqueado y redireccionamiento a la pagina de login
