@@ -95,7 +95,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                                     <strong>Apellidos:</strong><h4>{{item.apellidos}}</h4>
                                                 <p>                                           
                                                     <strong>Nombre de Usuario:</strong><h4>{{item.usuario}}</h4>  
-                                            </div>                                           
+                                            </div> 
+                                            <br>
                                             <div class="btn-group">                                                                                                                                
                                                 <span>&nbsp;&nbsp;&nbsp;<img src="../img/thumbs-up.png" class="txiki" style="cursor:pointer;" ng-click='positivo($index, item)' alt=""></span>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <span>&nbsp;&nbsp;<img src="../img/thumbs-down.png" class="txiki" style="cursor:pointer;" ng-click='negativo($index, item)' alt=""></span>  
