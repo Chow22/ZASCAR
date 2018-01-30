@@ -73,14 +73,14 @@ $(document).ready(function () {
 
 
 //////////////////eliminar trayecto pasajero/////////////////////////////////////////
-    $('#tablaPasajero').on("click", "#borrar", function () {
-// alert('borrando');
+    $('#tablaDinamica').on("click", "#borrar", function () {
+ alert('borrando');
         idBorrar = $(this).attr("data-idBorrar");
         funcionBorrar();
         return false;
     });
     function funcionBorrar() {
-        //alert("eliminandoo");
+        alert("eliminandoo");
 
         idusu = $('#idusuSession').text();
         //alert(idBorrar);
