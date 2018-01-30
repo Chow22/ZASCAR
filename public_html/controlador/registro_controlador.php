@@ -11,5 +11,5 @@ $lista = new modelo_usuario();
 $lista->registrar_usuario($nombre, $apellidos, $telefono, $email, $imagen, $usuario, $pass);
 
 echo "<script type=\"text/javascript\">alert(\"Resgistro satisfactorio\");</script>";  
-header('Location: ../vista/index.php'); 
+header('Location: ../index.php'); 
 ?>
