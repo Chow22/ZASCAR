@@ -49,16 +49,17 @@ session_start();
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                     <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
                 </ul>
-
             </nav>
-        </header>
-        <fieldset>
-                <p class="intro">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+        </header>      
+        <section>
+                    <fieldset>
+                <p class="intro tamano">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
                 <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano"></button>
                     <button type="button" class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-zoom-in"></span> Zoom
                     </button>	
-            </fieldset>
+            </fieldset>            
+        </section>
         <section>
             <strong class="strindex">Puedes contactar con nosotros de las siguientes formas</strong>
         </section>
@@ -91,5 +92,5 @@ session_start();
     </footer>    
 
 
-    </body>
+</body>
 </html>
