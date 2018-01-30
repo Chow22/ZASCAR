@@ -53,6 +53,7 @@ session_start();
             </nav>
         </header>
         <fieldset>
+            <br> 
             <br>
              <p class="intro tamano2">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
                 <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano2"></button>
