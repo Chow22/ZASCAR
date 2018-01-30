@@ -46,7 +46,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
                     <fieldset>
-                        <a  href="../vista/index.php">
+                        <a  href="../index.php">
                             <img id="atras"  src="../img/atras.png"  alt="imagen"  align="left" style="float:top;width:10%; border:none" >
                         </a>
                         <br><br><br>

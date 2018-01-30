@@ -1,6 +1,7 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1;
      font-family: arial;
+     margin:auto;
 }
 h1{font-size: 25px;color: white;margin-left: 25px;margin-right: 25px;}h2{font-size: 21px;}h3{font-size: 18px;}h4{font-size: 16px;}
 p{font-size: 15px;color: white;margin-left: 25px;margin-right: 25px;}
@@ -250,8 +251,7 @@ body > section {
 @media screen and (min-width: 992px) {
 
     .container {
-        max-width: 930px;
-        margin-right: 20%;
+        
     }
 
 }
@@ -500,8 +500,8 @@ iframe{
 }
 
 .unpoquitodemargen{
-    margin-left: -35%;
-    margin-right: 90%;
+    margin-left: -20%;
+    margin-right: 60%;
 }
 
 
@@ -518,6 +518,8 @@ iframe{
 .listWrap {
     height: 800px;
     width: 1000px;
+    margin-right: 15%;
+    margin-left: -8%;
 }
 .list {
     list-style: none;
@@ -569,7 +571,7 @@ iframe{
 .list span {
     text-align: left;
     display: table-cell;
-    padding: 20px;
+    padding: 9px;
     vertical-align: middle;
 }
 .margenes{
@@ -577,8 +579,8 @@ iframe{
 }
 .margeneslista{
     align-content: center;
-    margin-left: 245px;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 .plazasACero{
     background-color: darksalmon;
@@ -599,20 +601,20 @@ iframe{
     padding: 10px;    
 }
 /*alineando el botonsito de busqueda*/
-.alineando-botonsito{margin-left: 680px}
+.alineando-botonsito{margin: auto;}
 /*alinamiento del texto del buscador en valoraciones*/
 .texto-buscador{margin-right: 125px;color:#FFF;font-size: 17px}
 
 /*-----------------------------valoracion de conductores-------------------------------*/
 /*botones votos votados que no revotan*/
-.botonesLikeDislke{margin-left: 35%}
+.botonesLikeDislke{margin-left: auto}
 .btn-group{margin-left: 175px}
 /*imagenes perfiles de usuario*/
 .imagencitas{width:150px;height:150px;}
 /*datos del conductor*/
 .datos-conductor{margin-left: 20px;text-align: center}
 /*tabla conductores*/
-.valorar{margin-left: 500px}
+.valorar{margin-left: 20%; margin-right: 20%}
 /*alineando el botonsito de busqueda de la tabla buscarTrayectos*/
 .alineando-botonsito2{margin-left: 5px}
 /*alineando el cajetin de buscador de buscarTrayectos*/
@@ -632,7 +634,10 @@ small {
     margin-left: 10px;
 }
 .tamano{
-    margin-left: 100px;
+    margin-left: 2%;
+}
+.tamano2{
+    margin-left: 4%;
 }
 /*-----reces socisales----*/
 

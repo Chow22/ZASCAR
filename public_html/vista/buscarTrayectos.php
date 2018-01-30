@@ -51,7 +51,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             <br>
             <nav>  
                 <ul>
-                    <li><a href="index.php" class="active">Home</a></li>
+                    <li><a href="../index.php" class="active">Home</a></li>
                     <li><a href="informacion.php">Información</a></li>                                                        
                     <li><a href="../controlador/controlador_listar_trayectos.php">¿Quiéres conocer los viajes?</a></li>
                     <li><a href="valorarConductores.php">Valora a nuestros conductores</a></li>
@@ -98,7 +98,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                 <span class="tabla-campos2">{{item.destino}}</span>
                                 <span>{{item.fecha_hora}}</span>
                                 <span>{{item.plazas}}</span>                                
-                                <span class="tabla-campos">{{item.paradas}}</span> 
+                                <span class="tabla-campos" width="100px">{{item.paradas}}</span> 
                                 <span></span>
                                 <div class="btn-group btn-group-xs" role="group" aria-label="...">
                                     <span> <img src="../img/infobutton.png" class="txiki" style="cursor:pointer;" ng-click='infor($index, item)' alt="" >

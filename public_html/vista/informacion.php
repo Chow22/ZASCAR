@@ -54,8 +54,8 @@ session_start();
         </header>
         <fieldset>
             <br>
-             <p class="intro tamano">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
-                <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano"></button>
+             <p class="intro tamano2">¿Te cuesta ver el tamaño de la letra? Pulsa aquí para aumentar el tamaño de la fuente.</p>
+                <buttonton name="botonModificar" value="Modificar Tamaño" onclick="Tamanyo()" class="tamano2"></button>
                     <button type="button" class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-zoom-in"></span> Zoom
                     </button>	
