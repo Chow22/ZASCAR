@@ -58,7 +58,7 @@ $(document).ready(function () {
                 success: function (datos) {
                     alert("Se ha eliminado con exito");
                     //alert(datos);
-                    window.location.href = "../vista/index.php";
+                    window.location.href = "../index.php";
                 },
                 error: function (xhr) {
                     alert("An error occured: " + xhr.status +
