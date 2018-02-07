@@ -303,21 +303,6 @@ body > section {
 .strong-info{
     color: white;
 }
-/*---Tabla listarTrayectos---*/
-table, tr, td{  
-    border:solid black 1px;
-}
-
-tr{ 
-    padding: 7px;
-}
-td{
-    text-align: center;
-    padding: 7px;
-}
-strong{
-    color:black;
-}
 /*--------------------Tabla para la pagina buscarTrayectos--------------------*/
 #zonalista{width:50%;margin:auto;padding:15px;margin-bottom: 50px;}
 listatrayectos th,td,tr{background-color:grey;color:black;margin: 50%; }  
@@ -434,7 +419,6 @@ img.txiki{
 .item5 > a:before {
     background-position: -76px 0;
 }
-
 .menu > li > ul li a:before{
     font-size: 8px;
     color: #bcbcbf;
@@ -673,3 +657,7 @@ small {
  #social-em:hover {
      color: #f39c12;
  }
+ /*Tipo de letra para '¿Has olvidado la contraseña?'*/
+.letra-recu{color: lightskyblue;size:50px;}
+.letra-recu:hover{color: lightcyan;}
+.letra-recu:visited{color: lightcyan}

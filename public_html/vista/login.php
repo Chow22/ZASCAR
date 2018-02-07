@@ -55,12 +55,12 @@
                                 <div class="form-group" style="color:white;">                                                                      
                                     <label>Contraseña:</label><input type="password" class="form-control" name="pass">
                                 </div>
-
+                                <a class="letra-recu" href="recu.php">¿Has olvidado la contraseña?</a><br><br>
                                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                     <div class="btn-group" role="group">
                                         <div class="unpoquitodemargen">
                                             <button type="submit" class="btn btn-primary">Iniciar Sesión</button><br><br>
-                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Registro</a><br>                                            
                                         </div>
                                     </div>   
                                 </div>

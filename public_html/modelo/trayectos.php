@@ -80,7 +80,32 @@ class trayectos {
     }
 
     public function insertar_trayecto($origen, $destino, $fechahora, $plazas, $paradas, $id) {
-        $consulta = $this->link->query("CALL sp_insertar_trayecto ('$origen','$destino','$fechahora','$plazas','$paradas','$id')");
+        $consulta = $this->link;
+        $consulta->autocommit(false);
+        $stop = false;
+
+        $sql1 = "INSERT INTO trayecto (origen, destino, fecha_hora, plazas, paradas, idusuario) 
+                VALUES ('$origen', '$destino', '$fechahora', '$plazas', '$paradas', '$id');";
+        $sql2 = "INSERT INTO viajes (idusuario, idtrayecto, clase, aceptado) 
+            VALUES ('$id', LAST_INSERT_ID(), 'conductor', '1');";
+
+        $result = $consulta->query($sql1); //intento primer query
+        if ($consulta->errno) {
+            $stop = true; //si hay error entra aqui y para
+            echo "Error sql1: " . $consulta->error . ". ";
+        }
+        $result = $consulta->query($sql2); //intento de hacer segudo query
+        if ($consulta->errno) {
+            $stop = true; //si hay error entra aqui y para
+            echo "Error sql2: " . $consulta->error . ". ";
+        }
+        if ($stop == false) { //si no hay ningun error have la consulta en la BD
+            $consulta->commit();
+            echo "Los datos de han guardado correctamente";
+        } else {
+            $consulta->rollback(); //si hay error anula todas
+            echo "No se han metido datos en la BD";
+        }
     }
 
 }

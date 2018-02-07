@@ -1,5 +1,4 @@
 <?php
-
 require_once "../modelo/trayectos.php";
 $origen = filter_input(INPUT_POST, 'origen');
 $destino = filter_input(INPUT_POST, 'destino');
